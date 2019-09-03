@@ -7,21 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{B63B96B8-CC4F-4ACA-B912-B9D2E060581E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexing", "src\Foundation\Indexing\Indexing.csproj", "{D806604D-897F-4BD7-BA56-5F3343A7069C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Indexing", "src\Foundation\Indexing\Foundation.Indexing.csproj", "{D806604D-897F-4BD7-BA56-5F3343A7069C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreExtensions", "src\Foundation\SitecoreExtensions\SitecoreExtensions.csproj", "{63FB5190-8698-46F3-BDE7-3D7903C995EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\Foundation.SitecoreExtensions.csproj", "{63FB5190-8698-46F3-BDE7-3D7903C995EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacetFilter", "src\Feature\FacetFilter\FacetFilter.csproj", "{621A9331-D469-44B4-AF55-2FC9A6319504}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.FacetFilter", "src\Feature\FacetFilter\Feature.FacetFilter.csproj", "{621A9331-D469-44B4-AF55-2FC9A6319504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageSelector", "src\Feature\PageSelector\PageSelector.csproj", "{CCFCD724-129D-47CD-B8DF-C091CC0F53C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.PageSelector", "src\Feature\PageSelector\Feature.PageSelector.csproj", "{CCFCD724-129D-47CD-B8DF-C091CC0F53C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchBox", "src\Feature\SearchBox\SearchBox.csproj", "{9D084FCF-AE68-4B4E-A128-B7C867F43E0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.SearchBox", "src\Feature\SearchBox\Feature.SearchBox.csproj", "{9D084FCF-AE68-4B4E-A128-B7C867F43E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchResults", "src\Feature\SearchResults\SearchResults.csproj", "{CC105EB4-282C-42DF-8B55-30F0165CDC14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.SearchResults", "src\Feature\SearchResults\Feature.SearchResults.csproj", "{CC105EB4-282C-42DF-8B55-30F0165CDC14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchResultSummary", "src\Feature\SearchResultSummary\SearchResultSummary.csproj", "{7774EB38-96E3-4C43-A855-B8A650AB6E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.SearchResultSummary", "src\Feature\SearchResultSummary\Feature.SearchResultSummary.csproj", "{7774EB38-96E3-4C43-A855-B8A650AB6E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortIndicator", "src\Feature\SortIndicator\SortIndicator.csproj", "{DD48DDB0-E77D-4066-A97C-DC1355887232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.SortIndicator", "src\Feature\SortIndicator\Feature.SortIndicator.csproj", "{DD48DDB0-E77D-4066-A97C-DC1355887232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

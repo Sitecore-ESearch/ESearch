@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7774EB38-96E3-4C43-A855-B8A650AB6E6F}</ProjectGuid>
+    <ProjectGuid>{DD48DDB0-E77D-4066-A97C-DC1355887232}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SearchResultSummary</RootNamespace>
-    <AssemblyName>SearchResultSummary</AssemblyName>
+    <RootNamespace>ESearch.Feature.SortIndicator</RootNamespace>
+    <AssemblyName>SortIndicator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -131,9 +131,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58465</DevelopmentServerPort>
+          <DevelopmentServerPort>58478</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58465/</IISUrl>
+          <IISUrl>http://localhost:58478/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
