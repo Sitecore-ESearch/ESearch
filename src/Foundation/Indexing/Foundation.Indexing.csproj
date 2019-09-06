@@ -113,7 +113,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FacetQuery.cs" />
+    <Compile Include="Models\FacetResults.cs" />
+    <Compile Include="Models\SearchQuery.cs" />
+    <Compile Include="Models\SearchResults.cs" />
+    <Compile Include="Models\SuggestionQuery.cs" />
+    <Compile Include="Models\SuggestionResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IFacetService.cs" />
+    <Compile Include="Services\IIndexResolver.cs" />
+    <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\ISuggestionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
