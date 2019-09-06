@@ -130,11 +130,10 @@
     <Compile Include="Services\ISuggestionService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\Foundation\ESearch.Foundation.Indexing.RegisterServices.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Config\Include\Foundation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SitecoreExtensions\Foundation.SitecoreExtensions.csproj">
       <Project>{63fb5190-8698-46f3-bde7-3d7903c995ec}</Project>
