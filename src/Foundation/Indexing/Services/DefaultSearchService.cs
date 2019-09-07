@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using ESearch.Foundation.Indexing.Models;
+using System;
 
 namespace ESearch.Foundation.Indexing.Services
 {
@@ -14,6 +11,16 @@ namespace ESearch.Foundation.Indexing.Services
         }
 
         public int GetTotalCount(SearchQuery query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SuggestionResults GetSuggestions(SuggestionQuery query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FacetResults GetFacets(FacetQuery query)
         {
             throw new NotImplementedException();
         }

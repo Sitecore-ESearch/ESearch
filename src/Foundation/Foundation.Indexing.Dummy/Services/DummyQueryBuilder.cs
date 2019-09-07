@@ -6,7 +6,7 @@ using System.Collections.Specialized;
 
 namespace ESearch.Foundation.Indexing.Dummy.Services
 {
-    public class DummySearchQueryBuilder : ISearchQueryBuilder
+    public class DummyQueryBuilder : IQueryBuilder
     {
         public string BuildQueryString(SearchQuery query)
         {
@@ -18,8 +18,6 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             return new SearchQuery()
             {
                 Scope = ItemIDs.ContentRoot,
-                Offset = 0,
-                Limit = 30,
                 TargetTemplates = new[]
                 {
                     TemplateIDs.UnversionedFile, TemplateIDs.MediaFolder

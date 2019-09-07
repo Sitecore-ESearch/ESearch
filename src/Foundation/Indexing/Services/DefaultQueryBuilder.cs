@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 
 namespace ESearch.Foundation.Indexing.Services
 {
-    public class DefaultSearchQueryBuilder : ISearchQueryBuilder
+    public class DefaultQueryBuilder : IQueryBuilder
     {
         public string BuildQueryString(SearchQuery query)
         {
