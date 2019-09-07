@@ -20,6 +20,8 @@ namespace ESearch.Foundation.Indexing.Models
         public ICollection<ContainsCondition> ContainsConditions { get; set; }
 
         public ICollection<BetweenCondition> BetweenConditions { get; set; }
+
+        public ICollection<SortCondition> SortConditions { get; set; }
     }
 
     public class KeywordCondition
@@ -45,5 +47,17 @@ namespace ESearch.Foundation.Indexing.Models
         public string FieldName { get; set; }
         public string LowerValue { get; set; }
         public string UpperValue { get; set; }
+    }
+
+    public class SortCondition
+    {
+        public string FieldName { get; set; }
+        public SortDirection Direction { get; set; }
+    }
+
+    public enum SortDirection
+    {
+        Asc,
+        Desc
     }
 }
