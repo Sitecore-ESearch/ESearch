@@ -1,9 +1,5 @@
 using Sitecore.Data;
-using Sitecore.Data.Items;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ESearch.Foundation.Indexing.Models
 {
@@ -24,19 +20,6 @@ namespace ESearch.Foundation.Indexing.Models
         public ICollection<ContainsCondition> ContainsConditions { get; set; }
 
         public ICollection<BetweenCondition> BetweenConditions { get; set; }
-
-        public SearchQuery()
-        {
-        }
-
-        public SearchQuery(string queryString, Item searchSettings)
-        {
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 
     public class KeywordCondition
