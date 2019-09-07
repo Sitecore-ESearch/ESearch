@@ -6,7 +6,12 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public class DefaultSearchQueryBuilder : ISearchQueryBuilder
     {
-        public SearchQuery Build(string queryString, Item searchSettings)
+        public string BuildQueryString(SearchQuery query)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SearchQuery BuildSearchQuery(string queryString, Item searchSettings)
         {
             throw new NotImplementedException();
         }
