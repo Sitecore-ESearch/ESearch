@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ESearch.Feature.SearchResultSummary</RootNamespace>
-    <AssemblyName>SearchResultSummary</AssemblyName>
+    <AssemblyName>ESearch.Feature.SearchResultSummary</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
