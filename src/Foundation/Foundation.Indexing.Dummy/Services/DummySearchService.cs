@@ -49,7 +49,7 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
         {
             return new FacetResults
             {
-                Facets = query.FacetFields.Select(field => new Facet
+                Facets = query.TargetFields.Select(field => new Facet
                 {
                     FieldName = field,
                     FacetValues = new[]

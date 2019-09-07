@@ -4,7 +4,7 @@ namespace ESearch.Foundation.Indexing.Models
 {
     public class FacetQuery
     {
-        public ICollection<string> FacetFields { get; set; }
+        public ICollection<string> TargetFields { get; set; }
         public SearchQuery SearchQuery { get; set; }
     }
 }
