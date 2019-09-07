@@ -2,6 +2,7 @@ using ESearch.Foundation.Indexing.Models;
 using ESearch.Foundation.Indexing.Services;
 using Sitecore;
 using Sitecore.Data.Items;
+using System.Collections.Specialized;
 
 namespace ESearch.Foundation.Indexing.Dummy.Services
 {
@@ -12,7 +13,7 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             return "keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc";
         }
 
-        public SearchQuery BuildSearchQuery(string queryString, Item searchSettings)
+        public SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings)
         {
             return new SearchQuery()
             {

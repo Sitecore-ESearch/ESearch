@@ -1,6 +1,7 @@
 using ESearch.Foundation.Indexing.Models;
 using Sitecore.Data.Items;
 using System;
+using System.Collections.Specialized;
 
 namespace ESearch.Foundation.Indexing.Services
 {
@@ -11,7 +12,7 @@ namespace ESearch.Foundation.Indexing.Services
             throw new NotImplementedException();
         }
 
-        public SearchQuery BuildSearchQuery(string queryString, Item searchSettings)
+        public SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings)
         {
             throw new NotImplementedException();
         }
