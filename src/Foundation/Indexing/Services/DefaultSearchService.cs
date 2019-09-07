@@ -15,12 +15,12 @@ namespace ESearch.Foundation.Indexing.Services
             throw new NotImplementedException();
         }
 
-        public SuggestionResults GetSuggestions(SuggestionQuery query)
+        public SuggestionResults GetSuggestions(SearchQuery query, params string[] targetFields)
         {
             throw new NotImplementedException();
         }
 
-        public FacetResults GetFacets(FacetQuery query)
+        public FacetResults GetFacets(SearchQuery query, params string[] targetFields)
         {
             throw new NotImplementedException();
         }

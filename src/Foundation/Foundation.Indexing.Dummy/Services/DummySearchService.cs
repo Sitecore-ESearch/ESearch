@@ -25,12 +25,12 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             return 238;
         }
 
-        public SuggestionResults GetSuggestions(SuggestionQuery query)
+        public SuggestionResults GetSuggestions(SearchQuery query, params string[] targetFields)
         {
             var suggestions = new List<Suggestion>();
             for (var i = 0; i < query.Limit; i++)
             {
-                var fields = query.TargetFields.ToDictionary(
+                var fields = targetFields.ToDictionary(
                     field => field,
                     field => "Lorem ipsum dolor sit <em>amet</em>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <em>labore</em> et dolore magna aliqua.");
                 suggestions.Add(new Suggestion
@@ -45,11 +45,11 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             };
         }
 
-        public FacetResults GetFacets(FacetQuery query)
+        public FacetResults GetFacets(SearchQuery query, params string[] targetFields)
         {
             return new FacetResults
             {
-                Facets = query.TargetFields.Select(field => new Facet
+                Facets = targetFields.Select(field => new Facet
                 {
                     FieldName = field,
                     FacetValues = new[]
