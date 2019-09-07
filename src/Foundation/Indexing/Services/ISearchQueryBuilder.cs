@@ -5,6 +5,7 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public interface ISearchQueryBuilder
     {
-        SearchQuery Build(string queryString, Item searchSettings);
+        SearchQuery BuildSearchQuery(string queryString, Item searchSettings);
+        string BuildQueryString(SearchQuery query);
     }
 }
