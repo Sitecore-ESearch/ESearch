@@ -4,7 +4,7 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public interface ISearchService
     {
-        SearchResults GetItems(SearchQuery query);
+        SearchResults SearchItems(SearchQuery query);
         int GetTotalCount(SearchQuery query);
     }
 }

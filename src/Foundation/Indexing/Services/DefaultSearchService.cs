@@ -8,7 +8,7 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public class DefaultSearchService : ISearchService
     {
-        public SearchResults GetItems(SearchQuery query)
+        public SearchResults SearchItems(SearchQuery query)
         {
             throw new NotImplementedException();
         }

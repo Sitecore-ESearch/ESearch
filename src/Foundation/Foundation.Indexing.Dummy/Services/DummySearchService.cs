@@ -8,7 +8,7 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
 {
     public class DummySearchService : ISearchService
     {
-        public SearchResults GetItems(SearchQuery query)
+        public SearchResults SearchItems(SearchQuery query)
         {
             var dummyItems = Context.Database.GetItem("/sitecore/content/dummy")?.Axes.GetDescendants() ?? Enumerable.Empty<Item>();
 
