@@ -3,14 +3,15 @@ using ESearch.Foundation.Indexing.Services;
 using Sitecore;
 using Sitecore.Data.Items;
 using System.Collections.Specialized;
+using System.Web;
 
 namespace ESearch.Foundation.Indexing.Dummy.Services
 {
     public class DummyQueryBuilder : IQueryBuilder
     {
-        public string BuildQueryString(SearchQuery query)
+        public NameValueCollection BuildQueryString(SearchQuery query)
         {
-            return "keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc";
+            return HttpUtility.ParseQueryString("keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc");
         }
 
         public SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings)

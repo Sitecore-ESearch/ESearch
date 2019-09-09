@@ -7,7 +7,7 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public class DefaultQueryBuilder : IQueryBuilder
     {
-        public string BuildQueryString(SearchQuery query)
+        public NameValueCollection BuildQueryString(SearchQuery query)
         {
             throw new NotImplementedException();
         }

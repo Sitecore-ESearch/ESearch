@@ -7,6 +7,6 @@ namespace ESearch.Foundation.Indexing.Services
     public interface IQueryBuilder
     {
         SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings);
-        string BuildQueryString(SearchQuery query);
+        NameValueCollection BuildQueryString(SearchQuery query);
     }
 }
