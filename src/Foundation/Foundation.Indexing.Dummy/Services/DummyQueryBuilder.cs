@@ -25,24 +25,24 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
                 },
                 ContainsConditions = new[]
                 {
-                    new ContainsCondition { FieldName = "tags", Values = new[] { "beginner" } },
+                    new ContainsCondition { TargetField = "tags", Values = new[] { "beginner" } },
                 },
                 EqualsConditions = new[]
                 {
-                    new EqualsCondition { FieldName = "category", Value = "climbing" }
+                    new EqualsCondition { TargetField = "category", Value = "climbing" }
                 },
                 BetweenConditions = new[]
                 {
-                    new BetweenCondition { FieldName = "price", LowerValue = "100", UpperValue = "250" },
+                    new BetweenCondition { TargetField = "price", LowerValue = "100", UpperValue = "250" },
                 },
                 KeywordCondition = new KeywordCondition
                 {
-                    FieldNames = new[] { "title" },
+                    TargetFields = new[] { "title" },
                     Keywords = new [] { "everest" },
                 },
                 SortConditions = new[]
                 {
-                    new SortCondition { FieldName = "date", Direction = SortDirection.Desc }
+                    new SortCondition { TargetField = "date", Direction = SortDirection.Desc }
                 },
             };
         }
