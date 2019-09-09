@@ -2,47 +2,49 @@ using ESearch.Foundation.Indexing.Models;
 using ESearch.Foundation.Indexing.Services;
 using Sitecore;
 using Sitecore.Data.Items;
+using System.Collections.Specialized;
+using System.Web;
 
 namespace ESearch.Foundation.Indexing.Dummy.Services
 {
-    public class DummySearchQueryBuilder : ISearchQueryBuilder
+    public class DummyQueryBuilder : IQueryBuilder
     {
-        public string BuildQueryString(SearchQuery query)
+        public NameValueCollection BuildQueryString(SearchQuery query)
         {
-            return "keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc";
+            return HttpUtility.ParseQueryString("keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc");
         }
 
-        public SearchQuery BuildSearchQuery(string queryString, Item searchSettings)
+        public SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings)
         {
             return new SearchQuery()
             {
                 Scope = ItemIDs.ContentRoot,
                 Offset = 0,
-                Limit = 30,
+                Limit = 20,
                 TargetTemplates = new[]
                 {
                     TemplateIDs.UnversionedFile, TemplateIDs.MediaFolder
                 },
                 ContainsConditions = new[]
                 {
-                    new ContainsCondition { FieldName = "tags", Values = new[] { "beginner" } },
+                    new ContainsCondition { TargetField = "tags", Values = new[] { "beginner" } },
                 },
                 EqualsConditions = new[]
                 {
-                    new EqualsCondition { FieldName = "category", Value = "climbing" }
+                    new EqualsCondition { TargetField = "category", Value = "climbing" }
                 },
                 BetweenConditions = new[]
                 {
-                    new BetweenCondition { FieldName = "price", LowerValue = "100", UpperValue = "250" },
+                    new BetweenCondition { TargetField = "price", LowerValue = "100", UpperValue = "250" },
                 },
                 KeywordCondition = new KeywordCondition
                 {
-                    FieldNames = new[] { "title" },
+                    TargetFields = new[] { "title" },
                     Keywords = new [] { "everest" },
                 },
                 SortConditions = new[]
                 {
-                    new SortCondition { FieldName = "date", Direction = SortDirection.Desc }
+                    new SortCondition { TargetField = "date", Direction = SortDirection.Desc }
                 },
             };
         }

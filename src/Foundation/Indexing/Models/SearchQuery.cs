@@ -26,32 +26,32 @@ namespace ESearch.Foundation.Indexing.Models
 
     public class KeywordCondition
     {
-        public ICollection<string> FieldNames { get; set; }
+        public ICollection<string> TargetFields { get; set; }
         public ICollection<string> Keywords { get; set; }
     }
 
     public class EqualsCondition
     {
-        public string FieldName { get; set; }
+        public string TargetField { get; set; }
         public string Value { get; set; }
     }
 
     public class ContainsCondition
     {
-        public string FieldName { get; set; }
+        public string TargetField { get; set; }
         public ICollection<string> Values { get; set; }
     }
 
     public class BetweenCondition
     {
-        public string FieldName { get; set; }
+        public string TargetField { get; set; }
         public string LowerValue { get; set; }
         public string UpperValue { get; set; }
     }
 
     public class SortCondition
     {
-        public string FieldName { get; set; }
+        public string TargetField { get; set; }
         public SortDirection Direction { get; set; }
     }
 
