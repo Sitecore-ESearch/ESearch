@@ -15,7 +15,7 @@ namespace ESearch.Foundation.Indexing.Services
             throw new NotImplementedException();
         }
 
-        public SuggestionResults GetSuggestions(SearchQuery query, params string[] targetFields)
+        public SuggestionResults GetSuggestions(SearchQuery query)
         {
             throw new NotImplementedException();
         }

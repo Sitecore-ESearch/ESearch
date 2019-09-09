@@ -25,12 +25,12 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             return 238;
         }
 
-        public SuggestionResults GetSuggestions(SearchQuery query, params string[] targetFields)
+        public SuggestionResults GetSuggestions(SearchQuery query)
         {
             var suggestions = new List<Suggestion>();
             for (var i = 0; i < query.Limit; i++)
             {
-                var fields = targetFields.ToDictionary(
+                var fields = query.KeywordCondition.TargetFields.ToDictionary(
                     field => field,
                     field => "Lorem ipsum dolor sit <em>amet</em>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <em>labore</em> et dolore magna aliqua.");
                 suggestions.Add(new Suggestion
