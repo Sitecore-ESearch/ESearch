@@ -19,6 +19,8 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
             return new SearchQuery()
             {
                 Scope = ItemIDs.ContentRoot,
+                Offset = 0,
+                Limit = 20,
                 TargetTemplates = new[]
                 {
                     TemplateIDs.UnversionedFile, TemplateIDs.MediaFolder
