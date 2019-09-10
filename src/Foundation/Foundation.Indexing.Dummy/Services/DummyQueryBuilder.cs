@@ -9,9 +9,9 @@ namespace ESearch.Foundation.Indexing.Dummy.Services
 {
     public class DummyQueryBuilder : IQueryBuilder
     {
-        public NameValueCollection BuildQueryString(SearchQuery query)
+        public NameValueCollection BuildQueryString(SearchQuery query, Item searchSettings)
         {
-            return HttpUtility.ParseQueryString("keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc");
+            return HttpUtility.ParseQueryString("page=1&keyword=everest&tags=(beginner)&category=climbing&price=100|250&sort=date:desc");
         }
 
         public SearchQuery BuildSearchQuery(NameValueCollection queryString, Item searchSettings)
