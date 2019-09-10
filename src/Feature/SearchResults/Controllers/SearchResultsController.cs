@@ -1,4 +1,4 @@
-using ESearch.Foundation.Indexing.Services;
+using ESearch.Feature.SearchResults.Repositories;
 using Sitecore.DependencyInjection;
 using System.Web.Mvc;
 
@@ -6,25 +6,17 @@ namespace ESearch.Feature.SearchResults.Controllers
 {
     public class SearchResultsController : Controller
     {
-        private readonly IQueryBuilder _queryBuilder;
-        private readonly ISearchService _searchService;
+        private readonly ISearchResultsRepository _searchResultsRepository;
 
         public SearchResultsController()
         {
-            _queryBuilder = ServiceLocator.ServiceProvider.GetService(typeof(IQueryBuilder)) as IQueryBuilder;
-            _searchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
+            _searchResultsRepository = ServiceLocator.ServiceProvider.GetService(typeof(ISearchResultsRepository)) as ISearchResultsRepository;
         }
 
         public ActionResult Index()
         {
-            var query = _queryBuilder.BuildSearchQuery(Request.QueryString, null);
-            var qs = _queryBuilder.BuildQueryString(query).ToString();
-            var searchResults = _searchService.SearchItems(query);
-            var facetResults = _searchService.GetFacets(query, "myfield");
-            var suggestionResults = _searchService.GetSuggestions(query);
-            var totalCount = _searchService.GetTotalCount(query);
-
-            return new EmptyResult();
+            var model = _searchResultsRepository.GetModel();
+            return View("/Views/ESearch/SearchResults.cshtml", model);
         }
     }
 }
