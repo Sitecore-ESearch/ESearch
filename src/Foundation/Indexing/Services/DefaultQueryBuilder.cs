@@ -13,8 +13,6 @@ namespace ESearch.Foundation.Indexing.Services
 {
     public class DefaultQueryBuilder : IQueryBuilder
     {
-        protected virtual string DateTimeFormat { get; } = "yyyyMMdd";
-
         public NameValueCollection BuildQueryString(SearchQuery query, Item searchSettings)
         {
             var queryString = HttpUtility.ParseQueryString(string.Empty);
@@ -32,13 +30,14 @@ namespace ESearch.Foundation.Indexing.Services
                 queryString[containsCondition.TargetField] = $"({string.Join("+", containsCondition.Values)})";
             }
 
+            var dateFormat = searchSettings[Templates.SearchSettings.Fields.DateFormat];
             foreach (var betweensCondition in query.BetweenConditions ?? Enumerable.Empty<BetweenCondition>())
             {
                 var lowerValue = DateTime.TryParse(betweensCondition.LowerValue, out var lowerDate)
-                    ? lowerDate.ToString(DateTimeFormat)
+                    ? lowerDate.ToString(dateFormat)
                     : betweensCondition.LowerValue;
                 var upperValue = DateTime.TryParse(betweensCondition.UpperValue, out var upperDate)
-                    ? upperDate.ToString(DateTimeFormat)
+                    ? upperDate.ToString(dateFormat)
                     : betweensCondition.UpperValue;
 
                 queryString[betweensCondition.TargetField] = $"{lowerValue}|{upperValue}";
@@ -193,7 +192,8 @@ namespace ESearch.Foundation.Indexing.Services
             string Normalize(string datetimeValue)
             {
                 // make datetime value parsable by DateTime.Parse
-                return DateTime.TryParseExact(datetimeValue, DateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date)
+                var dateFormat = searchSettings[Templates.SearchSettings.Fields.DateFormat];
+                return DateTime.TryParseExact(datetimeValue, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date)
                     ? date.ToString()
                     : datetimeValue;
             }
