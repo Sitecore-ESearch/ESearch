@@ -115,7 +115,7 @@ namespace ESearch.Foundation.Indexing.Services
         {
             var keywordCondition = new KeywordCondition
             {
-                TargetFields = searchSettings[Templates.SearchSettings.Fields.TargetTemplates].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries),
+                TargetFields = searchSettings[Templates.SearchSettings.Fields.KeywordSearchTargets].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries),
                 Keywords = value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries),
             };
 
