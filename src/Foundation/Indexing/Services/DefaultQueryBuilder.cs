@@ -57,8 +57,6 @@ namespace ESearch.Foundation.Indexing.Services
             {
                 Scope = ((ReferenceField)searchSettings.Fields[Templates.SearchSettings.Fields.Scope]).TargetID,
                 TargetTemplates = ((MultilistField)searchSettings.Fields[Templates.SearchSettings.Fields.TargetTemplates]).TargetIDs,
-                KeywordCondition = new KeywordCondition(),
-                SortConditions = new List<SortCondition>(),
                 ContainsConditions = new List<ContainsCondition>(),
                 BetweenConditions = new List<BetweenCondition>(),
                 EqualsConditions = new List<EqualsCondition>(),
@@ -74,48 +72,60 @@ namespace ESearch.Foundation.Indexing.Services
 
                 if (key.Equals("keyword", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    ApplyKeywordCondition(query, value, searchSettings);
+                    query.KeywordCondition = CreateKeywordCondition(value, searchSettings);
                     continue;
                 }
 
                 if (key.Equals("sort", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    ApplySortConditions(query, value, searchSettings);
+                    query.SortConditions = CreateSortConditions(value, searchSettings);
                     continue;
                 }
 
                 if (key.Equals("page", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    ApplyPagenationQuery(query, value, searchSettings);
+                    var (offset, limit) = CreatePaginationInfo(value, searchSettings);
+                    query.Offset = offset;
+                    query.Limit = limit;
                     continue;
                 }
 
                 if (value.StartsWith("(") && value.EndsWith(")"))
                 {
-                    ApplyContainsCondition(query, key, value, searchSettings);
+                    var containsCondition = CreateContainsCondition(key, value, searchSettings);
+                    query.ContainsConditions.Add(containsCondition);
                     continue;
                 }
 
                 if (value.Contains("|"))
                 {
-                    ApplyContainsCondition(query, key, value, searchSettings);
+                    var betweenCondition = CreateBetweenCondition(key, value, searchSettings);
+                    query.BetweenConditions.Add(betweenCondition);
                     continue;
                 }
 
-                ApplyEqualsCondition(query, key, value, searchSettings);
+                var equalsCondition = CreateEqualsCondition(key, value, searchSettings);
+                query.EqualsConditions.Add(equalsCondition);
             }
 
             return query;
         }
 
-        protected virtual void ApplyKeywordCondition(SearchQuery query, string value, Item searchSettings)
+        protected virtual KeywordCondition CreateKeywordCondition(string value, Item searchSettings)
         {
-            query.KeywordCondition.TargetFields = searchSettings[Templates.SearchSettings.Fields.TargetTemplates].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-            query.KeywordCondition.Keywords = value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries);
+            var keywordCondition = new KeywordCondition
+            {
+                TargetFields = searchSettings[Templates.SearchSettings.Fields.TargetTemplates].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries),
+                Keywords = value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries),
+            };
+
+            return keywordCondition;
         }
 
-        protected virtual void ApplySortConditions(SearchQuery query, string value, Item searchSettings)
+        protected virtual ICollection<SortCondition> CreateSortConditions(string value, Item searchSettings)
         {
+            var sortConditions = new List<SortCondition>();
+
             foreach (var sortInfo in value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 var fieldAndDirection = sortInfo.Split(':');
@@ -141,30 +151,32 @@ namespace ESearch.Foundation.Indexing.Services
                     sortCondition.Direction = SortDirection.Asc;
                 }
 
-                query.SortConditions.Add(sortCondition);
+                sortConditions.Add(sortCondition);
             }
+
+            return sortConditions;
         }
 
-        protected virtual void ApplyPagenationQuery(SearchQuery query, string value, Item searchSettings)
+        protected virtual (int offset, int limit) CreatePaginationInfo(string value, Item searchSettings)
         {
             if (!int.TryParse(value, out var page))
             {
-                return;
+                return (0, 0);
             }
 
             var pageSize = searchSettings.GetInteger(Templates.SearchSettings.Fields.PageSize) ?? -1;
             if (pageSize <= 0)
             {
-                return;
+                return (0, 0);
             }
 
-            query.Offset = (page - 1) * pageSize;
-            query.Limit = pageSize;
+            var offset = (page - 1) * pageSize;
+            var limit = pageSize;
 
-            return;
+            return (offset, limit);
         }
 
-        protected virtual void ApplyContainsCondition(SearchQuery query, string key, string value, Item searchSettings)
+        protected virtual ContainsCondition CreateContainsCondition(string key, string value, Item searchSettings)
         {
             var containsCondition = new ContainsCondition
             {
@@ -172,10 +184,10 @@ namespace ESearch.Foundation.Indexing.Services
                 Values = value.TrimStart('(').TrimEnd(')').Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries),
             };
 
-            query.ContainsConditions.Add(containsCondition);
+            return containsCondition;
         }
 
-        protected virtual void ApplyBetweenCondition(SearchQuery query, string key, string value, Item searchSettings)
+        protected virtual BetweenCondition CreateBetweenCondition(string key, string value, Item searchSettings)
         {
             var lowerAndUpper = value.Split('|');
             var lower = lowerAndUpper[0];
@@ -187,7 +199,7 @@ namespace ESearch.Foundation.Indexing.Services
                 UpperValue = Normalize(upper),
             };
 
-            query.BetweenConditions.Add(betweenCondition);
+            return betweenCondition;
 
             string Normalize(string input)
             {
@@ -199,7 +211,7 @@ namespace ESearch.Foundation.Indexing.Services
             }
         }
 
-        protected virtual void ApplyEqualsCondition(SearchQuery query, string key, string value, Item searchSettings)
+        protected virtual EqualsCondition CreateEqualsCondition(string key, string value, Item searchSettings)
         {
             var equalsCondition = new EqualsCondition
             {
@@ -207,7 +219,7 @@ namespace ESearch.Foundation.Indexing.Services
                 Value = value,
             };
 
-            query.EqualsConditions.Add(equalsCondition);
+            return equalsCondition;
         }
     }
 }
