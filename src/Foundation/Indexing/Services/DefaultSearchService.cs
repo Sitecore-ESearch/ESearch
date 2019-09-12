@@ -67,8 +67,11 @@ namespace ESearch.Foundation.Indexing.Services
                 return new SuggestionResults
                 {
                     Suggestions = queryable.GetResults().Hits
-                    .Select(hit => ExtractSuggestionFields(hit.Document.Fields, query.KeywordCondition.TargetFields))
-                    .Select(fields => new Suggestion { SuggestedFields = fields })
+                    .Select(hit => new Suggestion
+                    {
+                        ItemId = hit.Document.ItemId,
+                        SuggestedFields = ExtractSuggestionFields(hit.Document.Fields, query.KeywordCondition)
+                    })
                     .ToList()
                 };
             }
@@ -248,11 +251,11 @@ namespace ESearch.Foundation.Indexing.Services
             return fieldNames.Aggregate(queryable, (acc, fieldName) => acc.FacetOn(item => item[fieldName]));
         }
 
-        protected IDictionary<string, string> ExtractSuggestionFields(IDictionary<string, object> fields, ICollection<string> targetFields)
+        protected IDictionary<string, string> ExtractSuggestionFields(IDictionary<string, object> fields, KeywordCondition condition)
         {
             var translator = IndexResolver.Resolve().FieldNameTranslator;
 
-            return targetFields
+            return condition.TargetFields
                 .OrderByDescending(field => field.Length)
                 .ToDictionary(fieldName => fieldName, GetFieldValue);
 
@@ -261,7 +264,8 @@ namespace ESearch.Foundation.Indexing.Services
                 var nameWithoutType = translator.GetIndexFieldName(fieldName);
                 var nameWithType = translator.GetIndexFieldName(fieldName, typeof(string));
                 var fieldKey = fields.Keys.FirstOrDefault(key => key == nameWithoutType || key == nameWithType);
-                return string.IsNullOrEmpty(fieldKey) ? string.Empty : fields[fieldKey].ToString();
+                var value = string.IsNullOrEmpty(fieldKey) ? string.Empty : fields[fieldKey].ToString();
+                return condition.Keywords.Aggregate(value, (acc, keyword) => acc.Replace(keyword, $"<em>{keyword}</em>"));
             }
         }
     }
