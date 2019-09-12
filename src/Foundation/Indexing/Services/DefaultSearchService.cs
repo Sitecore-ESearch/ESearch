@@ -171,17 +171,23 @@ namespace ESearch.Foundation.Indexing.Services
 
             foreach (var condition in conditions)
             {
-                var lower = EnsureDateFormat(condition.LowerValue);
-                var upper = EnsureDateFormat(condition.UpperValue);
+                var lower = Format(condition.LowerValue);
+                var upper = Format(condition.UpperValue);
                 queryable = queryable.Where(item => item[condition.TargetField].Between(lower, upper, Inclusion.Both));
             }
 
             return queryable;
 
-            string EnsureDateFormat(string dateString)
+            string Format(string input)
             {
+                if (string.IsNullOrEmpty(input))
+                {
+                    return "*";
+                }
+
+                // convert datetime to provider's format
                 var dateFormat = IndexResolver.Resolve().Configuration.DefaultDateFormat;
-                return DateTime.TryParse(dateString, out var date) ? date.ToString(dateFormat) : dateString;
+                return DateTime.TryParse(input, out var date) ? date.ToString(dateFormat) : input;
             }
         }
 
