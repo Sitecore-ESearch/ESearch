@@ -131,6 +131,7 @@
     <Compile Include="Services\IIndexResolver.cs" />
     <Compile Include="Services\IQueryBuilder.cs" />
     <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\ESearch.Foundation.Indexing.RegisterServices.config" />

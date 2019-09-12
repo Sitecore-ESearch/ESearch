@@ -7,8 +7,8 @@ namespace ESearch.Foundation.Indexing.Services
     {
         public ISearchIndex Resolve()
         {
-            var databaseName = Context.Database.Name.ToLowerInvariant();
-            var indexName = $"sitecore_{databaseName}_index";
+            var indexable = (SitecoreIndexableItem) Context.Item;
+            var indexName = ContentSearchManager.GetContextIndexName(indexable);
 
             return ContentSearchManager.GetIndex(indexName);
         }

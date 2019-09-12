@@ -1,7 +1,5 @@
-using System;
+using Sitecore.Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ESearch.Foundation.Indexing.Models
 {
@@ -12,6 +10,7 @@ namespace ESearch.Foundation.Indexing.Models
 
     public class Suggestion
     {
+        public ID ItemId { get; set; }
         public IDictionary<string, string> SuggestedFields { get; set; }
     }
 }
