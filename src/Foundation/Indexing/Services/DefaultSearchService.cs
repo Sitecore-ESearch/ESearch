@@ -255,9 +255,7 @@ namespace ESearch.Foundation.Indexing.Services
         {
             var translator = IndexResolver.Resolve().FieldNameTranslator;
 
-            return condition.TargetFields
-                .OrderByDescending(field => field.Length)
-                .ToDictionary(fieldName => fieldName, GetFieldValue);
+            return condition.TargetFields.ToDictionary(fieldName => fieldName, GetFieldValue);
 
             string GetFieldValue(string fieldName)
             {
