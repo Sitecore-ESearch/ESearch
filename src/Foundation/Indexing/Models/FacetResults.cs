@@ -17,5 +17,15 @@ namespace ESearch.Foundation.Indexing.Models
     {
         public string FieldValue { get; set; }
         public int Count { get; set; }
+
+        public FacetValue()
+        {
+        }
+
+        public FacetValue(string fieldValue, int count)
+        {
+            FieldValue = fieldValue;
+            Count = count;
+        }
     }
 }
