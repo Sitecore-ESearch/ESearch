@@ -45,7 +45,17 @@ namespace ESearch.Foundation.Indexing.Models
     public class BetweenCondition
     {
         public string TargetField { get; set; }
+
+        /// <summary>
+        /// A lower value of the target range.
+        /// If the value is parsable as DateTime, it treats as UTC time.
+        /// </summary>
         public string LowerValue { get; set; }
+
+        /// <summary>
+        /// A upper value of the target range.
+        /// If the value is parsable as DateTime, it treats as UTC time.
+        /// </summary>
         public string UpperValue { get; set; }
     }
 

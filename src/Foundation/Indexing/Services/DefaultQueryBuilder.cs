@@ -34,10 +34,10 @@ namespace ESearch.Foundation.Indexing.Services
             foreach (var betweensCondition in query.BetweenConditions ?? Enumerable.Empty<BetweenCondition>())
             {
                 var lowerValue = DateTime.TryParse(betweensCondition.LowerValue, out var lowerDate)
-                    ? lowerDate.ToString(dateFormat)
+                    ? lowerDate.ToLocalTime().ToString(dateFormat)
                     : betweensCondition.LowerValue;
                 var upperValue = DateTime.TryParse(betweensCondition.UpperValue, out var upperDate)
-                    ? upperDate.ToString(dateFormat)
+                    ? upperDate.ToLocalTime().ToString(dateFormat)
                     : betweensCondition.UpperValue;
 
                 queryString[betweensCondition.TargetField] = $"{lowerValue}|{upperValue}";
@@ -189,13 +189,13 @@ namespace ESearch.Foundation.Indexing.Services
 
             query.BetweenConditions.Add(betweenCondition);
 
-            string Normalize(string datetimeValue)
+            string Normalize(string input)
             {
                 // make datetime value parsable by DateTime.Parse
                 var dateFormat = searchSettings[Templates.SearchSettings.Fields.DateFormat];
-                return DateTime.TryParseExact(datetimeValue, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date)
-                    ? date.ToString()
-                    : datetimeValue;
+                return DateTime.TryParseExact(input, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date)
+                    ? date.ToUniversalTime().ToString()
+                    : input;
             }
         }
 
