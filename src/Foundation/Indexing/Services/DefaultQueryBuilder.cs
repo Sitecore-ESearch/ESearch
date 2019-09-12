@@ -111,7 +111,7 @@ namespace ESearch.Foundation.Indexing.Services
             return query;
         }
 
-        protected virtual KeywordCondition CreateKeywordCondition(string value, Item searchSettings)
+        private KeywordCondition CreateKeywordCondition(string value, Item searchSettings)
         {
             var keywordCondition = new KeywordCondition
             {
@@ -122,7 +122,7 @@ namespace ESearch.Foundation.Indexing.Services
             return keywordCondition;
         }
 
-        protected virtual ICollection<SortCondition> CreateSortConditions(string value, Item searchSettings)
+        private ICollection<SortCondition> CreateSortConditions(string value, Item searchSettings)
         {
             var sortConditions = new List<SortCondition>();
 
@@ -157,7 +157,7 @@ namespace ESearch.Foundation.Indexing.Services
             return sortConditions;
         }
 
-        protected virtual (int offset, int limit) CreatePaginationInfo(string value, Item searchSettings)
+        private (int offset, int limit) CreatePaginationInfo(string value, Item searchSettings)
         {
             if (!int.TryParse(value, out var page))
             {
@@ -176,7 +176,7 @@ namespace ESearch.Foundation.Indexing.Services
             return (offset, limit);
         }
 
-        protected virtual ContainsCondition CreateContainsCondition(string key, string value, Item searchSettings)
+        private ContainsCondition CreateContainsCondition(string key, string value, Item searchSettings)
         {
             var containsCondition = new ContainsCondition
             {
@@ -187,7 +187,7 @@ namespace ESearch.Foundation.Indexing.Services
             return containsCondition;
         }
 
-        protected virtual BetweenCondition CreateBetweenCondition(string key, string value, Item searchSettings)
+        private BetweenCondition CreateBetweenCondition(string key, string value, Item searchSettings)
         {
             var lowerAndUpper = value.Split('|');
             var lower = lowerAndUpper[0];
@@ -211,7 +211,7 @@ namespace ESearch.Foundation.Indexing.Services
             }
         }
 
-        protected virtual EqualsCondition CreateEqualsCondition(string key, string value, Item searchSettings)
+        private EqualsCondition CreateEqualsCondition(string key, string value, Item searchSettings)
         {
             var equalsCondition = new EqualsCondition
             {
