@@ -9,8 +9,13 @@ namespace ESearch.Foundation.Indexing.Services
         {
             var indexable = (SitecoreIndexableItem) Context.Item;
             var indexName = ContentSearchManager.GetContextIndexName(indexable);
+            if (!string.IsNullOrEmpty(indexName))
+            {
+                return ContentSearchManager.GetIndex(indexName);
+            }
 
-            return ContentSearchManager.GetIndex(indexName);
+            var dbName = Context.Database.Name.ToLowerInvariant();
+            return ContentSearchManager.GetIndex($"sitecore_{dbName}_index");
         }
     }
 }

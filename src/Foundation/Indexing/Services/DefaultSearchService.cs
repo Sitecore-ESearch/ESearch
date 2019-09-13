@@ -8,6 +8,7 @@ using Sitecore.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using FacetResults = ESearch.Foundation.Indexing.Models.FacetResults;
 
 namespace ESearch.Foundation.Indexing.Services
@@ -70,10 +71,19 @@ namespace ESearch.Foundation.Indexing.Services
                     .Select(hit => new Suggestion
                     {
                         ItemId = hit.Document.ItemId,
-                        SuggestedFields = ExtractSuggestionFields(hit.Document.Fields, query.KeywordCondition)
+                        SuggestedFields = query.KeywordCondition?.TargetFields?.ToDictionary(fieldName => fieldName, fieldName => GetSuggestedFieldValue(hit.Document, fieldName)) ?? new Dictionary<string, string>(),
                     })
                     .ToList()
                 };
+            }
+
+            string GetSuggestedFieldValue(TResult document ,string fieldName)
+            {
+                var fieldNameInIndex = index.FieldNameTranslator.GetIndexFieldName(fieldName);
+                var fieldValue = document.Fields[fieldNameInIndex].ToString();
+                return query.KeywordCondition?.Keywords?.Aggregate(
+                    fieldValue,
+                    (acc, keyword) => Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase));
             }
         }
 
@@ -92,22 +102,34 @@ namespace ESearch.Foundation.Indexing.Services
                     Facets = queryable.GetFacets().Categories
                     .Select(category => new Facet()
                     {
-                        FieldName = category.Name,
+                        FieldName = targetFields.FirstOrDefault(field => IsCategoryField(field, category.Name)) ?? category.Name,
                         FacetValues = category.Values.Select(value => new Models.FacetValue(value.Name, value.AggregateCount)).ToList()
                     })
                     .ToList()
                 };
+            }
+
+            bool IsCategoryField(string fieldName, string categoryName)
+            {
+                var translatedName = index.FieldNameTranslator.GetIndexFieldName(fieldName);
+                return translatedName.StartsWith(categoryName) || categoryName.StartsWith(translatedName);
             }
         }
 
         protected IQueryable<TResult> ApplyFilterConditions(IQueryable<TResult> queryable, SearchQuery query)
         {
             var scope = ID.IsNullOrEmpty(query.Scope) ? ItemIDs.ContentRoot : query.Scope;
-            var templatePred = query.TargetTemplates.Aggregate(
-                PredicateBuilder.False<TResult>(),
-                (pred, templateId) => pred.Or(item => item.TemplateId == templateId));
+            queryable = queryable.Filter(item => item.Paths.Contains(scope));
 
-            queryable = queryable.Filter(item => item.Paths.Contains(scope)).Filter(templatePred);
+            if (query.TargetTemplates != null && query.TargetTemplates.Any())
+            {
+                var templatePred = query.TargetTemplates.Aggregate(
+                    PredicateBuilder.False<TResult>(),
+                    (pred, templateId) => pred.Or(item => item.TemplateId == templateId));
+
+                queryable = queryable.Filter(templatePred);
+            }
+
             queryable = ApplyKeywordsCondition(queryable, query.KeywordCondition);
             queryable = ApplyContainsConditions(queryable, query.ContainsConditions);
             queryable = ApplyBetweenConditions(queryable, query.BetweenConditions);
@@ -249,24 +271,6 @@ namespace ESearch.Foundation.Indexing.Services
         protected virtual IQueryable<TResult> ApplyFacets(IQueryable<TResult> queryable, ICollection<string> fieldNames)
         {
             return fieldNames.Aggregate(queryable, (acc, fieldName) => acc.FacetOn(item => item[fieldName]));
-        }
-
-        protected IDictionary<string, string> ExtractSuggestionFields(IDictionary<string, object> fields, KeywordCondition condition)
-        {
-            var translator = IndexResolver.Resolve().FieldNameTranslator;
-
-            return condition.TargetFields
-                .OrderByDescending(field => field.Length)
-                .ToDictionary(fieldName => fieldName, GetFieldValue);
-
-            string GetFieldValue(string fieldName)
-            {
-                var nameWithoutType = translator.GetIndexFieldName(fieldName);
-                var nameWithType = translator.GetIndexFieldName(fieldName, typeof(string));
-                var fieldKey = fields.Keys.FirstOrDefault(key => key == nameWithoutType || key == nameWithType);
-                var value = string.IsNullOrEmpty(fieldKey) ? string.Empty : fields[fieldKey].ToString();
-                return condition.Keywords.Aggregate(value, (acc, keyword) => acc.Replace(keyword, $"<em>{keyword}</em>"));
-            }
         }
     }
 }
