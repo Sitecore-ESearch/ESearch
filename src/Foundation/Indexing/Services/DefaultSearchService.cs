@@ -8,6 +8,7 @@ using Sitecore.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using FacetResults = ESearch.Foundation.Indexing.Models.FacetResults;
 
 namespace ESearch.Foundation.Indexing.Services
@@ -80,7 +81,9 @@ namespace ESearch.Foundation.Indexing.Services
             {
                 var fieldNameInIndex = index.FieldNameTranslator.GetIndexFieldName(fieldName);
                 var fieldValue = document.Fields[fieldNameInIndex].ToString();
-                return query.KeywordCondition?.Keywords?.Aggregate(fieldValue, (acc, keyword) => acc.Replace(keyword, $"<em>{keyword}</em>"));
+                return query.KeywordCondition?.Keywords?.Aggregate(
+                    fieldValue,
+                    (acc, keyword) => Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase));
             }
         }
 
