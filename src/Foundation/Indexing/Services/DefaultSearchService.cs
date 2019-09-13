@@ -117,11 +117,17 @@ namespace ESearch.Foundation.Indexing.Services
         protected IQueryable<TResult> ApplyFilterConditions(IQueryable<TResult> queryable, SearchQuery query)
         {
             var scope = ID.IsNullOrEmpty(query.Scope) ? ItemIDs.ContentRoot : query.Scope;
-            var templatePred = query.TargetTemplates.Aggregate(
-                PredicateBuilder.False<TResult>(),
-                (pred, templateId) => pred.Or(item => item.TemplateId == templateId));
+            queryable = queryable.Filter(item => item.Paths.Contains(scope));
 
-            queryable = queryable.Filter(item => item.Paths.Contains(scope)).Filter(templatePred);
+            if (query.TargetTemplates != null && query.TargetTemplates.Any())
+            {
+                var templatePred = query.TargetTemplates.Aggregate(
+                    PredicateBuilder.False<TResult>(),
+                    (pred, templateId) => pred.Or(item => item.TemplateId == templateId));
+
+                queryable = queryable.Filter(templatePred);
+            }
+
             queryable = ApplyKeywordsCondition(queryable, query.KeywordCondition);
             queryable = ApplyContainsConditions(queryable, query.ContainsConditions);
             queryable = ApplyBetweenConditions(queryable, query.BetweenConditions);
