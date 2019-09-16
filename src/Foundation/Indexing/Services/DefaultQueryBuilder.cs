@@ -62,31 +62,15 @@ namespace ESearch.Foundation.Indexing.Services
                 EqualsConditions = new List<EqualsCondition>(),
             };
 
+            query.KeywordCondition = CreateKeywordCondition(queryString["keyword"], searchSettings);
+            query.SortConditions = CreateSortConditions(queryString["sort"], searchSettings);
+            (query.Offset, query.Limit) = CreatePaginationInfo(queryString["page"], searchSettings);
+
             foreach (var key in queryString.AllKeys)
             {
                 var value = queryString[key];
                 if (string.IsNullOrEmpty(value))
                 {
-                    continue;
-                }
-
-                if (key.Equals("keyword", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    query.KeywordCondition = CreateKeywordCondition(value, searchSettings);
-                    continue;
-                }
-
-                if (key.Equals("sort", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    query.SortConditions = CreateSortConditions(value, searchSettings);
-                    continue;
-                }
-
-                if (key.Equals("page", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    var (offset, limit) = CreatePaginationInfo(value, searchSettings);
-                    query.Offset = offset;
-                    query.Limit = limit;
                     continue;
                 }
 
@@ -116,7 +100,7 @@ namespace ESearch.Foundation.Indexing.Services
             var keywordCondition = new KeywordCondition
             {
                 TargetFields = searchSettings[Templates.SearchSettings.Fields.KeywordSearchTargets].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries),
-                Keywords = value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries),
+                Keywords = value?.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>(),
             };
 
             return keywordCondition;
@@ -126,7 +110,7 @@ namespace ESearch.Foundation.Indexing.Services
         {
             var sortConditions = new List<SortCondition>();
 
-            foreach (var sortInfo in value.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries))
+            foreach (var sortInfo in value?.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries) ?? Enumerable.Empty<string>())
             {
                 var fieldAndDirection = sortInfo.Split(':');
                 var sortCondition = new SortCondition
@@ -159,7 +143,7 @@ namespace ESearch.Foundation.Indexing.Services
 
         private (int offset, int limit) CreatePaginationInfo(string value, Item searchSettings)
         {
-            if (!int.TryParse(value, out var page))
+            if (string.IsNullOrEmpty(value) || !int.TryParse(value, out var page) || page <= 0)
             {
                 return (0, 0);
             }
