@@ -1,0 +1,23 @@
+@model ESearch.Feature.SearchResultSummary.Models.SearchResultSummaryModel
+@using Sitecore.Mvc
+
+<div>
+
+    <ul class="result-summary">
+        <li>Root Item       : @Model.ScopeItem.Name</li>
+        <li>Target Template : @Model.TargetTemplates</li>
+        <li>Strat Index     : @Model.Offset</li>
+        <li>Limit Index     : @Model.Limit</li>
+        <li>Keywords Target : @Model.TargetFields</li>
+        <li>Keywords        : @Model.Keywords</li>
+        @foreach (var radio in Model.EqualsConditions)
+        {
+            <li>@radio.TargetField : @radio.Value</li>
+        }
+
+        @foreach (var check in Model.ContainsConditions)
+        {
+            <li>@check.TargetField : @string.Join(",", check.Values)</li>
+        }
+    </ul>
+</div>
