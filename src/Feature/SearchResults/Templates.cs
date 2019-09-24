@@ -14,7 +14,7 @@ namespace ESearch.Feature.SearchResults
             }
         }
 
-        public struct SearchResulData
+        public struct SearchResultData
         {
             public static readonly ID ID = new ID("{7A79306A-F5B3-4CC6-A3DB-F82099CECDC1}");
 
