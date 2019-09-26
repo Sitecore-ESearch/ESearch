@@ -68,6 +68,11 @@ namespace ESearch.Foundation.Indexing.Services
 
             foreach (var key in queryString.AllKeys)
             {
+                if (key == "keyword" || key == "sort" || key == "page")
+                {
+                    continue;
+                }
+
                 var value = queryString[key];
                 if (string.IsNullOrEmpty(value))
                 {
@@ -143,15 +148,15 @@ namespace ESearch.Foundation.Indexing.Services
 
         private (int offset, int limit) CreatePaginationInfo(string value, Item searchSettings)
         {
-            if (string.IsNullOrEmpty(value) || !int.TryParse(value, out var page) || page <= 0)
-            {
-                return (0, 0);
-            }
-
             var pageSize = searchSettings.GetInteger(Templates.SearchSettings.Fields.PageSize) ?? -1;
             if (pageSize <= 0)
             {
-                return (0, 0);
+                throw new ArgumentException("PageSize must be positive value.");
+            }
+
+            if (string.IsNullOrEmpty(value) || !int.TryParse(value, out var page) || page <= 0)
+            {
+                return (0, pageSize);
             }
 
             var offset = (page - 1) * pageSize;
