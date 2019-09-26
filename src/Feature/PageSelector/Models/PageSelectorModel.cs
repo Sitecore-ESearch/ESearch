@@ -21,7 +21,7 @@ namespace ESearch.Feature.PageSelector.Models
             _searchPageUrl = searchPageUrl;
             CurrentPageIndex = GetPageQueryValue(searchPageUrl);
             FirstPageIndex = 1;
-            LastPageIndex = CalculateLastPage(resultsCount, selectorSize);
+            LastPageIndex = CalculateLastPage(resultsCount, pageSize);
             PageIndexes = CreatePageIndexes(CurrentPageIndex, selectorSize, LastPageIndex);
         }
 

@@ -2,10 +2,10 @@
 <div>
     <ul>
         <li>
-            <a href="@Model.GetPageUrl(Model.FirstPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.FirstLinkLabel)</a>
+            <a href="@Model.GetPageUrl(Model.FirstPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field("First Link Label")</a>
         </li>
         <li>
-            <a href="@Model.GetPageUrl(Model.CurrentPageIndex - 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.PreviousLinkLabel)</a>
+            <a href="@Model.GetPageUrl(Model.CurrentPageIndex - 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field("Previous Link Label")</a>
         </li>
         @foreach (var index in Model.PageIndexes)
         {
@@ -14,10 +14,10 @@
             </li>
         }
         <li>
-            <a href="@Model.GetPageUrl(Model.CurrentPageIndex + 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.NextLinkLabel)</a>
+            <a href="@Model.GetPageUrl(Model.CurrentPageIndex + 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field("Next Link Label")</a>
         </li>
         <li>
-            <a href="@Model.GetPageUrl(Model.LastPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.LastLinkLabel)</a>
+            <a href="@Model.GetPageUrl(Model.LastPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field("Last Link Label")</a>
         </li>
     </ul>
 </div>
