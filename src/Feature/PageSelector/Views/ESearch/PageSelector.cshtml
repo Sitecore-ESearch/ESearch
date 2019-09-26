@@ -1,0 +1,23 @@
+@model ESearch.Feature.PageSelector.Models.PageSelectorModel
+<div>
+    <ul>
+        <li>
+            <a href="@Model.GetPageUrl(Model.FirstPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.FirstLinkLabel)</a>
+        </li>
+        <li>
+            <a href="@Model.GetPageUrl(Model.CurrentPageIndex - 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.PreviousLinkLabel)</a>
+        </li>
+        @foreach (var index in Model.PageIndexes)
+        {
+            <li>
+                <a href="@Model.GetPageUrl(index)" class="@(index == Model.CurrentPageIndex ? "current" : string.Empty)">@index</a>
+            </li>
+        }
+        <li>
+            <a href="@Model.GetPageUrl(Model.CurrentPageIndex + 1)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.NextLinkLabel)</a>
+        </li>
+        <li>
+            <a href="@Model.GetPageUrl(Model.LastPageIndex)" class="@(Model.HasPreviousPage ? "active" : "inactive")">@Html.Sitecore().Field(Templates.PageSelector.Fields.LastLinkLabel)</a>
+        </li>
+    </ul>
+</div>
