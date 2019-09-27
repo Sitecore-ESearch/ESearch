@@ -1,0 +1,29 @@
+@model ESearch.Feature.PageSelector.Models.PageSelectorModel
+<div class="component esearch-component @Html.Sitecore().Field("Css Class", new { DisableWebEdit = true })">
+    <ul>
+        @if (Model.HasPreviousPage)
+        {
+            <li>
+                <a href="@Model.GetPageUrl(Model.FirstPageIndex)">@Html.Sitecore().Field("First Link Label")</a>
+            </li>
+            <li>
+                <a href="@Model.GetPageUrl(Model.CurrentPageIndex - 1)">@Html.Sitecore().Field("Previous Link Label")</a>
+            </li>
+        }
+        @foreach (var index in Model.PageIndexes)
+        {
+            <li>
+                <a href="@Model.GetPageUrl(index)" class="@(index == Model.CurrentPageIndex ? "current" : string.Empty)">@index</a>
+            </li>
+        }
+        @if (Model.HasNextPage)
+        {
+            <li>
+                <a href="@Model.GetPageUrl(Model.CurrentPageIndex + 1)">@Html.Sitecore().Field("Next Link Label")</a>
+            </li>
+            <li>
+                <a href="@Model.GetPageUrl(Model.LastPageIndex)">@Html.Sitecore().Field("Last Link Label")</a>
+            </li>
+        }
+    </ul>
+</div>
