@@ -45,7 +45,9 @@ namespace ESearch.Foundation.Indexing.Services
 
             foreach (var equalsCondition in query.EqualsConditions ?? Enumerable.Empty<EqualsCondition>())
             {
-                queryString[equalsCondition.TargetField] = equalsCondition.Value;
+                queryString[equalsCondition.TargetField] = string.IsNullOrEmpty(queryString[equalsCondition.TargetField])
+                    ? equalsCondition.Value
+                    : $"{queryString[equalsCondition.TargetField]}+{equalsCondition.Value}";
             }
 
             return queryString;
@@ -93,8 +95,11 @@ namespace ESearch.Foundation.Indexing.Services
                     continue;
                 }
 
-                var equalsCondition = CreateEqualsCondition(key, value, searchSettings);
-                query.EqualsConditions.Add(equalsCondition);
+                var equalsConditions = CreateEqualsConditions(key, value, searchSettings);
+                foreach (var equalsCondition in equalsConditions)
+                {
+                    query.EqualsConditions.Add(equalsCondition);
+                }
             }
 
             return query;
@@ -200,15 +205,13 @@ namespace ESearch.Foundation.Indexing.Services
             }
         }
 
-        private EqualsCondition CreateEqualsCondition(string key, string value, Item searchSettings)
+        private ICollection<EqualsCondition> CreateEqualsConditions(string key, string values, Item searchSettings)
         {
-            var equalsCondition = new EqualsCondition
+            return values.Split('+').Select(value => new EqualsCondition
             {
                 TargetField = key,
-                Value = value,
-            };
-
-            return equalsCondition;
+                Value = value
+            }).ToList();
         }
     }
 }
