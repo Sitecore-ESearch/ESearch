@@ -10,7 +10,7 @@ namespace ESearch.Feature.FacetFilter.Models
     public class FacetFilterRow
     {
         public string Label { get; set; }
-        public string FilterKey { get; set; }
+        public string Link { get; set; }
         public int Count { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using Sitecore.DependencyInjection;
 using Sitecore.Mvc.Presentation;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Web;
 
 namespace ESearch.Feature.FacetFilter.Repositories
 {
@@ -35,14 +35,13 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var rowCount = RenderingContext.Current.Rendering.Item.GetInteger(Templates.FacetFilter.Fields.RowCount);
 
             var facetResults = SearchService.GetFacets(searchQuery, facetKey);
-            var filterRows = facetResults.Facets
-                .FirstOrDefault()?
-                .FacetValues
+            var facet = facetResults.Facets.FirstOrDefault();
+            var filterRows = facet?.FacetValues
                 .OrderByDescending(value => value.Count)
                 .Select(value => new FacetFilterRow
                 {
                     Label = GetFilterLabel(value.FieldValue),
-                    FilterKey = value.FieldValue,
+                    Link = GetFilterLink(facet.FieldName, value.FieldValue),
                     Count = value.Count
                 })
                 .Take(rowCount ?? int.MaxValue);
@@ -51,6 +50,15 @@ namespace ESearch.Feature.FacetFilter.Repositories
             {
                 FilterRows = filterRows?.ToList() ?? new List<FacetFilterRow>(),
             };
+        }
+
+        protected virtual string GetFilterLink(string fieldName, string fieldValue)
+        {
+            var absolutePath = Context.HttpContext.Request.Url.AbsolutePath;
+            var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
+            query[fieldName] = fieldValue;
+
+            return $"{absolutePath}?{query}";
         }
 
         protected virtual string GetFilterLabel(string filterKey)

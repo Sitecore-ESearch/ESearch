@@ -6,7 +6,7 @@
             @foreach (var row in Model.FilterRows)
             {
                 <li>
-                    <span data-facet-key="@row.FilterKey">@row.Label (@row.Count)</span>
+                    <a href="@row.Link">@row.Label (@row.Count)</a>
                 </li>
             }
         </ul>
