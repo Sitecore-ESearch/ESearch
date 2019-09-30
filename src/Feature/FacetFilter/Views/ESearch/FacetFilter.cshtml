@@ -1,0 +1,14 @@
+@model ESearch.Feature.FacetFilter.Models.FacetFilterModel
+<div class="component">
+    <div class="esearch esearch-facet-filter">
+        <h2>@Html.Sitecore().Field("Filter Name")</h2>
+        <ul>
+            @foreach (var row in Model.FilterRows)
+            {
+                <li>
+                    <span data-facet-key="@row.FilterKey">@row.Label (@row.Count)</span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
