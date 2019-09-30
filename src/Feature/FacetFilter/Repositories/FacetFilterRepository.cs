@@ -5,6 +5,7 @@ using Sitecore;
 using Sitecore.Data;
 using Sitecore.DependencyInjection;
 using Sitecore.Mvc.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -56,7 +57,11 @@ namespace ESearch.Feature.FacetFilter.Repositories
         {
             var absolutePath = Context.HttpContext.Request.Url.AbsolutePath;
             var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
-            query[fieldName] = fieldValue;
+            var values = query[fieldName]?.Split('+') ?? Array.Empty<string>();
+            if (!values.Contains(fieldValue))
+            {
+                query[fieldName] = string.Join("+", values.Append(fieldValue));
+            }
 
             return $"{absolutePath}?{query}";
         }
