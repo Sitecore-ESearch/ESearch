@@ -1,1 +1,21 @@
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Feature.SearchResults
 @model ESearch.Feature.SearchResults.Models.SearchResultsModel
+<div class="component">
+    <div class="esearch esearch-searchresults @Model.CssClass">
+        <ul>
+            @foreach (var item in Model.Items)
+            {
+                <li class="@Model.ItemCssClass">
+                    <img class="thumb" src="@item.MediaUrl(Templates.SearchResultData.Fields.Thumbnail)" />
+                    <h2 class="title">
+                        <a href="@item.Url()">@item[Templates.SearchResultData.Fields.Title]</a>
+                    </h2>
+                    <div class="description">
+                        <p>@item[Templates.SearchResultData.Fields.Description]</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

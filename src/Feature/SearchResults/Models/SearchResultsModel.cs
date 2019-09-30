@@ -1,11 +1,12 @@
-﻿using System;
+using Sitecore.Data.Items;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ESearch.Feature.SearchResults.Models
 {
     public class SearchResultsModel
     {
+        public ICollection<Item> Items { get; set; }
+        public string CssClass { get; set; }
+        public string ItemCssClass { get; set; }
     }
 }
