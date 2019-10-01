@@ -32,8 +32,6 @@ namespace ESearch.Feature.SearchResults.Repositories
             return new SearchResultsModel
             {
                 Items = searchResults.Items,
-                CssClass = RenderingContext.Current.Rendering.Item[Templates.SearchResults.Fields.CssClass],
-                ItemCssClass = RenderingContext.Current.Rendering.Item[Templates.SearchResults.Fields.ItemCssClass],
             };
         }
     }

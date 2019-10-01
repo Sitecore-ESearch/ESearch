@@ -9,8 +9,7 @@ namespace ESearch.Feature.SearchResults
             public static readonly ID ID = new ID("{6B260939-A836-4497-B509-7F530FF5593E}");
             public struct Fields
             {
-                public static readonly ID CssClass = new ID("{8137BB22-4719-4FA6-A678-57DC24067B00}");
-                public static readonly ID ItemCssClass = new ID("{53BC3369-26C1-4034-BAD3-A2FE144194A5}");
+                public static readonly ID ReadMoreLabel = new ID("{5794BCAA-9780-4252-83D2-DCACD7632B84}");
             }
         }
 
