@@ -104,6 +104,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\ESearchSampleLayout.cshtml" />
+    <Content Include="Views\ESearchSample\Container.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
