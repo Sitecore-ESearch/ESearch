@@ -4,6 +4,7 @@ namespace ESearch.Feature.FacetFilter.Models
 {
     public class FacetFilterModel
     {
+        public string ClearLink { get; set; }
         public ICollection<FacetFilterRow> FilterRows { get; set; }
     }
 
