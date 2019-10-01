@@ -1,14 +1,19 @@
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Feature.FacetFilter
 @model ESearch.Feature.FacetFilter.Models.FacetFilterModel
-<div class="component">
+<div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]"">
     <div class="esearch esearch-facet-filter">
-        <h2>@Html.Sitecore().Field("Filter Name")</h2>
-        <ul>
-            @foreach (var row in Model.FilterRows)
-            {
-                <li>
-                    <a href="@row.Link">@row.Label (@row.Count)</a>
-                </li>
-            }
-        </ul>
+        <div class="card">
+            <div class="card-header">@Html.Sitecore().Field(Templates.FacetFilter.Fields.FilterLabel)</div>
+            <div class="list-group list-group-flush">
+                @foreach (var row in Model.FilterRows)
+                {
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center @(row.IsActive ? "active" : "")" href="@row.Link">
+                        @row.Label
+                        <span class="badge badge-primary badge-pill">@row.Count</span>
+                    </a>
+                }
+            </div>
+        </div>
     </div>
 </div>

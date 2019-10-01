@@ -10,9 +10,8 @@ namespace ESearch.Feature.FacetFilter
 
             public struct Fields
             {
-                public static readonly ID FilterName = new ID("{27D1F25E-CFF1-47EF-92C4-D7DEB8A960B9}");
-                public static readonly ID FilterKey = new ID("{1E72366C-7C38-4417-9FF5-2DC58D1075D4}");
-                public static readonly ID RowCount = new ID("{1F5EEFD8-19A8-4154-8455-48BB7F6D6910}");
+                public static readonly ID FilterLabel = new ID("{27D1F25E-CFF1-47EF-92C4-D7DEB8A960B9}");
+                public static readonly ID TargetField = new ID("{1E72366C-7C38-4417-9FF5-2DC58D1075D4}");
             }
         }
     }
