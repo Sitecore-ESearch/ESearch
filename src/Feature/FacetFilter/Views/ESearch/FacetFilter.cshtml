@@ -4,7 +4,10 @@
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]"">
     <div class="esearch esearch-facet-filter">
         <div class="card">
-            <div class="card-header">@Html.Sitecore().Field(Templates.FacetFilter.Fields.FilterLabel)</div>
+            <div class="card-header">
+                @Html.Sitecore().Field(Templates.FacetFilter.Fields.HeaderLabel)
+                <a class="float-right text-secondary" href="@Model.ClearLink">@Html.Sitecore().Field(Templates.FacetFilter.Fields.ClearLabel)</a>
+            </div>
             <div class="list-group list-group-flush">
                 @foreach (var row in Model.FilterRows)
                 {
