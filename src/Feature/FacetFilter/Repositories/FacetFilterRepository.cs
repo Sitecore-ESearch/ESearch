@@ -38,13 +38,14 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var facetResults = SearchService.GetFacets(searchQuery, targetField);
             var facet = facetResults.Facets.FirstOrDefault();
             var filterRows = facet?.FacetValues
+                .Where(value => value.Count > 0)
                 .OrderByDescending(value => value.Count)
                 .Select(value => new FacetFilterRow
                 {
                     Label = GetFilterLabel(value.FieldValue),
                     Link = GetFilterLink(facet.FieldName, value.FieldValue),
                     Count = value.Count,
-                    IsActive = searchQuery.EqualsConditions.Any(cond => cond.Value == value.FieldValue)
+                    IsActive = searchQuery.EqualsConditions.Any(cond => cond.TargetField == facet.FieldName && cond.Value == value.FieldValue)
                 })
                 .Take(rowCount);
 
@@ -65,6 +66,10 @@ namespace ESearch.Feature.FacetFilter.Repositories
             if (!values.Contains(fieldValue))
             {
                 query[fieldName] = string.Join("+", values.Append(fieldValue));
+            }
+            else
+            {
+                query[fieldName] = string.Join("+", values.Where(val => val != fieldValue));
             }
 
             return $"{absolutePath}?{query}";
