@@ -6,7 +6,10 @@
             <div class="list-group list-group-flush">
                 @foreach (var row in Model.FilterRows)
                 {
-                    <a class="list-group-item list-group-item-action" href="@row.Link">@row.Label (@row.Count)</a>
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center @(row.IsActive ? "active" : "")" href="@row.Link">
+                        @row.Label
+                        <span class="badge badge-primary badge-pill">@row.Count</span>
+                    </a>
                 }
             </div>
         </div>

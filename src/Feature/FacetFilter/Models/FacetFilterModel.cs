@@ -12,5 +12,6 @@ namespace ESearch.Feature.FacetFilter.Models
         public string Label { get; set; }
         public string Link { get; set; }
         public int Count { get; set; }
+        public bool IsActive { get; set; }
     }
 }

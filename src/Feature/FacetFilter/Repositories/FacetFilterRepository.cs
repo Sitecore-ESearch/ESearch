@@ -43,7 +43,8 @@ namespace ESearch.Feature.FacetFilter.Repositories
                 {
                     Label = GetFilterLabel(value.FieldValue),
                     Link = GetFilterLink(facet.FieldName, value.FieldValue),
-                    Count = value.Count
+                    Count = value.Count,
+                    IsActive = searchQuery.EqualsConditions.Any(cond => cond.Value == value.FieldValue)
                 })
                 .Take(rowCount);
 
