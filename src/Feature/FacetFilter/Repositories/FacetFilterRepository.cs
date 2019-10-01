@@ -67,6 +67,10 @@ namespace ESearch.Feature.FacetFilter.Repositories
             {
                 query[fieldName] = string.Join("+", values.Append(fieldValue));
             }
+            else
+            {
+                query[fieldName] = string.Join("+", values.Where(val => val != fieldValue));
+            }
 
             return $"{absolutePath}?{query}";
         }
