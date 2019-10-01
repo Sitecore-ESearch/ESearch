@@ -32,10 +32,10 @@ namespace ESearch.Feature.FacetFilter.Repositories
         {
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
             var searchQuery = QueryBuilder.BuildSearchQuery(Context.HttpContext.Request.QueryString, searchSettings);
-            var facetKey = RenderingContext.Current.Rendering.Item[Templates.FacetFilter.Fields.FilterKey];
-            var rowCount = RenderingContext.Current.Rendering.Item.GetInteger(Templates.FacetFilter.Fields.RowCount);
+            var targetField = RenderingContext.Current.Rendering.Item[Templates.FacetFilter.Fields.TargetField];
+            var rowCount = RenderingContext.Current.Rendering.GetIntegerParameter("Row Count") ?? int.MaxValue;
 
-            var facetResults = SearchService.GetFacets(searchQuery, facetKey);
+            var facetResults = SearchService.GetFacets(searchQuery, targetField);
             var facet = facetResults.Facets.FirstOrDefault();
             var filterRows = facet?.FacetValues
                 .OrderByDescending(value => value.Count)
@@ -45,7 +45,7 @@ namespace ESearch.Feature.FacetFilter.Repositories
                     Link = GetFilterLink(facet.FieldName, value.FieldValue),
                     Count = value.Count
                 })
-                .Take(rowCount ?? int.MaxValue);
+                .Take(rowCount);
 
             return new FacetFilterModel
             {
