@@ -1,6 +1,6 @@
 using System.Web.Mvc;
 
-namespace Project.SampleWebSite.Controllers
+namespace Project.SampleWebsite.Controllers
 {
     public class SamplePageController : Controller
     {

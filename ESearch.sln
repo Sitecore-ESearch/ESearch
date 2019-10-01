@@ -34,7 +34,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Indexing.Dummy",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{4060AA8F-DADA-4274-A928-F22EB49671FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.SampleWebSite", "src\Project\Project.SampleWebSite\Project.SampleWebSite.csproj", "{1DBAADDF-67B2-480D-B67A-B2FF3863B554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.SampleWebsite", "src\Project\SampleWebsite\Project.SampleWebsite.csproj", "{1DBAADDF-67B2-480D-B67A-B2FF3863B554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
