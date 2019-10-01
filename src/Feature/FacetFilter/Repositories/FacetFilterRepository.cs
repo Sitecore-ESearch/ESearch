@@ -38,6 +38,7 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var facetResults = SearchService.GetFacets(searchQuery, targetField);
             var facet = facetResults.Facets.FirstOrDefault();
             var filterRows = facet?.FacetValues
+                .Where(value => value.Count > 0)
                 .OrderByDescending(value => value.Count)
                 .Select(value => new FacetFilterRow
                 {
