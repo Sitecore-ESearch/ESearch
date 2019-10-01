@@ -33,7 +33,7 @@ namespace ESearch.Feature.PageSelector.Repositories
             var url = Context.HttpContext.Request.Url.OriginalString;
             var pageSize = searchSettings.GetInteger(IndexingTemplates.SearchSettings.Fields.PageSize) ?? 20;
             var totalCount = SearchService.GetTotalCount(searchQuery);
-            var selectorSize = RenderingContext.Current.Rendering.Item.GetInteger(Templates.PageSelector.Fields.SelectorSize) ?? 2;
+            var selectorSize = RenderingContext.Current.Rendering.GetIntegerParameter("Selector Size") ?? 2;
             return new PageSelectorModel(url, pageSize, totalCount, selectorSize);
         }
     }

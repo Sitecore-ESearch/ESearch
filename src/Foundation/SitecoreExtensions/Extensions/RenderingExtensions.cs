@@ -13,5 +13,18 @@ namespace ESearch.Foundation.SitecoreExtensions.Extensions
             var idOrPath = rendering.Parameters[parameterName];
             return rendering.Item.Database.GetItem(idOrPath);
         }
+
+        public static int? GetIntegerParameter(this Rendering rendering, string parameterName)
+        {
+            Assert.ArgumentNotNull(rendering, nameof(rendering));
+
+            var value = rendering.Parameters[parameterName];
+            if (string.IsNullOrEmpty(value))
+            {
+                return default;
+            }
+
+            return int.TryParse(value, out var result) ? result : default(int?);
+        }
     }
 }
