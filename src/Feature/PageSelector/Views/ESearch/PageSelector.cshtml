@@ -1,7 +1,7 @@
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @using ESearch.Feature.PageSelector
 @model ESearch.Feature.PageSelector.Models.PageSelectorModel
-<div class="component @Html.Sitecore().Field(Templates.PageSelector.Fields.CssClass, new { DisableWebEdit = true })">
+<div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
     <div class="esearch esearch-page-selector">
         <ul class="pagination">
             @if (Html.Sitecore().CurrentItem.FieldHasValue(Templates.PageSelector.Fields.FirstLinkLabel))

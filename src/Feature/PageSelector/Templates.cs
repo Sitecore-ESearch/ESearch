@@ -15,7 +15,6 @@ namespace ESearch.Feature.PageSelector
                 public static readonly ID NextLinkLabel = new ID("{0E7D76A2-2C71-4470-8C24-1AA992F71726}");
                 public static readonly ID FirstLinkLabel = new ID("{313E7431-D0AB-4227-BA4D-98A8E1F5D763}");
                 public static readonly ID LastLinkLabel = new ID("{5345578D-59C9-40C8-9977-041ED15D4E32}");
-                public static readonly ID CssClass = new ID("{7F190973-E112-4B98-B4E0-8D2ACD254B86}");
             }
         }
     }
