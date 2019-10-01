@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\esearch.sample.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +105,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\BasePageLayout.cshtml" />
+    <Content Include="Views\Shared\ESearchSampleLayout.cshtml" />
     <Content Include="Views\SamplePage\SearchPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -115,6 +116,32 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Feature\FacetFilter\Feature.FacetFilter.csproj">
+      <Project>{621a9331-d469-44b4-af55-2fc9a6319504}</Project>
+      <Name>Feature.FacetFilter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Feature\PageSelector\Feature.PageSelector.csproj">
+      <Project>{ccfcd724-129d-47cd-b8df-c091cc0f53c7}</Project>
+      <Name>Feature.PageSelector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Feature\SearchBox\Feature.SearchBox.csproj">
+      <Project>{9d084fcf-ae68-4b4e-a128-b7c867f43e0b}</Project>
+      <Name>Feature.SearchBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Feature\SearchResultSummary\Feature.SearchResultSummary.csproj">
+      <Project>{7774eb38-96e3-4c43-a855-b8a650ab6e6f}</Project>
+      <Name>Feature.SearchResultSummary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Feature\SearchResults\Feature.SearchResults.csproj">
+      <Project>{cc105eb4-282c-42df-8b55-30f0165cdc14}</Project>
+      <Name>Feature.SearchResults</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Feature\SortIndicator\Feature.SortIndicator.csproj">
+      <Project>{dd48ddb0-e77d-4066-a97c-dc1355887232}</Project>
+      <Name>Feature.SortIndicator</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
