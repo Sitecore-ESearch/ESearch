@@ -61,6 +61,7 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
             var values = query[fieldName]?.Split('+') ?? Array.Empty<string>();
 
+            query.Remove("page");
             if (!values.Contains(fieldValue))
             {
                 query[fieldName] = string.Join("+", values.Append(fieldValue));
@@ -74,6 +75,7 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var absolutePath = Context.HttpContext.Request.Url.AbsolutePath;
             var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
 
+            query.Remove("page");
             if (!string.IsNullOrEmpty(fieldName))
             {
                 query.Remove(fieldName);
