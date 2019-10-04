@@ -64,16 +64,15 @@ namespace ESearch.Foundation.Indexing.Services
 
                 queryable = ApplyFilterConditions(queryable, query);
                 queryable = ApplyPagination(queryable, query.Limit, query.Offset);
-
+                var aaa = queryable.GetResults();
+                var bbb = aaa.Hits.Select(hit => new Suggestion
+                {
+                    ItemId = hit.Document.ItemId,
+                    SuggestedFields = query.KeywordCondition?.TargetFields?.ToDictionary(fieldName => fieldName, fieldName => GetSuggestedFieldValue(hit.Document, fieldName)) ?? new Dictionary<string, string>(),
+                });
                 return new SuggestionResults
                 {
-                    Suggestions = queryable.GetResults().Hits
-                    .Select(hit => new Suggestion
-                    {
-                        ItemId = hit.Document.ItemId,
-                        SuggestedFields = query.KeywordCondition?.TargetFields?.ToDictionary(fieldName => fieldName, fieldName => GetSuggestedFieldValue(hit.Document, fieldName)) ?? new Dictionary<string, string>(),
-                    })
-                    .ToList()
+                    Suggestions = bbb.ToList()
                 };
             }
 
