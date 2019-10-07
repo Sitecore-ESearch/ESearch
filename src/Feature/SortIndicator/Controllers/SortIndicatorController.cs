@@ -13,7 +13,7 @@ namespace ESearch.Feature.SearchResults.Controllers
             _searchIndicatorRepository = ServiceLocator.ServiceProvider.GetService(typeof(ISortIndicatorRepository)) as ISortIndicatorRepository;
         }
 
-        public ActionResult Index(string sortType)
+        public ActionResult Index()
         {
             var model = _searchIndicatorRepository.GetModel();
             return View("/Views/ESearch/SortIndicator.cshtml", model);

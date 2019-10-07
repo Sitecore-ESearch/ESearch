@@ -1,4 +1,5 @@
 @using ESearch.Foundation.SitecoreExtensions.Extensions
+@using SearchQuery = ESearch.Foundation.Indexing.Models
 @using Sitecore.Mvc
 @using Sitecore.Links;
 @model ESearch.Feature.SortIndicator.Models.SortIndicatorModel
@@ -20,15 +21,15 @@
                 }
             </select>
             <select name="sortType" onChange="location.href=value;">
-                @if (Model.Direction == ESearch.Foundation.Indexing.Models.SortDirection.Asc)
+                @if (Model.Direction == SearchQuery.SortDirection.Asc)
                 {
-                    <option value=@Model.GetSortLink(Model.TargetField, ESearch.Foundation.Indexing.Models.SortDirection.Asc) selected="selected">asc</option>
-                    <option value=@Model.GetSortLink(Model.TargetField, ESearch.Foundation.Indexing.Models.SortDirection.Desc)>desc</option>
+                    <option value=@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc) selected="selected">@SearchQuery.SortDirection.Asc</option>
+                    <option value=@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)>@SearchQuery.SortDirection.Desc</option>
                 }
                 else
                 {
-                    <option value=@Model.GetSortLink(Model.TargetField, ESearch.Foundation.Indexing.Models.SortDirection.Asc)>asc</option>
-                    <option value=@Model.GetSortLink(Model.TargetField, ESearch.Foundation.Indexing.Models.SortDirection.Desc) selected="selected">desc</option>
+                    <option value=@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)>@SearchQuery.SortDirection.Asc</option>
+                    <option value=@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc) selected="selected">@SearchQuery.SortDirection.Desc</option>
                 }
             </select>
         }
