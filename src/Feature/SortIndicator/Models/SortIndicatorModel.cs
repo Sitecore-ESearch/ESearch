@@ -3,9 +3,7 @@ using Sitecore.Data.Fields;
 using Sitecore;
 using System.Web;
 using System.Linq;
-using System.Collections.Specialized;
 using ESearch.Foundation.Indexing.Models;
-using ESearch.Foundation.Indexing.Services;
 
 namespace ESearch.Feature.SortIndicator.Models
 {
@@ -20,7 +18,7 @@ namespace ESearch.Feature.SortIndicator.Models
         #region Constructor
         public SortIndicatorModel(Item sortSetting, SearchQuery searchQuery)
         {
-            MultilistField sortItems = sortSetting.Fields["Sort Fields"];
+            MultilistField sortItems = sortSetting.Fields[Templates.SortIndicator.Fields.SortFields];
             SortItems = sortItems?.GetItems();
 
             if (SortItems.Length > 0 )
@@ -38,7 +36,7 @@ namespace ESearch.Feature.SortIndicator.Models
         {
             if (searchQuery.SortConditions.Count == 0)
             {
-                return sortItems[0].Fields["Field Name"].ToString();               
+                return sortItems[0][Templates.SortField.Fields.FieldName];               
             }
             else
             {
@@ -63,7 +61,7 @@ namespace ESearch.Feature.SortIndicator.Models
             var absolutePath = Context.HttpContext.Request.Url.AbsolutePath;
             var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
 
-            if (!string.IsNullOrEmpty(fieldName) && direction != null)
+            if (!string.IsNullOrEmpty(fieldName))
             {
                 if (query["sort"] == null)
                 {

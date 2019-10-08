@@ -15,12 +15,10 @@ namespace ESearch.Feature.SortIndicator.Repositories
     public class SortIndicatorRepository : ISortIndicatorRepository
     {
         protected IQueryBuilder QueryBuilder { get; }
-        protected ISearchService SearchService { get; }
 
         public SortIndicatorRepository()
         {
             QueryBuilder = ServiceLocator.ServiceProvider.GetService(typeof(IQueryBuilder)) as IQueryBuilder;
-            SearchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
         }
 
         public SortIndicatorModel GetModel()

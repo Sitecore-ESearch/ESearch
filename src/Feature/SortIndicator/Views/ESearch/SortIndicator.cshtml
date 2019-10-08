@@ -1,7 +1,6 @@
+@using ESearch.Feature.SortIndicator
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @using SearchQuery = ESearch.Foundation.Indexing.Models
-@using Sitecore.Mvc
-@using Sitecore.Links;
 @model ESearch.Feature.SortIndicator.Models.SortIndicatorModel
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
     <div class="esearch esearch-sort-indicator">
@@ -10,13 +9,13 @@
             <select name="sortItem" onChange="location.href=value;">
                 @foreach (var item in Model.SortItems)
                 {
-                    if (Model.TargetField == item["Field Name"])
+                    if (Model.TargetField == item[Templates.SortField.Fields.FieldName])
                     {
-                        <option value=@Model.GetSortLink(item["Field Name"], Model.Direction) selected="selected">@item["Display Name"]</option>
+                        <option value=@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction) selected="selected">@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</option>
                     }
                     else
                     {
-                        <option value=@Model.GetSortLink(item["Field Name"], Model.Direction)>@item["Display Name"]</option>
+                        <option value=@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction)>@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</option>
                     }
                 }
             </select>
