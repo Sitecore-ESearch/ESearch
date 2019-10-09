@@ -8,10 +8,13 @@ namespace ESearch.Foundation.Indexing.Services
         public ISearchIndex Resolve()
         {
             var indexable = (SitecoreIndexableItem) Context.Item;
-            var indexName = ContentSearchManager.GetContextIndexName(indexable);
-            if (!string.IsNullOrEmpty(indexName))
+            if (indexable != null)
             {
-                return ContentSearchManager.GetIndex(indexName);
+                var indexName = ContentSearchManager.GetContextIndexName(indexable);
+                if (!string.IsNullOrEmpty(indexName))
+                {
+                    return ContentSearchManager.GetIndex(indexName);
+                }
             }
 
             var dbName = Context.Database.Name.ToLowerInvariant();
