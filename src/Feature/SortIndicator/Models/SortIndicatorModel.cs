@@ -1,16 +1,19 @@
-using Sitecore.Data.Items;
-using Sitecore.Data.Fields;
-using Sitecore;
+using System.Collections.Generic;
 using System.Web;
 using System.Linq;
+using Sitecore;
+using Sitecore.Data.Items;
 using ESearch.Foundation.Indexing.Models;
+using ESearch.Foundation.SitecoreExtensions.Extensions;
+using Sitecore.Install.Framework;
 
 namespace ESearch.Feature.SortIndicator.Models
 {
     public class SortIndicatorModel
     {
         #region Property
-        public Item[] SortItems { get; set; }
+        public IEnumerable<Item> SortItems { get; set; }
+        public string DefaultText { get; set; }
         public string TargetField { get; set; }
         public SortDirection Direction { get; set; }
         #endregion
@@ -18,42 +21,26 @@ namespace ESearch.Feature.SortIndicator.Models
         #region Constructor
         public SortIndicatorModel(Item sortSetting, SearchQuery searchQuery)
         {
-            MultilistField sortItems = sortSetting.Fields[Templates.SortIndicator.Fields.SortFields];
-            SortItems = sortItems?.GetItems();
+            SortItems = sortSetting.GetMultiListValueItems(Templates.SortIndicator.Fields.SortFields);
+            DefaultText = sortSetting[Templates.SortIndicator.Fields.DefaultText];
 
-            if (SortItems.Length > 0 )
+            if (SortItems.Any())
             {
-                var query = HttpUtility.ParseQueryString(Context.HttpContext.Request.Url.Query);
-                TargetField = GetTargetField(SortItems, searchQuery);
+                TargetField = GetTargetField(searchQuery);
                 Direction = GetDirection(searchQuery);
             }
-
         }
         #endregion
 
         #region Method
-        public string GetTargetField(Item[] sortItems, SearchQuery searchQuery)
+        public string GetTargetField(SearchQuery searchQuery)
         {
-            if (searchQuery.SortConditions.Count == 0)
-            {
-                return sortItems[0][Templates.SortField.Fields.FieldName];               
-            }
-            else
-            {
-                return searchQuery.SortConditions.First().TargetField;
-            }
+            return searchQuery.SortConditions.FirstOrDefault()?.TargetField;
         }
 
         public SortDirection GetDirection(SearchQuery searchQuery)
         {
-            if (searchQuery.SortConditions.Count == 0)
-            {
-                return SortDirection.Asc;
-            }
-            else
-            {
-                return searchQuery.SortConditions.First().Direction;
-            }
+            return searchQuery.SortConditions.FirstOrDefault()?.Direction ?? default;
         }
 
         public string GetSortLink(string fieldName, SortDirection direction)

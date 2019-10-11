@@ -1,47 +1,52 @@
 @using ESearch.Feature.SortIndicator
-@using ESearch.Foundation.SitecoreExtensions.Extensions
 @using SearchQuery = ESearch.Foundation.Indexing.Models
+@using ESearch.Foundation.SitecoreExtensions.Extensions
 @model ESearch.Feature.SortIndicator.Models.SortIndicatorModel
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
     <div class="esearch esearch-sort-indicator">
-        @if (Model.SortItems.Length > 0)
+        @if (Model.SortItems.Any())
         {
             <div class="dropdown">
-                <!-- 切替ボタンの設定 -->
-                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort Field
-                </a>
-                <!-- ドロップメニューの設定 -->
+                @if (Model.TargetField == null)
+                {
+                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @Model.DefaultText
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @Model.TargetField
+                    </a>
+                }
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
                     @foreach (var item in Model.SortItems)
                     {
                         if (Model.TargetField == item[Templates.SortField.Fields.FieldName])
                         {
-                            <a class="dropdown-item active" href="@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction) ">@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</a>
+                            <a class="dropdown-item active" href="@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction)">@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</a>
                         }
                         else
                         {
-                            <a class="dropdown-item" href="@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction) ">@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</a>
+                            <a class="dropdown-item" href="@Model.GetSortLink(item[Templates.SortField.Fields.FieldName], Model.Direction)">@Html.Sitecore().Field(Templates.SortField.Fields.DisplayName, item)</a>
                         }
                     }
                 </div>
             </div>
             <div class="dropdown">
-                <!-- 切替ボタンの設定 -->
                 <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort Direction
+                    @Model.Direction
                 </a>
-                <!-- ドロップメニューの設定 -->
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
                     @if (Model.Direction == SearchQuery.SortDirection.Asc)
                     {
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)  ">@SearchQuery.SortDirection.Asc</a>
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)  ">@SearchQuery.SortDirection.Desc</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@SearchQuery.SortDirection.Asc</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@SearchQuery.SortDirection.Desc</a>
                     }
                     else
                     {
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)  ">@SearchQuery.SortDirection.Asc</a>
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)  ">@SearchQuery.SortDirection.Desc</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@SearchQuery.SortDirection.Asc</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@SearchQuery.SortDirection.Desc</a>
                     }
                 </div>
             </div>

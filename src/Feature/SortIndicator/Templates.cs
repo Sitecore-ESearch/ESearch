@@ -10,6 +10,7 @@ namespace ESearch.Feature.SortIndicator
             public struct Fields
             {
                 public static readonly ID SortFields = new ID("{632F4F3B-3F60-4790-9F91-265A4CFDF503}");
+                public static readonly ID DefaultText = new ID("{33BE8D8A-772F-4666-8EC4-66A63E2023C9}");
             }
         }
 
