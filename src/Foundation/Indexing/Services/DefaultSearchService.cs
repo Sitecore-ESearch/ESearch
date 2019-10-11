@@ -64,25 +64,27 @@ namespace ESearch.Foundation.Indexing.Services
 
                 queryable = ApplyFilterConditions(queryable, query);
                 queryable = ApplyPagination(queryable, query.Limit, query.Offset);
-                var aaa = queryable.GetResults();
-                var bbb = aaa.Hits.Select(hit => new Suggestion
-                {
-                    ItemId = hit.Document.ItemId,
-                    SuggestedFields = query.KeywordCondition?.TargetFields?.ToDictionary(fieldName => fieldName, fieldName => GetSuggestedFieldValue(hit.Document, fieldName)) ?? new Dictionary<string, string>(),
-                });
                 return new SuggestionResults
                 {
-                    Suggestions = bbb.ToList()
+                    Suggestions = queryable.GetResults().Hits.Select(hit => new Suggestion
+                    {
+                        ItemId = hit.Document.ItemId,
+                        SuggestedFields = query.KeywordCondition?.TargetFields?.ToDictionary(fieldName => fieldName, fieldName => GetSuggestedFieldValue(hit.Document, fieldName)) ?? new Dictionary<string, string>(),
+                    }).ToList()
                 };
             }
 
             string GetSuggestedFieldValue(TResult document ,string fieldName)
             {
                 var fieldNameInIndex = index.FieldNameTranslator.GetIndexFieldName(fieldName);
-                var fieldValue = document.Fields[fieldNameInIndex].ToString();
-                return query.KeywordCondition?.Keywords?.Aggregate(
-                    fieldValue,
-                    (acc, keyword) => Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase));
+                if(document.Fields.TryGetValue(fieldNameInIndex, out var fieldValue))
+                {
+                    return query.KeywordCondition?.Keywords?.Aggregate(fieldValue.ToString(), (acc, keyword) => Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase));
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
