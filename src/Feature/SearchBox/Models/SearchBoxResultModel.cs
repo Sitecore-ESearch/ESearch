@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using Sitecore.Data.Items;
-using ESearch.Foundation.Indexing.Models;
-using System.Linq;
 
 namespace ESearch.Feature.SearchBox.Models
 {
@@ -9,9 +7,8 @@ namespace ESearch.Feature.SearchBox.Models
     {
         public ICollection<Item> Items { get; set; }
 
-        public SearchBoxResultModel(ICollection<Suggestion> suggestions)
+        public SearchBoxResultModel()
         {
-            Items = suggestions.Select(suggestion => Sitecore.Context.Database.GetItem(suggestion.ItemId)).ToList();
         }
     }
 }

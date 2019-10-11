@@ -14,17 +14,10 @@ namespace ESearch.Feature.SearchBox.Controllers
             _repository = ServiceLocator.ServiceProvider.GetService(typeof(ISearchBoxRepository)) as ISearchBoxRepository;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string keyword)
         {
-            var model = _repository.GetModel();
+            var model = _repository.GetModel(keyword);
             return View("/Views/ESearch/SearchBox.cshtml", model);
-        }
-
-        [HttpGet]
-        public ActionResult SearchBoxResult(string keyword)
-        {
-            var model = _repository.GetResultModel(keyword);
-            return View("/Views/ESearch/SearchBoxResult.cshtml", model);
         }
 
         [HttpPost]
