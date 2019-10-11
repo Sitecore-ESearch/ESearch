@@ -1,6 +1,6 @@
-using ESearch.Feature.SortIndicator.Repositories;
-using Sitecore.DependencyInjection;
 using System.Web.Mvc;
+using Sitecore.DependencyInjection;
+using ESearch.Feature.SortIndicator.Repositories;
 
 namespace ESearch.Feature.SearchResults.Controllers
 {
