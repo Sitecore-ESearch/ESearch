@@ -35,12 +35,12 @@ namespace ESearch.Feature.SortIndicator.Models
         #region Method
         public string GetTargetField(SearchQuery searchQuery)
         {
-            return searchQuery.SortConditions.FirstOrDefault().TargetField;
+            return searchQuery.SortConditions.FirstOrDefault()?.TargetField;
         }
 
         public SortDirection GetDirection(SearchQuery searchQuery)
         {
-            return searchQuery.SortConditions.FirstOrDefault().Direction;
+            return searchQuery.SortConditions.FirstOrDefault()?.Direction ?? default;
         }
 
         public string GetSortLink(string fieldName, SortDirection direction)
