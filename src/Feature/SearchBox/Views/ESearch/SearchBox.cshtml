@@ -3,11 +3,24 @@
 @model ESearch.Feature.SearchBox.Models.SearchBoxModel
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
     <div class="esearch esearch-search-box">
-        <form id="search-box_form" class="form-inline" method="get" action="@Sitecore.Context.Item.Url()" search-settings-item-id="@Model.SearchSettingsItemId" ajax-url="esearch/searchbox">
-            <input type="search" id="search-box_keyword" name="keyword" class="form-control @Html.Sitecore().CurrentRendering.Parameters["Keyword Box Css Class"]" placeholder="@Html.Sitecore().Field(Templates.SearchBox.Fields.PlaceholderLabel)">
-            <button type="submit" id="search-box_button" class="btn @Html.Sitecore().CurrentRendering.Parameters["Button Css Class"]">@Html.Sitecore().Field(Templates.SearchBox.Fields.ExecuteButtonLabel)</button>
+        <form id="search-box_form" class="form-inline input-group" method="get" action="@Sitecore.Context.Item.Url()" search-settings-item-id="@Model.SearchSettingsItemId" ajax-url="esearch/searchbox">
+            <input type="search" id="search-box_keyword" name="keyword" class="form-control @Html.Sitecore().CurrentRendering.Parameters["Keyword Box Css Class"]" placeholder="@Html.Sitecore().Field(Templates.SearchBox.Fields.PlaceholderLabel)" value="@Model.Keyword">
+            <div class="input-group-append">
+                <button type="submit" id="search-box_button" class="btn btn-outline-secondary @Html.Sitecore().CurrentRendering.Parameters["Button Css Class"]">@Html.Sitecore().Field(Templates.SearchBox.Fields.ExecuteButtonLabel)</button>
+            </div>
         </form>
         <div id="search-box_results">
+            @if (Model.Items.Any())
+            {
+                <div class="dropdown show">
+                    <div class="dropdown-menu show">
+                        @foreach (var item in Model.Items)
+                        {
+                            <a class="dropdown-item" href="@item.Url()">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Title, item)</a>
+                        }
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>

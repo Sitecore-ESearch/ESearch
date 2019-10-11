@@ -7,14 +7,16 @@ using System.Web;
 using ESearch.Feature.SearchBox.Models;
 using ESearch.Foundation.Indexing.Services;
 using ESearch.Foundation.SitecoreExtensions.Extensions;
+using System.Linq;
+using ESearch.Foundation.Indexing.Models;
+using System.Collections.Generic;
 
 namespace ESearch.Feature.SearchBox.Repositories
 {
     public interface ISearchBoxRepository
     {
-        SearchBoxModel GetModel();
+        SearchBoxModel GetModel(string keyword);
         SearchBoxResultModel GetResultModel(SearchBoxModel model);
-        SearchBoxResultModel GetResultModel(string keyword);
     }
 
     public class SearchBoxRepository: ISearchBoxRepository
@@ -28,11 +30,23 @@ namespace ESearch.Feature.SearchBox.Repositories
             SearchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
         }
 
-        public SearchBoxModel GetModel()
+        public SearchBoxModel GetModel(string keyword)
         {
+            var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
+            var searchResults = new SuggestionResults();
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                var queryString = HttpUtility.ParseQueryString(string.Empty);
+                queryString["keyword"] = keyword;
+                var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
+                searchResults = SearchService.GetSuggestions(searchQuery);
+            }
+
             return new SearchBoxModel()
             {
-                SearchSettingsItemId = RenderingContext.Current.Rendering.GetItemParameter("Search Settings").ID.ToString()
+                Keyword = keyword,
+                SearchSettingsItemId = searchSettings.ID.ToString(),
+                Items = searchResults?.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
             };
         }
 
@@ -44,18 +58,10 @@ namespace ESearch.Feature.SearchBox.Repositories
 
             var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
             var searchResults = SearchService.GetSuggestions(searchQuery);
-            return new SearchBoxResultModel(searchResults.Suggestions);
-        }
-
-        public SearchBoxResultModel GetResultModel(string keyword)
-        {
-            var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
-            var queryString = HttpUtility.ParseQueryString(string.Empty);
-            queryString["keyword"] = keyword;
-
-            var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
-            var searchResults = SearchService.GetSuggestions(searchQuery);
-            return new SearchBoxResultModel(searchResults.Suggestions);
+            return new SearchBoxResultModel()
+            {
+                Items = searchResults.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
+            };
         }
     }
 }
