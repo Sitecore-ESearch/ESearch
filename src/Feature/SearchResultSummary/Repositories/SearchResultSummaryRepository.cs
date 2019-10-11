@@ -26,7 +26,7 @@ namespace ESearch.Feature.SearchResultSummary.Repositories
 
             var searchQuery = QueryBuilder.BuildSearchQuery(Context.HttpContext.Request.QueryString, searchSettings);
 
-            return new SearchResultSummaryModel(searchQuery);
+            return new SearchResultSummaryModel(searchQuery, searchSettings);
         }
     }
 }

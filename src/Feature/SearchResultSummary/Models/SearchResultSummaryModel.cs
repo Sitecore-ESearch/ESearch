@@ -1,48 +1,47 @@
 using System.Collections.Generic;
+using ESearch.Foundation.SitecoreExtensions.Extensions;
+using ESearch.Foundation.Indexing;
 using ESearch.Foundation.Indexing.Models;
+using Sitecore;
 using Sitecore.Data.Items;
+using System;
+using System.Globalization;
+using System.Linq;
 
 namespace ESearch.Feature.SearchResultSummary.Models
 {
     public class SearchResultSummaryModel
     {
         #region Property
-        public Item ScopeItem { get; set; }
-
-        public int Offset { get; set; }
-
-        public int Limit { get; set; }
-
-        public string TargetTemplates { get; set; }
-
-        public string TargetFields { get; set; }
 
         public string Keywords { get; set; }
 
-        public ICollection<EqualsCondition> EqualsConditions { get; set; }
+        public SearchQuery SearchQuery { get; set; }
 
-        public ICollection<ContainsCondition> ContainsConditions { get; set; }
+        public ICollection<BetweenCondition> BetweenConditions { get; set; }
+
         #endregion
 
         #region Constructor
-        public SearchResultSummaryModel(SearchQuery searchQuery)
+        public SearchResultSummaryModel(SearchQuery searchQuery, Item searchSettings)
         {
-            ScopeItem = Sitecore.Context.Database.GetItem(searchQuery.Scope);
+            SearchQuery = searchQuery;
 
-            var targetTemplateItemNames = new List<string>();
-            foreach (var template in searchQuery.TargetTemplates)
+            Keywords = string.Join(", ", SearchQuery.KeywordCondition.Keywords);
+
+            BetweenConditions = SearchQuery.BetweenConditions;
+
+            var dateFormat = searchSettings[Templates.SearchSettings.Fields.DateFormat];
+            
+            foreach (var betweensCondition in BetweenConditions ?? Enumerable.Empty<BetweenCondition>())
             {
-                targetTemplateItemNames.Add(Sitecore.Context.Database.GetItem(template).Name);
+                betweensCondition.LowerValue = DateTime.TryParse(betweensCondition.LowerValue, out var lowerDate)
+                    ? lowerDate.ToLocalTime().ToString(dateFormat)
+                    : betweensCondition.LowerValue;
+                betweensCondition.UpperValue = DateTime.TryParse(betweensCondition.UpperValue, out var upperDate)
+                    ? upperDate.ToLocalTime().ToString(dateFormat)
+                    : betweensCondition.UpperValue;
             }
-            TargetTemplates = string.Join(" , ", targetTemplateItemNames);
-
-            TargetFields = string.Join(" , ", searchQuery.KeywordCondition.TargetFields);
-            Keywords = string.Join(" , ", searchQuery.KeywordCondition.Keywords);
-            var count = searchQuery.EqualsConditions.Count;
-
-            EqualsConditions = searchQuery.EqualsConditions;
-            ContainsConditions = searchQuery.ContainsConditions;
-
         }
         #endregion
 
