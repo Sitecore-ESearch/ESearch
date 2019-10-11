@@ -10,7 +10,6 @@ namespace ESearch.Feature.SearchResultSummary.Controllers
 
         public SearchResultSummaryController()
         {
-            var type = typeof(ISearchResultSummaryRepository);
             _searchResultSummaryRepository = ServiceLocator.ServiceProvider.GetService(typeof(ISearchResultSummaryRepository)) as ISearchResultSummaryRepository;
         }
 
