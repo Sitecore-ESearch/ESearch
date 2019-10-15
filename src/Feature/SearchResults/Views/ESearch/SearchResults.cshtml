@@ -6,12 +6,14 @@
         <div class="row">
             @foreach (var item in Model.Items)
             {
-                <div class="card @Html.Sitecore().CurrentRendering.Parameters["Item Css Class"]">
-                    @Html.Sitecore().Field(Templates.SearchResultData.Fields.Thumbnail, item, new { @class = "card-img-top" })
-                    <div class="card-body">
-                        <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Title, item)</h5>
-                        <p class="card-text">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Description, item)</p>
-                        <a class="btn btn-primary" href="@item.Url()">@Html.Sitecore().Field(Templates.SearchResults.Fields.ReadMoreLabel)</a>
+                <div class="@Html.Sitecore().CurrentRendering.Parameters["Item Css Class"]">
+                    <div class="card">
+                        @Html.Sitecore().Field(Templates.SearchResultData.Fields.Thumbnail, item, new { @class = "card-img-top" })
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Title, item)</h5>
+                            <p class="card-text">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Description, item)</p>
+                            <a class="btn btn-primary" href="@item.Url()">@Html.Sitecore().Field(Templates.SearchResults.Fields.ReadMoreLabel)</a>
+                        </div>
                     </div>
                 </div>
             }
