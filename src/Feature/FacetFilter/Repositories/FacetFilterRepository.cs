@@ -33,8 +33,16 @@ namespace ESearch.Feature.FacetFilter.Repositories
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
             var searchQuery = QueryBuilder.BuildSearchQuery(Context.HttpContext.Request.QueryString, searchSettings);
             var targetField = RenderingContext.Current.Rendering.Parameters["Target Field"];
-            var rowCount = RenderingContext.Current.Rendering.GetIntegerParameter("Row Count") ?? int.MaxValue;
+            if (string.IsNullOrEmpty(targetField))
+            {
+                return new FacetFilterModel
+                {
+                    ClearLink = "#",
+                    FilterRows = new List<FacetFilterRow>(),
+                };
+            }
 
+            var rowCount = RenderingContext.Current.Rendering.GetIntegerParameter("Row Count") ?? int.MaxValue;
             var facetResults = SearchService.GetFacets(searchQuery, targetField);
             var facet = facetResults.Facets.FirstOrDefault();
             var filterRows = facet?.FacetValues
