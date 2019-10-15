@@ -41,7 +41,6 @@ namespace ESearch.Feature.SearchBox.Repositories
                 var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
                 searchResults = SearchService.GetSuggestions(searchQuery);
             }
-
             return new SearchBoxModel()
             {
                 Keyword = keyword,
@@ -53,11 +52,15 @@ namespace ESearch.Feature.SearchBox.Repositories
         public SearchBoxResultModel GetResultModel(SearchBoxModel model)
         {
             var searchSettings = Context.Database.GetItem(ID.Parse(model.SearchSettingsItemId));
-            var queryString = HttpUtility.ParseQueryString(string.Empty);
-            queryString["keyword"] = model.Keyword;
+            var searchResults = new SuggestionResults();
+            if (!string.IsNullOrEmpty(model.Keyword))
+            {
+                var queryString = HttpUtility.ParseQueryString(string.Empty);
+                queryString["keyword"] = model.Keyword;
 
-            var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
-            var searchResults = SearchService.GetSuggestions(searchQuery);
+                var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
+                searchResults = SearchService.GetSuggestions(searchQuery);
+            }
             return new SearchBoxResultModel()
             {
                 Items = searchResults.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
