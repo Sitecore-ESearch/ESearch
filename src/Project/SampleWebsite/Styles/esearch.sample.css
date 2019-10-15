@@ -1,3 +1,37 @@
 .body-content {
   max-width: 1280px;
 }
+
+  .body-content > div {
+    margin: .5rem 0rem;
+  }
+
+.esearch-search-results .col-4 {
+  padding: 0rem .4rem;
+}
+
+.esearch-search-results .card {
+  margin: .4rem 0rem;
+}
+
+.esearch-search-results .card-img-top {
+  height: 200px;
+}
+
+.esearch-search-results h5.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.esearch-search-results p.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  height: 4.5rem;
+}
+
+.esearch-page-selector .pagination {
+  margin-bottom: 0;
+}
