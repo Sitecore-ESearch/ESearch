@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var $form = document.getElementById('search-box_form');
     var $keyword = document.getElementById('search-box_keyword');
     var $results = document.getElementById('search-box_results');
-    var $button = document.getElementById('search-box_button');
     var send_timeout_id = null
     var send_timeout_milliseconds = 200;
 
@@ -36,11 +35,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         // send_timeout_milliseconds後にsendを実行するように予約
         send_timeout_id = setTimeout(send, send_timeout_milliseconds);
-    });
-
-    //検索ボタンのイベントハンドラ
-    $button.addEventListener("click", function (e) {
-        e.preventDefault();
-        send();
     });
 });
