@@ -15,7 +15,7 @@ namespace ESearch.Feature.SearchBox.Repositories
 {
     public interface ISearchBoxRepository
     {
-        SearchBoxModel GetModel(string keyword);
+        SearchBoxModel GetModel();
         SearchBoxResultModel GetResultModel(SearchBoxModel model);
     }
 
@@ -30,20 +30,14 @@ namespace ESearch.Feature.SearchBox.Repositories
             SearchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
         }
 
-        public SearchBoxModel GetModel(string keyword)
+        public SearchBoxModel GetModel()
         {
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
-            var searchResults = new SuggestionResults();
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                var queryString = HttpUtility.ParseQueryString(string.Empty);
-                queryString["keyword"] = keyword;
-                var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
-                searchResults = SearchService.GetSuggestions(searchQuery);
-            }
+            var queryString = Context.HttpContext.Request.QueryString;
+            var searchResults = GetSuggestionResults(queryString["keyword"], searchSettings);
             return new SearchBoxModel()
             {
-                Keyword = keyword,
+                Keyword = queryString["keyword"],
                 SearchSettingsItemId = searchSettings.ID.ToString(),
                 Items = searchResults?.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
             };
@@ -52,19 +46,31 @@ namespace ESearch.Feature.SearchBox.Repositories
         public SearchBoxResultModel GetResultModel(SearchBoxModel model)
         {
             var searchSettings = Context.Database.GetItem(ID.Parse(model.SearchSettingsItemId));
-            var searchResults = new SuggestionResults();
-            if (!string.IsNullOrEmpty(model.Keyword))
-            {
-                var queryString = HttpUtility.ParseQueryString(string.Empty);
-                queryString["keyword"] = model.Keyword;
-
-                var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
-                searchResults = SearchService.GetSuggestions(searchQuery);
-            }
+            var searchResults = GetSuggestionResults(model.Keyword, searchSettings);
             return new SearchBoxResultModel()
             {
-                Items = searchResults.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
+                Items = searchResults?.Suggestions?.Select(suggestion => Context.Database.GetItem(suggestion.ItemId)).ToList() ?? new List<Item>()
             };
+        }
+
+        private SuggestionResults GetSuggestionResults(string keyword, Item searchSettings)
+        {
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return null;
+            }
+            else
+            {
+                /**
+                 * If it is delimited by single-byte spaces or double-byte spaces, an AND search is performed with the delimited words,
+                 * so it is converted to a character string concatenated with “+” so that it can be used in the search interface.
+                 */
+                var words = keyword.Split(new string[] { " ", "　" }, System.StringSplitOptions.RemoveEmptyEntries);
+                var queryString = HttpUtility.ParseQueryString(string.Empty);
+                queryString["keyword"] = string.Join("+", words);
+                var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
+                return SearchService.GetSuggestions(searchQuery);
+            }
         }
     }
 }
