@@ -14,42 +14,39 @@ using System.Collections.Generic;
 namespace ESearch.Feature.SearchBox.Repositories
 {
     /// <summary>
-    /// provides methods for retrieving data for use in the search box component.
+    /// Provides methods for retrieving data for use in the search box component.
     /// </summary>
     public interface ISearchBoxRepository
     {
         /// <summary>
-        /// get the data of the search box component
+        /// Get the data of the search box component.
         /// </summary>
-        /// <returns>instance of the SearchBoxModel</returns>
+        /// <returns>Data of the search box component.</returns>
         SearchBoxModel GetModel();
 
         /// <summary>
-        /// get the result data searched by the search box component.
+        /// Get the result data searched by the search box component.
         /// </summary>
-        /// <remarks>assume calls from ajax.</remarks>
-        /// <param name="data">Data posted when performing a search in the search box component</param>
-        /// <returns>instance of the SearchBoxResultModel</returns>
+        /// <remarks>Called from ajax.</remarks>
+        /// <param name="data">Data posted when performing a search in the search box component.</param>
+        /// <returns>The search result.</returns>
         SearchBoxResultModel GetResultModel(SearchBoxModel data);
     }
 
-    /// <summary>
-    /// class for accessing data handled by the search box component
-    /// </summary>
     public class SearchBoxRepository: ISearchBoxRepository
     {
         /// <summary>
-        ///  get instance of the QueryBuilder
+        ///  Gets instance of the QueryBuilder.
         /// </summary>
         protected IQueryBuilder QueryBuilder { get; }
 
         /// <summary>
-        /// get instance of the SearchService
+        /// Gets instance of the SearchService.
         /// </summary>
         protected ISearchService SearchService { get; }
 
         /// <summary>
-        /// constructor
+        /// Initializes a new instance of the <see cref="SearchBoxRepository" /> class.
         /// </summary>
         public SearchBoxRepository()
         {
@@ -58,10 +55,10 @@ namespace ESearch.Feature.SearchBox.Repositories
         }
 
         /// <summary>
-        /// implementation of ISearchBoxRepository.GetModel
+        /// ISearchBoxRepository.GetModel Implementation.
         /// </summary>
         /// <remarks>If “keyword” is included in the query of the request, the search is executed according to the setting of “Search Settings item” set in the rendering parameters.</remarks>
-        /// <returns>instance of the SearchBoxModel</returns>
+        /// <returns>Data of the search box component.</returns>
         public SearchBoxModel GetModel()
         {
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
@@ -76,11 +73,11 @@ namespace ESearch.Feature.SearchBox.Repositories
         }
 
         /// <summary>
-        /// implementation of ISearchBoxRepository.GetResultModel
+        /// ISearchBoxRepository.GetResultModel Implementation.
         /// </summary>
-        /// <remarks>assume calls from ajax. Use the posted data to get the data for the search result view of the search box component</remarks>
-        /// <param name="data">Data posted when performing a search in the search box component</param>
-        /// <returns>instance of the SearchBoxResultModel</returns>
+        /// <remarks>Called from ajax. Use the posted data to get the data for the search result view of the search box component.</remarks>
+        /// <param name="data">Data posted when performing a search in the search box component.</param>
+        /// <returns>The result of a search.</returns>
         public SearchBoxResultModel GetResultModel(SearchBoxModel data)
         {
             var searchSettings = Context.Database.GetItem(ID.Parse(data.SearchSettingsItemId));
@@ -92,11 +89,11 @@ namespace ESearch.Feature.SearchBox.Repositories
         }
 
         /// <summary>
-        /// get suggest search results
+        /// Gets suggest search results.
         /// </summary>
-        /// <param name="keyword">search keyword</param>
-        /// <param name="searchSettings">search setting item specified by rendering parameter</param>
-        /// <returns>instance of the Suggest search results</returns>
+        /// <param name="keyword">The search keyword.</param>
+        /// <param name="searchSettings">The search setting item specified by rendering parameter.</param>
+        /// <returns>The result of suggest search.</returns>
         private SuggestionResults GetSuggestionResults(string keyword, Item searchSettings)
         {
             if (string.IsNullOrEmpty(keyword))

@@ -5,18 +5,12 @@ using System.Web.Mvc;
 
 namespace ESearch.Feature.SearchBox.Controllers
 {
-    /// <summary>
-    /// controller of search box component
-    /// </summary>
     public class SearchBoxController: Controller
     {
-        /// <summary>
-        /// instance of the repository
-        /// </summary>
         private readonly ISearchBoxRepository _repository;
 
         /// <summary>
-        /// constructor
+        /// Initializes a new instance of the <see cref="SearchBoxController" /> class.
         /// </summary>
         public SearchBoxController()
         {
@@ -24,9 +18,9 @@ namespace ESearch.Feature.SearchBox.Controllers
         }
 
         /// <summary>
-        /// action method called Index
+        /// Returns the search box component view
         /// </summary>
-        /// <returns>View of the search box component</returns>
+        /// <returns>the search box component view</returns>
         public ActionResult Index()
         {
             var model = _repository.GetModel();
@@ -34,11 +28,11 @@ namespace ESearch.Feature.SearchBox.Controllers
         }
 
         /// <summary>
-        /// action method called SearchBoxResult
+        /// Returns the search result view for the search box component
         /// </summary>
-        /// <remarks>assume calls from ajax.</remarks>
+        /// <remarks>Called from ajax.</remarks>
         /// <param name="data">Data posted when performing a search in the search box component</param>
-        /// <returns>View of the search result  for the search box component</returns>
+        /// <returns>The search result view for the search box component</returns>
         [HttpPost]
         public ActionResult SearchBoxResult(SearchBoxModel data)
         {
