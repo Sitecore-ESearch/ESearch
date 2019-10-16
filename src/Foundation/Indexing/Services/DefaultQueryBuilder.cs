@@ -70,7 +70,7 @@ namespace ESearch.Foundation.Indexing.Services
 
             foreach (var key in queryString.AllKeys)
             {
-                if (key == "keyword" || key == "sort" || key == "page" || key.StartsWith("sc_"))
+                if (key == null || key == "keyword" || key == "sort" || key == "page" || key.StartsWith("sc_"))
                 {
                     continue;
                 }
