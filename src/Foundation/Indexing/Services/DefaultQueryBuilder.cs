@@ -207,7 +207,7 @@ namespace ESearch.Foundation.Indexing.Services
 
         private ICollection<EqualsCondition> CreateEqualsConditions(string key, string values, Item searchSettings)
         {
-            return values.Split('+').Select(value => new EqualsCondition
+            return values.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries).Select(value => new EqualsCondition
             {
                 TargetField = key,
                 Value = value
