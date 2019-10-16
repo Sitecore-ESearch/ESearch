@@ -79,7 +79,11 @@ namespace ESearch.Foundation.Indexing.Services
                 var fieldNameInIndex = index.FieldNameTranslator.GetIndexFieldName(fieldName);
                 if(document.Fields.TryGetValue(fieldNameInIndex, out var fieldValue))
                 {
-                    return query.KeywordCondition?.Keywords?.Aggregate(fieldValue.ToString(), (acc, keyword) => Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase));
+                    return query.KeywordCondition?.Keywords?.Aggregate(fieldValue.ToString(), (acc, keyword) =>
+                    {
+                        keyword = Regex.Escape(keyword);
+                        return Regex.Replace(acc, $"({keyword})", $"<em>$1</em>", RegexOptions.IgnoreCase);
+                    });
                 }
                 else
                 {
