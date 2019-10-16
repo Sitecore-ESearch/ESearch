@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var request = new XMLHttpRequest();
         request.open("POST", url, true);
         request.onload = function (event) {
-            if (request.readyState === 4 && request.status === 200) {
-                $results.innerHTML = request.responseText;
-            } else {
-                $results.innerHTML = request.responseText;
-            }
+            $results.innerHTML = request.responseText;
         };
         request.onerror = function (event) {
             $results.innerHTML = request.responseText;
@@ -27,13 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
         request.send(JSON.stringify(data));
     };
 
-    // 検索ボックス入力時のイベントハンドラ
     $keyword.addEventListener('keyup', function () {
-        // keyupされた時点で既にsendの実行が予約されていたら一旦削除
         if (send_timeout_id) {
             clearTimeout(send_timeout_id);
         }
-        // send_timeout_milliseconds後にsendを実行するように予約
         send_timeout_id = setTimeout(send, send_timeout_milliseconds);
     });
 });
