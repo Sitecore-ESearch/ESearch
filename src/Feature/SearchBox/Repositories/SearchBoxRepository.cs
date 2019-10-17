@@ -13,52 +13,23 @@ using System.Collections.Generic;
 
 namespace ESearch.Feature.SearchBox.Repositories
 {
-    /// <summary>
-    /// Provides methods for retrieving data for use in the search box component.
-    /// </summary>
     public interface ISearchBoxRepository
     {
-        /// <summary>
-        /// Get the data of the search box component.
-        /// </summary>
-        /// <returns>Data of the search box component.</returns>
         SearchBoxModel GetModel();
-
-        /// <summary>
-        /// Get the result data searched by the search box component.
-        /// </summary>
-        /// <remarks>Called from ajax.</remarks>
-        /// <param name="data">Data posted when performing a search in the search box component.</param>
-        /// <returns>The search result.</returns>
         SearchBoxResultModel GetResultModel(SearchBoxModel data);
     }
 
     public class SearchBoxRepository: ISearchBoxRepository
     {
-        /// <summary>
-        ///  Gets instance of the QueryBuilder.
-        /// </summary>
         protected IQueryBuilder QueryBuilder { get; }
-
-        /// <summary>
-        /// Gets instance of the SearchService.
-        /// </summary>
         protected ISearchService SearchService { get; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchBoxRepository" /> class.
-        /// </summary>
         public SearchBoxRepository()
         {
             QueryBuilder = ServiceLocator.ServiceProvider.GetService(typeof(IQueryBuilder)) as IQueryBuilder;
             SearchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
         }
 
-        /// <summary>
-        /// ISearchBoxRepository.GetModel Implementation.
-        /// </summary>
-        /// <remarks>If “keyword” is included in the query of the request, the search is executed according to the setting of “Search Settings item” set in the rendering parameters.</remarks>
-        /// <returns>Data of the search box component.</returns>
         public SearchBoxModel GetModel()
         {
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
@@ -72,12 +43,6 @@ namespace ESearch.Feature.SearchBox.Repositories
             };
         }
 
-        /// <summary>
-        /// ISearchBoxRepository.GetResultModel Implementation.
-        /// </summary>
-        /// <remarks>Called from ajax. Use the posted data to get the data for the search result view of the search box component.</remarks>
-        /// <param name="data">Data posted when performing a search in the search box component.</param>
-        /// <returns>The result of a search.</returns>
         public SearchBoxResultModel GetResultModel(SearchBoxModel data)
         {
             var searchSettings = Context.Database.GetItem(ID.Parse(data.SearchSettingsItemId));
@@ -88,12 +53,6 @@ namespace ESearch.Feature.SearchBox.Repositories
             };
         }
 
-        /// <summary>
-        /// Gets suggest search results.
-        /// </summary>
-        /// <param name="keyword">The search keyword.</param>
-        /// <param name="searchSettings">The search setting item specified by rendering parameter.</param>
-        /// <returns>The result of suggest search.</returns>
         private SuggestionResults GetSuggestionResults(string keyword, Item searchSettings)
         {
             if (string.IsNullOrEmpty(keyword))
