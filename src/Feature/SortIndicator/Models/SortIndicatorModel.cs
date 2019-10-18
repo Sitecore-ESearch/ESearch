@@ -58,6 +58,7 @@ namespace ESearch.Feature.SortIndicator.Models
                 {
                     query["sort"] = $"{fieldName}:{direction}";
                 }
+                query.Remove("page");
             }
 
             return $"{absolutePath}?{query}";
