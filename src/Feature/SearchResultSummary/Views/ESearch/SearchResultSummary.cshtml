@@ -1,4 +1,3 @@
-@using ESearch.Foundation.Indexing.Models
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @using SummaryTemplate = ESearch.Feature.SearchResultSummary
 @using Sitecore.Globalization
@@ -14,7 +13,7 @@
                 <p>
                     @Model.TotalCount
                 </p>
-                @if (Model.IsDisplayConditions)
+                @if (Model.IsDisplaySearchConditions)
                 {
                     <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
                     <ul>

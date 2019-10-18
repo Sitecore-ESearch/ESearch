@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Linq;
 using System.Collections.Generic;
 using Sitecore;
@@ -6,6 +7,7 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using SearchSettingsTemplate = ESearch.Foundation.Indexing;
 using ESearch.Foundation.Indexing.Models;
+using System.Web;
 
 namespace ESearch.Feature.SearchResultSummary.Models
 {
@@ -13,8 +15,8 @@ namespace ESearch.Feature.SearchResultSummary.Models
     {
         #region Property
         public int TotalCount { get; set; }
-        public string Keywords { get; set; }
         public SearchQuery SearchQuery { get; set; }
+        public string Keywords { get; set; }
         public bool IsDisplaySearchConditions { get; set; }
         #endregion
 
@@ -22,16 +24,16 @@ namespace ESearch.Feature.SearchResultSummary.Models
         public SearchResultSummaryModel(SearchQuery searchQuery, Item searchSettings, int totalCount)
         {
             TotalCount = totalCount;
-            Keywords = string.Join(", ", SearchQuery.KeywordCondition.Keywords);
             SearchQuery = searchQuery;
+            Keywords = string.Join(", ", SearchQuery.KeywordCondition.Keywords);
             IsDisplaySearchConditions = !string.IsNullOrEmpty(Keywords)
                                   || SearchQuery.EqualsConditions.Count != 0
                                   || SearchQuery.ContainsConditions.Count != 0
                                   || SearchQuery.BetweenConditions.Count != 0;
 
             if (!IsDisplaySearchConditions) return;
-            var dateFormat = searchSettings[SearchSettingsTemplate.Templates.SearchSettings.Fields.DateFormat];
 
+            var dateFormat = searchSettings[SearchSettingsTemplate.Templates.SearchSettings.Fields.DateFormat];
             foreach (var equalCondition in SearchQuery.EqualsConditions ?? Enumerable.Empty<EqualsCondition>())
             {
                 equalCondition.Value = GetValue(equalCondition.Value, dateFormat);
@@ -46,7 +48,6 @@ namespace ESearch.Feature.SearchResultSummary.Models
 
             foreach (var containCondition in SearchQuery.ContainsConditions ?? Enumerable.Empty<ContainsCondition>())
             {
-                //ICollection<string> collection = containCondition.Values.Select(value => GetValue(value, dateFormat)).ToList();
                 containCondition.Values = containCondition.Values.Select(value => GetValue(value, dateFormat)).ToList();
             }
 
@@ -54,7 +55,7 @@ namespace ESearch.Feature.SearchResultSummary.Models
         #endregion
 
         #region Method
-        protected virtual string GetValue(string value, string dateFormat)
+        protected string GetValue(string value, string dateFormat)
         {
             if (ID.TryParse(value, out var id))
             {
