@@ -1,4 +1,5 @@
 @using ESearch.Feature.SortIndicator
+@using ESearch.Foundation.SitecoreExtensions.Extensions
 @using SearchQuery = ESearch.Foundation.Indexing.Models
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @model ESearch.Feature.SortIndicator.Models.SortIndicatorModel
@@ -9,9 +10,9 @@
             <div class="dropdown">
                 @if (Model.TargetField == null)
                 {
-                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @Model.DefaultText
-                    </a>
+                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @Html.Sitecore().Field(Templates.SortIndicator.Fields.DefaultText)
+                </a>
                 }
                 else
                 {

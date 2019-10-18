@@ -2,7 +2,7 @@ using System.Web.Mvc;
 using Sitecore.DependencyInjection;
 using ESearch.Feature.SortIndicator.Repositories;
 
-namespace ESearch.Feature.SearchResults.Controllers
+namespace ESearch.Feature.SortIndicator.Controllers
 {
     public class SortIndicatorController : Controller
     {
