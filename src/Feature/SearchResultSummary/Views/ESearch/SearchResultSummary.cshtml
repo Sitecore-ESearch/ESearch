@@ -1,31 +1,40 @@
-@model ESearch.Feature.SearchResultSummary.Models.SearchResultSummaryModel
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using SummaryTemplate = ESearch.Feature.SearchResultSummary
+@using Sitecore.Globalization
 @using Sitecore.Mvc
+@model ESearch.Feature.SearchResultSummary.Models.SearchResultSummaryModel
 
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
     <div class="esearch esearch-search-result-summary">
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Conditions</h5>
-                <ul>
-                    <!-- Keyword Condition -->
-                    <li class="badge badge-primary">Keyword: @Model.Keywords</li>
-                    <!-- Equals Conditions -->
-                    @foreach (var equal in Model.SearchQuery.EqualsConditions)
-                    {
-                        <li class="badge badge-success">@equal.TargetField : @equal.Value</li>
-                    }
-                    <!-- Between Conditions -->
-                    @foreach (var between in Model.SearchQuery.BetweenConditions)
-                    {
-                        <li class="badge badge-info">@between.TargetField : @between.LowerValue - @between.UpperValue</li>
-                    }
-                    <!-- Contains Conditions -->
-                    @foreach (var contain in Model.SearchQuery.ContainsConditions)
-                    {
-                        <li class="badge badge-warning">@contain.TargetField : @string.Join(",", contain.Values)</li>
-                    }
-                </ul>
+                <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.TotalCountLabel)</h5>
+                <p>
+                    @Model.TotalCount
+                </p>
+                @if (Model.IsDisplaySearchConditions)
+                {
+                    <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
+                    <ul>
+                        @if (!string.IsNullOrEmpty(Model.Keywords))
+                        {
+                            <li class="badge badge-primary">@Translate.Text("Keyword") : @Model.Keywords</li>
+                        }
+                        @foreach (var equal in Model.SearchQuery.EqualsConditions)
+                        {
+                            <li class="badge badge-success">@equal.TargetField : @equal.Value</li>
+                        }
+                        @foreach (var between in Model.SearchQuery.BetweenConditions)
+                        {
+                            <li class="badge badge-info">@between.TargetField : @between.LowerValue - @between.UpperValue</li>
+                        }
+                        @foreach (var contain in Model.SearchQuery.ContainsConditions)
+                        {
+                            <li class="badge badge-warning">@contain.TargetField : @string.Join(",", contain.Values)</li>
+                        }
+                    </ul>
+                }
             </div>
         </div>
     </div>

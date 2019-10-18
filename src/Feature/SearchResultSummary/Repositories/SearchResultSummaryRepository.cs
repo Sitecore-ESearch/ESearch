@@ -14,19 +14,21 @@ namespace ESearch.Feature.SearchResultSummary.Repositories
     public class SearchResultSummaryRepository : ISearchResultSummaryRepository
     {
         protected IQueryBuilder QueryBuilder { get; }
+        protected ISearchService SearchService { get; }
 
         public SearchResultSummaryRepository()
         {
             QueryBuilder = ServiceLocator.ServiceProvider.GetService(typeof(IQueryBuilder)) as IQueryBuilder;
+            SearchService = ServiceLocator.ServiceProvider.GetService(typeof(ISearchService)) as ISearchService;
         }
 
         public SearchResultSummaryModel GetModel()
         {
             var searchSettings = RenderingContext.Current.Rendering.GetItemParameter("Search Settings");
-
             var searchQuery = QueryBuilder.BuildSearchQuery(Context.HttpContext.Request.QueryString, searchSettings);
+            var totalCount = SearchService.GetTotalCount(searchQuery);
 
-            return new SearchResultSummaryModel(searchQuery, searchSettings);
+            return new SearchResultSummaryModel(searchQuery, searchSettings, totalCount);
         }
     }
 }
