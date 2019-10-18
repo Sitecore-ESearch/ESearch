@@ -18,22 +18,18 @@
                 {
                     <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
                     <ul>
-                        <!-- Keyword Condition -->
                         @if (!string.IsNullOrEmpty(Model.Keywords))
                         {
                             <li class="badge badge-primary">@Translate.Text("Keyword") : @Model.Keywords</li>
                         }
-                        <!-- Equals Conditions -->
                         @foreach (var equal in Model.SearchQuery.EqualsConditions)
                         {
                             <li class="badge badge-success">@equal.TargetField : @equal.Value</li>
                         }
-                        <!-- Between Conditions -->
                         @foreach (var between in Model.SearchQuery.BetweenConditions)
                         {
                             <li class="badge badge-info">@between.TargetField : @between.LowerValue - @between.UpperValue</li>
                         }
-                        <!-- Contains Conditions -->
                         @foreach (var contain in Model.SearchQuery.ContainsConditions)
                         {
                             <li class="badge badge-warning">@contain.TargetField : @string.Join(",", contain.Values)</li>
