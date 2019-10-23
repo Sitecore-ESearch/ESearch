@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\ESearch.Foundation.Indexing.RegisterServices.config" />
+    <Content Include="App_Config\Include\Foundation\ESearch.Foundation.Indexing.Serialization.config" />
     <None Include="packages.config" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">

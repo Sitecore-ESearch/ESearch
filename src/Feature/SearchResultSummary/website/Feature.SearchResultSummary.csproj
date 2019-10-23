@@ -119,6 +119,7 @@
     <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResultSummary.RegisterServices.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResultSummary.Serialization.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\ESearch\SearchResultSummary.cshtml" />
     <None Include="Web.config" />

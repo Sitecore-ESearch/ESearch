@@ -119,6 +119,7 @@
     <Content Include="App_Config\Include\Feature\ESearch.Feature.SortIndicator.RegisterServices.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\Feature\ESearch.Feature.SortIndicator.Serialization.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\ESearch\SortIndicator.cshtml" />
     <None Include="Web.config" />

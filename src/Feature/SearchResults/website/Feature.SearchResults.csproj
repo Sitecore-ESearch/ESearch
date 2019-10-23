@@ -118,6 +118,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResults.RegisterServices.config" />
     <Content Include="Views\ESearch\SearchResults.cshtml" />
+    <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResults.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

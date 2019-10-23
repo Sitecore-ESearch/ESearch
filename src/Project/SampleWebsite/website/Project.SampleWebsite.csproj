@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="App_Config\Include\Project\ESearch.Project.SampleWebsite.config" />
+    <Content Include="App_Config\Include\Project\ESearch.Project.SampleWebsite.Serialization.config" />
     <None Include="packages.config" />
     <Content Include="Views\ESearchSample\Layout.cshtml" />
     <Content Include="Views\ESearchSample\Container.cshtml" />

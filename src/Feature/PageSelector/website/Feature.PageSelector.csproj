@@ -118,6 +118,7 @@
   <ItemGroup>
     <Content Include="Views\ESearch\PageSelector.cshtml" />
     <Content Include="App_Config\Include\Feature\ESearch.Feature.PageSelector.RegisterServices.config" />
+    <Content Include="App_Config\Include\Feature\ESearch.Feature.PageSelector.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
