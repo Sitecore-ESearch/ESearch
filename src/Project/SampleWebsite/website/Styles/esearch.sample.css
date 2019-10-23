@@ -35,3 +35,16 @@
 .esearch-page-selector .pagination {
   margin-bottom: 0;
 }
+
+.esearch-sort-indicator .dropdown {
+  display: inline-block;
+}
+
+.esearch-search-result-summary .card-title {
+  font-size: .9rem;
+  color: gray;
+}
+
+.esearch-search-result-summary .total-count {
+  margin-left: 2.5rem;
+}

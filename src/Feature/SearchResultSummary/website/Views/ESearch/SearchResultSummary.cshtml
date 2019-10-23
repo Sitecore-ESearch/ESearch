@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.TotalCountLabel)</h5>
-                <p>
+                <p class="total-count">
                     @Translate.Text("{0} results", Model.TotalCount)
                 </p>
                 @if (Model.IsDisplaySearchConditions)
