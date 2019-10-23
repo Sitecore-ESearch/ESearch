@@ -38,23 +38,23 @@
                 <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @if (Model.Direction == SearchQuery.SortDirection.Asc)
                     {
-                        @Translate.Text("Ascendant")
+                        @Translate.Text("Ascending")
                     }
                     else
                     {
-                        @Translate.Text("Descendant")
+                        @Translate.Text("Descending")
                     }
                 </a>
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
                     @if (Model.Direction == SearchQuery.SortDirection.Asc)
                     {
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascendant")</a>
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descendant")</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascending")</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descending")</a>
                     }
                     else
                     {
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascendant")</a>
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descendant")</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascending")</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descending")</a>
                     }
                 </div>
             </div>
