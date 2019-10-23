@@ -42,6 +42,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codegen", "codegen", "{AFB1
 		codegen\Unicorn.tt = codegen\Unicorn.tt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{9AA25C6B-8530-403D-B97D-9C61F5F03674}"
+	ProjectSection(SolutionItems) = preProject
+		img\ESearch Logo.png = img\ESearch Logo.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +109,7 @@ Global
 		{1DBAADDF-67B2-480D-B67A-B2FF3863B554} = {4060AA8F-DADA-4274-A928-F22EB49671FA}
 		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E} = {5F8B6D0B-69B8-42F8-9342-79E63E747B6D}
 		{AFB1FAF4-62C6-4EAD-A157-C88392ED2D1C} = {5DC84A83-2023-4A27-B383-A65A586FF840}
+		{9AA25C6B-8530-403D-B97D-9C61F5F03674} = {5DC84A83-2023-4A27-B383-A65A586FF840}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {996CC9D4-F072-43F4-B12D-E7344231AB17}
