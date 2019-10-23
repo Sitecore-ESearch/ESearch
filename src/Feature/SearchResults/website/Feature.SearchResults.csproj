@@ -117,6 +117,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResults.RegisterServices.config" />
+    <Content Include="Templates.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Templates.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\ESearch\SearchResults.cshtml" />
     <Content Include="App_Config\Include\Feature\ESearch.Feature.SearchResults.Serialization.config" />
     <None Include="Web.config" />
@@ -126,7 +130,11 @@
     <Compile Include="Models\SearchResultsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\SearchResultsRepository.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.cs">
+      <DependentUpon>Templates.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\web.config" />
@@ -138,7 +146,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Indexing\website\Foundation.Indexing.csproj">
       <Project>{d806604d-897f-4bd7-ba56-5f3343a7069c}</Project>

@@ -1,0 +1,157 @@
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Xml" #>
+
+<#@ import namespace="Rainbow.Model" #>
+<#@ import namespace="Rainbow.Storage.Yaml" #>
+<#@ import namespace="Sitecore" #>
+
+// ReSharper disable InconsistentNaming
+namespace <#= GetNamespace()#>
+{
+    public struct Templates
+    {
+<#
+foreach (var data in GetTemplateData())
+{
+    var template = data.Template;
+    var fields = data.Fields;
+#>
+        #region <#= template.Path#>
+        public struct <#= GetTemplateName(template)#>
+        {
+            public static readonly Sitecore.Data.ID ID = new Sitecore.Data.ID("<#= template.Id.ToString("B").ToUpper()#>");
+
+<#
+        if (fields.Any())
+        {
+#>
+            public struct Fields
+            {
+<#
+            foreach (var field in fields)
+            {
+#>
+                public static readonly Sitecore.Data.ID <#= GetFieldName(field)#> = new Sitecore.Data.ID("<#= field.Id.ToString("B").ToUpper()#>");
+<#
+            }
+#>
+            }
+<#
+        }
+#>
+        }
+        #endregion
+<#
+}
+#>
+    }
+}
+
+<#+
+
+public string GetNamespace()
+{
+    var ns = System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("NamespaceHint").ToString();
+    if (string.IsNullOrEmpty(AdditionalNamespace))
+    {
+        return ns;
+    }
+
+    return ns + "." + AdditionalNamespace;
+}
+
+public string GetTemplateName(IItemData template)
+{
+    return AsValidWord(template.Name);
+}
+
+public string GetFieldName(IItemData field)
+{
+    return AsValidWord(field.Name);
+}
+
+public string AsValidWord(string part)
+{
+    part = TitleCase(part);
+    part = part.Replace(" ", "");
+    part = Regex.Replace(part, "^_", "");
+    part = part.Replace("-", "");
+    while (Regex.IsMatch(part, "^\\d"))
+    {
+        part = Regex.Replace(part, "^1", "One");
+        part = Regex.Replace(part, "^2", "Two");
+        part = Regex.Replace(part, "^3", "Three");
+        part = Regex.Replace(part, "^4", "Four");
+        part = Regex.Replace(part, "^5", "Five");
+        part = Regex.Replace(part, "^6", "Six");
+        part = Regex.Replace(part, "^7", "Seven");
+        part = Regex.Replace(part, "^8", "Eight");
+        part = Regex.Replace(part, "^9", "Nine");
+    }
+    return part;
+}
+
+public static string TitleCase(string word)
+{
+    word = Regex.Replace(word, "([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))", "$1+");
+    word = System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(word);
+    word = word.Replace("+", "");
+    return word;
+}
+
+public IEnumerable<TemplateData> GetTemplateData() {
+    var serializer = new YamlSerializationFormatter(null, null);
+
+    var files = Directory.EnumerateFiles($"{SolutionDir}/src/{HelixLayer}/{ModuleName}/serialization", "*.yml", SearchOption.AllDirectories);
+
+    var items = new List<IItemData>();
+
+    foreach (var file in files)
+    {
+        using (var reader = File.OpenRead(file))
+        {
+            var item = serializer.ReadSerializedItem(reader, file);
+            items.Add(item);
+        }
+    }
+
+    var itemsLookup = items.ToLookup(x => x.ParentId, x => x);
+
+    var templates = items.Where(x => x.TemplateId == Sitecore.TemplateIDs.Template.Guid);
+
+    return templates.Select(template => new TemplateData
+    {
+        Template = template,
+        Fields = GetFields(template.Id, itemsLookup)
+    });
+}
+
+public IList<IItemData> GetSections(Guid templateId, ILookup<Guid, IItemData> lookup)
+{
+    return lookup[templateId].Where(x => x.TemplateId == Sitecore.TemplateIDs.TemplateSection.Guid).ToList();
+}
+
+public IList<IItemData> GetFields(Guid templateId, ILookup<Guid, IItemData> lookup)
+{
+    var sectionIds = GetSections(templateId, lookup).Select(x => x.Id);
+    return sectionIds.SelectMany(x => lookup[x].Where(item => item.TemplateId == Sitecore.TemplateIDs.TemplateField.Guid).ToList()).ToList();
+}
+
+public class TemplateData
+{
+    public IItemData Template { get; set; }
+    public IEnumerable<IItemData> Fields { get; set; }
+}
+
+private string AdditionalNamespace { get; set; }
+private string SolutionDir { get; set; }
+private string HelixLayer { get; set; }
+private string ModuleName { get; set; }
+#>
