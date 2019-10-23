@@ -10,13 +10,13 @@
             <div class="dropdown">
                 @if (Model.TargetField == null)
                 {
-                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @Html.Sitecore().Field(Templates.SortIndicator.Fields.DefaultText)
                 </a>
                 }
                 else
                 {
-                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @Model.TargetField
                     </a>
                 }
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @Model.Direction
                 </a>
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
