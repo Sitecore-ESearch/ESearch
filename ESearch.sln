@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.SortIndicator", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.SampleWebsite", "src\Project\SampleWebsite\website\Project.SampleWebsite.csproj", "{1DBAADDF-67B2-480D-B67A-B2FF3863B554}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Serialization", "src\Foundation\Serialization\website\Foundation.Serialization.csproj", "{969478A9-C9C1-4D90-AFB1-A03A74A4A53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{1DBAADDF-67B2-480D-B67A-B2FF3863B554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DBAADDF-67B2-480D-B67A-B2FF3863B554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DBAADDF-67B2-480D-B67A-B2FF3863B554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{7774EB38-96E3-4C43-A855-B8A650AB6E6F} = {B63B96B8-CC4F-4ACA-B912-B9D2E060581E}
 		{DD48DDB0-E77D-4066-A97C-DC1355887232} = {B63B96B8-CC4F-4ACA-B912-B9D2E060581E}
 		{1DBAADDF-67B2-480D-B67A-B2FF3863B554} = {4060AA8F-DADA-4274-A928-F22EB49671FA}
+		{969478A9-C9C1-4D90-AFB1-A03A74A4A53E} = {5F8B6D0B-69B8-42F8-9342-79E63E747B6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {996CC9D4-F072-43F4-B12D-E7344231AB17}
