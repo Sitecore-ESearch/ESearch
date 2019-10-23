@@ -53,10 +53,24 @@ namespace ESearch.Feature.PageSelector.Models
 
         private static List<int> CreatePageIndexes(int currentPageIndex, int selectorSize, int lastPageIndex)
         {
-            return Enumerable.Range(currentPageIndex - selectorSize, selectorSize * 2 + 1)
-                .Where(i => 1 <= i)
-                .Where(i => i <= lastPageIndex)
-                .ToList();
+            return Enumerable.Range(1, lastPageIndex).Where(IsVisibleIndex).ToList();
+
+            bool IsVisibleIndex(int index)
+            {
+                var pagerLength = selectorSize * 2 + 1;
+                var half = Math.Floor((double)pagerLength / 2);
+                if (currentPageIndex <= half)
+                {
+                    return 1 <= index && index <= pagerLength;
+                }
+
+                if (lastPageIndex - half < currentPageIndex)
+                {
+                    return lastPageIndex - pagerLength < index && index <= lastPageIndex;
+                }
+
+                return currentPageIndex - half <= index && index <= currentPageIndex + half;
+            }
         }
     }
 }
