@@ -1,0 +1,18 @@
+﻿---
+ID: "a11debf5-0946-4fca-a470-84d3c0455565"
+Parent: "ffb1a78a-9533-47ab-95f1-05138e764506"
+Template: "ffb1a78a-9533-47ab-95f1-05138e764506"
+Path: /sitecore/templates/Project/ESearch/Sample Website/Category/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T104251Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -1,0 +1,25 @@
+﻿---
+ID: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Parent: "9a852adb-971f-4d97-aee7-f9cb7eac79fb"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Project/ESearch/Sample Website/Article Page
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/document_text.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{7A79306A-F5B3-4CC6-A3DB-F82099CECDC1}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{59045117-24EB-4BAB-9758-D3953AE24BF8}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190913T080448Z

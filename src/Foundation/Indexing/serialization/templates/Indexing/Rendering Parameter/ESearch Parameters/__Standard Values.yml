@@ -1,0 +1,21 @@
+﻿---
+ID: "8ec18369-c7ab-45cc-8507-a91ddcb692e7"
+Parent: "1922ad91-07ba-4892-a649-98e0065decfb"
+Template: "1922ad91-07ba-4892-a649-98e0065decfb"
+Path: /sitecore/templates/Foundation/ESearch/Indexing/Rendering Parameter/ESearch Parameters/__Standard Values
+DB: master
+SharedFields:
+- ID: "0e17d308-b9c7-4687-bc13-503c612c1630"
+  Hint: Search Settings
+  Value: "{8D72D8C1-6BC7-4B00-BC9D-B371A7BE23B7}"
+- ID: "3094d236-5985-4c4f-ae6a-e30740885532"
+  Hint: Caching
+  Value: 0|0|0|0|0|0|0|0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T054241Z

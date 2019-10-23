@@ -1,0 +1,22 @@
+﻿---
+ID: "0c3d2622-faa6-4fa9-9eee-2e58bbcec6e3"
+Parent: "0f4a48e3-0523-4849-bf0a-992d7f9b37f2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/ESearch/Page Selector/Rendering Parameter/Page Selector Parameters
+DB: master
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{1922AD91-07BA-4892-A649-98E0065DECFB}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{57794B4D-95F9-41E5-8164-A6FC48783776}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T053628Z

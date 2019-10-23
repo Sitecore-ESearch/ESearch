@@ -1,0 +1,24 @@
+﻿---
+ID: "366da96c-6bdb-4421-a713-073d63ce5949"
+Parent: "a1dd0c72-0926-46ad-9bb6-9f0a37175ec2"
+Template: "a1dd0c72-0926-46ad-9bb6-9f0a37175ec2"
+Path: /sitecore/templates/Feature/ESearch/Search Box/Search Box/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0e5c8a9c-77c3-401d-815f-1594c8791b01"
+      Hint: Placeholder Label
+      Value: Search keyword here...
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T074444Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "c9799703-ccaa-46be-b91d-e7265526acf1"
+      Hint: Execute Button Label
+      Value: SEARCH

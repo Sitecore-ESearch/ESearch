@@ -1,0 +1,21 @@
+﻿---
+ID: "7120c1ea-a924-4cde-a674-e0b790d20813"
+Parent: "5119f67d-ea7d-489e-8a69-cb160d54189c"
+Template: "5119f67d-ea7d-489e-8a69-cb160d54189c"
+Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Indicator/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T074440Z
+    - ID: "33be8d8a-772f-4666-8ec4-66a63e2023c9"
+      Hint: Default Text
+      Value: Default
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

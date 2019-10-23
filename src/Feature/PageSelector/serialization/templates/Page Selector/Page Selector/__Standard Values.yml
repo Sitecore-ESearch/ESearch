@@ -1,0 +1,30 @@
+﻿---
+ID: "9b3020db-adc3-4f09-8da2-d50c414a79c0"
+Parent: "1cbe2c9c-adf3-46a4-8866-4018b026c88b"
+Template: "1cbe2c9c-adf3-46a4-8866-4018b026c88b"
+Path: /sitecore/templates/Feature/ESearch/Page Selector/Page Selector/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0e7d76a2-2c71-4470-8c24-1aa992f71726"
+      Hint: Next Link Label
+      Value: Next
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190924T024640Z
+    - ID: "313e7431-d0ab-4227-ba4d-98a8e1f5d763"
+      Hint: First Link Label
+      Value: First
+    - ID: "5345578d-59c9-40c8-9977-041ed15d4e32"
+      Hint: Last Link Label
+      Value: Last
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "844dc433-8bd7-4c6c-b88d-5a921e53ee47"
+      Hint: Previous Link Label
+      Value: Prev
