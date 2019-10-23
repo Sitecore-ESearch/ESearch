@@ -6,6 +6,16 @@
     margin: .5rem 0rem;
   }
 
+.navbar-header .header-logo {
+  display: inline-block;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.navbar-header .component {
+  display: inline-block;
+}
+
 .esearch-search-results .col-4 {
   padding: 0rem .4rem;
 }
@@ -34,4 +44,17 @@
 
 .esearch-page-selector .pagination {
   margin-bottom: 0;
+}
+
+.esearch-sort-indicator .dropdown {
+  display: inline-block;
+}
+
+.esearch-search-result-summary .card-title {
+  font-size: .9rem;
+  color: gray;
+}
+
+.esearch-search-result-summary .total-count {
+  margin-left: 2.5rem;
 }
