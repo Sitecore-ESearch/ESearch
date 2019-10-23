@@ -1,0 +1,21 @@
+﻿---
+ID: "f1f182fb-66cc-4b52-8a6e-8678a2f283ff"
+Parent: "6b260939-a836-4497-b509-7f530ff5593e"
+Template: "6b260939-a836-4497-b509-7f530ff5593e"
+Path: /sitecore/templates/Feature/ESearch/Search Results/Search Results/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T074400Z
+    - ID: "5794bcaa-9780-4252-83d2-dcacd7632b84"
+      Hint: Read More Label
+      Value: Read more
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

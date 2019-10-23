@@ -1,0 +1,31 @@
+﻿---
+ID: "658821d4-2fff-426b-9e12-ea7173198745"
+Parent: "d3fa770c-1132-43a1-8ddc-95659ec52108"
+Template: "d3fa770c-1132-43a1-8ddc-95659ec52108"
+Path: /sitecore/templates/Foundation/ESearch/Indexing/Search Settings/__Standard Values
+DB: master
+SharedFields:
+- ID: "1bc703dd-565a-4b9d-a5b9-6e837b899eac"
+  Hint: Scope
+  Value: "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"
+- ID: "2451c71d-4bca-480e-875d-456c31df189c"
+  Hint: Page Size
+  Value: 20
+- ID: "3db968f2-72c0-4f98-b33e-b83c2f951f1e"
+  Hint: Keyword Search Targets
+  Value: Title|Content
+- ID: "490e60c3-da16-478e-a5d6-9fde33a38059"
+  Hint: Date Format
+  Value: yyyyMMdd
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190909T054907Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

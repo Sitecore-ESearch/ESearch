@@ -1,0 +1,14 @@
+﻿---
+ID: "90b83def-ea8f-4448-b3a1-de1bf5faafa9"
+Parent: "d3fa770c-1132-43a1-8ddc-95659ec52108"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Foundation/ESearch/Indexing/Search Settings/Data
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190909T054844Z

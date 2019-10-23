@@ -1,0 +1,24 @@
+﻿---
+ID: "0d5472d7-674b-4a52-942a-1d3af7999209"
+Parent: "853ca968-ef71-4e8c-9725-564f2e1ba0fe"
+Template: "853ca968-ef71-4e8c-9725-564f2e1ba0fe"
+Path: /sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191018T044847Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8d3e9d4f-9f6f-4a27-9cf1-17600bc41324"
+      Hint: Search Conditions Label
+      Value: Current refinements
+    - ID: "c67c252f-802e-4b77-bd10-3d44c2093232"
+      Hint: Total Count Label
+      Value: Stats

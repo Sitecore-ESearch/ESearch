@@ -1,0 +1,22 @@
+﻿---
+ID: "02adeb3e-8c4d-4048-b1c5-43f1a9a2e4c5"
+Parent: "2ca7f326-2d9c-4a31-a5b8-6353ddb39280"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/ESearch/Facet Filter/Rendering Parameter/Facet Filter Parameters
+DB: master
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{1922AD91-07BA-4892-A649-98E0065DECFB}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{AD1F9B2F-95C8-4079-80EB-2F80B101084A}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T075109Z

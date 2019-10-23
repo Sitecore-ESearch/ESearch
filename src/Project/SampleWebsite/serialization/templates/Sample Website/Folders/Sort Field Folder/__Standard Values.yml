@@ -1,0 +1,25 @@
+﻿---
+ID: "8fab9a53-6616-4382-b5ad-89d15785d62f"
+Parent: "4e7af1b7-c44d-4d57-b4dd-e33591a6bb8a"
+Template: "4e7af1b7-c44d-4d57-b4dd-e33591a6bb8a"
+Path: /sitecore/templates/Project/ESearch/Sample Website/Folders/Sort Field Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {4E7AF1B7-C44D-4D57-B4DD-E33591A6BB8A}
+    {632DA6D2-5B7E-4BAF-981C-54EB3D4FD946}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191017T102225Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -1,0 +1,14 @@
+﻿---
+ID: "b89dcf80-ae5a-4d94-a37d-cb05b9598fda"
+Parent: "1cbe2c9c-adf3-46a4-8866-4018b026c88b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/ESearch/Page Selector/Page Selector/Data
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190916T043201Z

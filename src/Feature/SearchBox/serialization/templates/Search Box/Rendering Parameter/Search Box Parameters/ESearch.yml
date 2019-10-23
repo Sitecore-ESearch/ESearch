@@ -1,0 +1,18 @@
+﻿---
+ID: "16469b1b-fee6-45b7-b70c-174547ce7a0f"
+Parent: "9849869e-09b8-4908-b989-5e37b9d4218c"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/ESearch/Search Box/Rendering Parameter/Search Box Parameters/ESearch
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 150
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191004T104129Z
