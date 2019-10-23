@@ -1,5 +1,6 @@
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @using ESearch.Feature.SearchBox
+@using SearchResultData = ESearch.Feature.SearchResults.Templates.SearchResultData
 @model ESearch.Feature.SearchBox.Models.SearchBoxResultModel
 @if (Model.Items.Any())
 {
@@ -7,7 +8,7 @@
         <div class="dropdown-menu show">
             @foreach (var item in Model.Items)
             {
-                <a class="dropdown-item" href="@item.Url()">@Html.Sitecore().Field(Templates.SearchResultData.Fields.Title, item)</a>
+                <a class="dropdown-item" href="@item.Url()">@Html.Sitecore().Field(SearchResultData.Fields.Title, item)</a>
             }
         </div>
     </div>
