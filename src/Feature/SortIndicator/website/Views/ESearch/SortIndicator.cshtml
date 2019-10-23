@@ -1,5 +1,5 @@
 @using ESearch.Feature.SortIndicator
-@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Globalization
 @using SearchQuery = ESearch.Foundation.Indexing.Models
 @using ESearch.Foundation.SitecoreExtensions.Extensions
 @model ESearch.Feature.SortIndicator.Models.SortIndicatorModel
@@ -7,12 +7,12 @@
     <div class="esearch esearch-sort-indicator">
         @if (Model.SortItems.Any())
         {
-            <div class="dropdown">
+            <div class="dropdown dropdown-fields">
                 @if (Model.TargetField == null)
                 {
-                <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @Html.Sitecore().Field(Templates.SortIndicator.Fields.DefaultText)
-                </a>
+                    <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @Html.Sitecore().Field(Templates.SortIndicator.Fields.DefaultText)
+                    </a>
                 }
                 else
                 {
@@ -34,20 +34,27 @@
                     }
                 </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown dropdown-direction">
                 <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @Model.Direction
+                    @if (Model.Direction == SearchQuery.SortDirection.Asc)
+                    {
+                        @Translate.Text("Ascendant")
+                    }
+                    else
+                    {
+                        @Translate.Text("Descendant")
+                    }
                 </a>
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
                     @if (Model.Direction == SearchQuery.SortDirection.Asc)
                     {
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@SearchQuery.SortDirection.Asc</a>
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@SearchQuery.SortDirection.Desc</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascendant")</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descendant")</a>
                     }
                     else
                     {
-                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@SearchQuery.SortDirection.Asc</a>
-                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@SearchQuery.SortDirection.Desc</a>
+                        <a class="dropdown-item" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Asc)">@Translate.Text("Ascendant")</a>
+                        <a class="dropdown-item active" href="@Model.GetSortLink(Model.TargetField, SearchQuery.SortDirection.Desc)">@Translate.Text("Descendant")</a>
                     }
                 </div>
             </div>
