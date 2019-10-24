@@ -1,9 +1,9 @@
-using Sitecore;
-using Sitecore.Mvc.Presentation;
-using Sitecore.DependencyInjection;
 using ESearch.Feature.SortIndicator.Models;
 using ESearch.Foundation.Indexing.Services;
 using ESearch.Foundation.SitecoreExtensions.Extensions;
+using Sitecore;
+using Sitecore.DependencyInjection;
+using Sitecore.Mvc.Presentation;
 
 namespace ESearch.Feature.SortIndicator.Repositories
 {

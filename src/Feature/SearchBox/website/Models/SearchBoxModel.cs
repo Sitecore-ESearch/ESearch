@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Sitecore.Data.Items;
+using System.Collections.Generic;
 
 namespace ESearch.Feature.SearchBox.Models
 {

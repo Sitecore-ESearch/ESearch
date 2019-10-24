@@ -1,13 +1,10 @@
-using System;
-using System.CodeDom;
-using System.Linq;
-using System.Collections.Generic;
+using ESearch.Foundation.Indexing.Models;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using System;
+using System.Linq;
 using SearchSettingsTemplate = ESearch.Foundation.Indexing;
-using ESearch.Foundation.Indexing.Models;
-using System.Web;
 
 namespace ESearch.Feature.SearchResultSummary.Models
 {

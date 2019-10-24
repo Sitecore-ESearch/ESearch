@@ -1,15 +1,15 @@
+using ESearch.Feature.SearchBox.Models;
+using ESearch.Foundation.Indexing.Models;
+using ESearch.Foundation.Indexing.Services;
+using ESearch.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Mvc.Presentation;
-using System.Web;
-using ESearch.Feature.SearchBox.Models;
-using ESearch.Foundation.Indexing.Services;
-using ESearch.Foundation.SitecoreExtensions.Extensions;
-using System.Linq;
-using ESearch.Foundation.Indexing.Models;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace ESearch.Feature.SearchBox.Repositories
 {

@@ -4,7 +4,7 @@ using ESearch.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.DependencyInjection;
 using Sitecore.Mvc.Presentation;
-using IndexingTemplates = ESearch.Foundation.Indexing.Templates;
+using SearchSettings = ESearch.Foundation.Indexing.Templates.SearchSettings;
 
 namespace ESearch.Feature.PageSelector.Repositories
 {
@@ -31,7 +31,7 @@ namespace ESearch.Feature.PageSelector.Repositories
             var searchQuery = QueryBuilder.BuildSearchQuery(queryString, searchSettings);
 
             var url = Context.HttpContext.Request.Url.OriginalString;
-            var pageSize = searchSettings.GetInteger(IndexingTemplates.SearchSettings.Fields.PageSize) ?? 20;
+            var pageSize = searchSettings.GetInteger(SearchSettings.Fields.PageSize) ?? 20;
             var totalCount = SearchService.GetTotalCount(searchQuery);
             var selectorSize = RenderingContext.Current.Rendering.GetIntegerParameter("Selector Size") ?? 2;
             return new PageSelectorModel(url, pageSize, totalCount, selectorSize);

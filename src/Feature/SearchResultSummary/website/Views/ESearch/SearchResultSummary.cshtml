@@ -1,7 +1,6 @@
-@using ESearch.Foundation.SitecoreExtensions.Extensions
-@using SummaryTemplate = ESearch.Feature.SearchResultSummary
 @using Sitecore.Globalization
-@using Sitecore.Mvc
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Feature.SearchResultSummary
 @model ESearch.Feature.SearchResultSummary.Models.SearchResultSummaryModel
 
 <div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
@@ -9,13 +8,13 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.TotalCountLabel)</h5>
+                <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultSummary.Fields.TotalCountLabel)</h5>
                 <p class="total-count">
                     @Translate.Text("{0} results", Model.TotalCount)
                 </p>
                 @if (Model.IsDisplaySearchConditions)
                 {
-                    <h5 class="card-title">@Html.Sitecore().Field(SummaryTemplate.Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
+                    <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
                     <ul>
                         @if (!string.IsNullOrEmpty(Model.Keywords))
                         {
