@@ -8,7 +8,7 @@
         @if (Model.SortItems.Any())
         {
             <div class="dropdown dropdown-fields">
-                @if (Model.SortDisplayName == null)
+                @if (string.IsNullOrEmpty(Model.SortFieldName))
                 {
                     <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @Html.Sitecore().Field(Templates.SortIndicator.Fields.DefaultText)
@@ -17,7 +17,7 @@
                 else
                 {
                     <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @Model.SortDisplayName            
+                        @Model.SortDisplayName
                     </a>
                 }
                 <div class="dropdown-menu btn-sm" aria-labelledby="dropdownMenuButton">
