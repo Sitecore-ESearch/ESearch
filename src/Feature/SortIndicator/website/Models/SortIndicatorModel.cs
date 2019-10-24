@@ -1,10 +1,11 @@
-using ESearch.Foundation.Indexing.Models;
-using ESearch.Foundation.SitecoreExtensions.Extensions;
+using System.Collections.Generic;
+using System.Web;
+using System.Linq;
 using Sitecore;
 using Sitecore.Data.Items;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using ESearch.Foundation.Indexing.Models;
+using ESearch.Foundation.SitecoreExtensions.Extensions;
+using Sitecore.Install.Framework;
 
 namespace ESearch.Feature.SortIndicator.Models
 {
@@ -13,7 +14,8 @@ namespace ESearch.Feature.SortIndicator.Models
         #region Property
         public IEnumerable<Item> SortItems { get; set; }
         public string DefaultText { get; set; }
-        public string TargetField { get; set; }
+        public string SortFieldName { get; set; }
+        public string SortDisplayName { get; set; }
         public SortDirection Direction { get; set; }
         #endregion
 
@@ -25,16 +27,20 @@ namespace ESearch.Feature.SortIndicator.Models
 
             if (SortItems.Any())
             {
-                TargetField = GetTargetField(searchQuery);
+                var sortItem = GetSortItem(searchQuery);
+                SortFieldName = sortItem?[Templates.SortField.Fields.FieldName];
+                SortDisplayName = sortItem?[Templates.SortField.Fields.DisplayName];
                 Direction = GetDirection(searchQuery);
             }
         }
         #endregion
 
         #region Method
-        public string GetTargetField(SearchQuery searchQuery)
+        public Item GetSortItem(SearchQuery searchQuery)
         {
-            return searchQuery.SortConditions.FirstOrDefault()?.TargetField;
+            var targetField = searchQuery.SortConditions.FirstOrDefault()?.TargetField;
+            var query = $"/sitecore/content//*[@@templateid = '{Templates.SortField.ID}' and @Field Name = '{targetField}']";
+            return Sitecore.Context.Database.SelectSingleItem(query);
         }
 
         public SortDirection GetDirection(SearchQuery searchQuery)
