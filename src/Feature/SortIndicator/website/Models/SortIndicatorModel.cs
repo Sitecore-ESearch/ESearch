@@ -1,11 +1,10 @@
-using System.Collections.Generic;
-using System.Web;
-using System.Linq;
-using Sitecore;
-using Sitecore.Data.Items;
 using ESearch.Foundation.Indexing.Models;
 using ESearch.Foundation.SitecoreExtensions.Extensions;
-using Sitecore.Install.Framework;
+using Sitecore;
+using Sitecore.Data.Items;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace ESearch.Feature.SortIndicator.Models
 {
