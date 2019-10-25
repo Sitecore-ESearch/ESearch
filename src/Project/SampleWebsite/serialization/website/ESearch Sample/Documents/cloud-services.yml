@@ -1,0 +1,165 @@
+﻿---
+ID: "2f22ba6e-6d0b-441a-b389-83b534fa83d1"
+Parent: "9081bebd-f353-44f0-89bd-48bde15e9465"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: "/sitecore/content/ESearch Sample/Documents/cloud-services"
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T075350Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Accelerate your time to market with Sitecore Cloud solutions.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Cloud Services
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Cloud Services
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{8A171E01-6A0E-4BEB-ABF6-07F3F3F81B60}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{11B54121-ED44-4F73-AC36-35166B53B585}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Cloud Services" />
+        <meta name="author" />
+        <link rel="icon" href="../../../favicon.ico" />
+        <title>Cloud Services (9.2) &mdash; Sitecore Developer Documentation</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/theme-sitecore.css" rel="stylesheet" />
+        <link href="/css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <!-- For Cludo Search -->
+        <link href="//customer.cludo.com/assets/2063/10039/cludo-search.min.css" type="text/css" rel="stylesheet" />
+        <!--Cookies Policy-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <div class="header-container">
+        <div class="container">
+        <div class="row mb-0  align-items-center">
+        <div class="col-sm-6">
+        <a href="/" class="logoLink"> </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="container">
+        <div class="title-container">
+        <!-- Heading -->
+        <h1>Cloud Services (Sitecore 9.2)</h1>
+        <p class="intro">Accelerate your time to market with Sitecore Cloud solutions.</p>
+        <ul class="cloud-services-status-list">
+            <li><a href="https://status.cloud.sitecore.net/">Sitecore Cloud Status</a></li>
+        </ul>
+        </div>
+        <h2 class="mb-5 hlabel">General</h2>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/sitecore-on-azure.html">Sitecore on
+        Azure</a></h3>
+        <p>Learn about the analytics features of Azure resources, app services, and Azure Marketplace.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../sat/23/sitecore-azure-toolkit/en/sitecore-azure-toolkit.html">Sitecore Azure
+        <br />
+        Toolkit 2.3</a></h3>
+        <p>Use the deployment tools, Microsoft Azure integrations, and deployment methodologies that allow simple and
+        flexible deployment of Sitecore on Microsoft Azure.</p>
+        </div>
+        </div>
+        <h2 class="mb-5 hlabel">Services</h2>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/device-detection.html">Device
+        Detection</a></h3>
+        <p>Personalize visitor experience and target campaigns for different devices.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/ip-geolocation.html">IP Geolocation</a>
+        </h3>
+        <p>Sitecore IP Geolocation is a service that provides information about the location and owner of an IP address.
+        </p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/sitecore-app-center.html">Sitecore App
+        Center</a></h3>
+        <p>Access and use the Sitecore App Center.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../mc/10/managed-cloud/en/managed-cloud.html">Managed Cloud 1.0</a></h3>
+        <p>Host your Sitecore Cloud deployments on Microsoft Azure.</p>
+        </div>
+        </div>
+        <h2 class="mb-5 hlabel">Integration of Azure resources</h2>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/platform-administration-and-architecture/en/sitecore-azure-search-overview.html">Azure Search
+        (search)</a></h3>
+        <p>Learn how to configure search and indexing, including how to switch indexes, ensure scalability, and more.
+        </p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/platform-administration-and-architecture/en/zero-downtime-index-rebuild-in-azure-search.html">Azure
+        Search<br />
+        (indexing)</a></h3>
+        <p>Use the Switch On Rebuild feature to avoid Search functionality downtime during a full rebuild of the
+        Sitecore Search index.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"> <a href="../../92/platform-administration-and-architecture/en/session-state.html">
+        Azure Session State</a></h3>
+        <p>Use a session state server to share all your contact sessions across different browsers and devices.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/content-delivery-network.html">Content
+        Delivery Network (CDN)</a></h3>
+        <p>Increase performance and availability for your solution by using a Content Delivery Network with the Sitecore
+        Media Library.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/azure-waf.html">Azure WAF</a></h3>
+        <p>Centralized inbound protection of your web applications from common exploits and vulnerabilities using a web
+        traffic load balancer that includes a Web Application Firewall.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/azure-monitoring-and-alerts.html">Azure
+        Monitoring and Alerts</a></h3>
+        <p>Customize the tiles, dashboards, and alerts that you receive when you install Sitecore Application Level
+        Monitoring.</p>
+        </div>
+        </div>
+        </div>
+        <!-- /.container -->
+        <footer class="text-muted mainFooter">
+        <div class="container"> <a href="/about/index.html">About this site</a> &middot; <a href="mailto:docsite@sitecore.net">Feedback</a> &middot; <a href="http://www.sitecore.net/Company/Contact/Privacy-Policy.aspx" rel="noopener" target="_blank">Privacy
+        policy</a> &middot; <a href="http://www.sitecore.net/Legal/Legal-Notice.aspx" rel="noopener" target="_blank">Legal
+        notice</a> &middot; <a href="https://profile.sitecore.net:443/dmca_notice" rel="noopener" target="_blank">DMCA
+        Notice</a> &middot; <a href="http://www.sitecore.net/Legal/Copyright.aspx" rel="noopener" target="_blank">Copyright &copy;
+        1999-2019 Sitecore</a> </div>
+        </footer>
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- www.Cludo.com Search body init script start -->
+        <!-- www.Cludo.com Search body init script end -->

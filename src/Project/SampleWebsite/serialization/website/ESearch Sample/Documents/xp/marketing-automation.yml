@@ -1,0 +1,41 @@
+﻿---
+ID: "6a3aa6e1-922d-4c51-8a2d-0ade34160580"
+Parent: "03975be2-0750-4032-b524-c60edd0f9aa6"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: "/sitecore/content/ESearch Sample/Documents/xp/marketing-automation"
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T081739Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: The Marketing Automation Engine processes engagement plan enrollments and moves contacts through plans.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Marketing Automation Engine
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Marketing
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{E4101AFB-3183-4706-AD4F-45697B21E90F}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{11B54121-ED44-4F73-AC36-35166B53B585}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <article class="topic content-container" id="content-wrapper"><div id="topic-content" class="topic-content"><section xml:lang="en" dir="ltr" class="section reused-publication reused-publication" data-origin-id="UUID-c112f577-517b-47d1-4d33-6ae17334d46c" data-permalink="marketing-automation.html" data-topic-level="1" data-relative-prefix="" data-time-modified="05/27/2019" data-publication-date="10/07/19" id="UUID-c112f577-517b-47d1-4d33-6ae17334d46c"><div class="titlepage"><div><div class="title"><h1 class="title" style="clear: both">Marketing Automation</h1><div id="current-version"><strong>Current version: </strong>9.2</div></div></div></div><p>Nurture your contacts by adapting your communication to be relevant for each individual interaction.&nbsp;For an overview of the architecture and functionality of the Marketing Automation Engine, watch the video below.</p><div class="mediaobject"><div class="video-container"><div class="videoobject"><iframe allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/0HxUph2YLZc" width="560" height="315">Your browser does not support the video tag</iframe></div></div></div></section><div class="footer-content"><div class="glossary-definitions"></div></div><footer></footer></div></article>

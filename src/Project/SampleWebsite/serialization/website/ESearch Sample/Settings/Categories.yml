@@ -1,0 +1,18 @@
+﻿---
+ID: "eecc7eeb-f78b-46c1-b916-c0256a488b5b"
+Parent: "b5286427-790f-4b28-b3df-2f9139257ff7"
+Template: "890b9279-c965-4a2a-a715-54ce84c3145c"
+Path: /sitecore/content/ESearch Sample/Settings/Categories
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T104310Z
