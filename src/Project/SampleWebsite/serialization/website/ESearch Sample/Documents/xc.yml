@@ -1,0 +1,139 @@
+﻿---
+ID: "9a079e6c-f38f-4cfa-b4a1-128f4a41d528"
+Parent: "9081bebd-f353-44f0-89bd-48bde15e9465"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: /sitecore/content/ESearch Sample/Documents/xc
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T074143Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Customize your ecommerce solution through a flexible extensibility framework.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Experience Commerce
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Experience Commerce
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{BA6E3FF4-2E8E-4D01-8364-C0E45053A1CF}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{6315A236-5450-4718-A163-8E00C1BD58FC}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sitecore Experience Commerce" />
+        <meta name="author" />
+        <link rel="icon" href="../../../favicon.ico" />
+        <title>Sitecore Experience Commerce (9.0) &mdash; Sitecore Developer Documentation</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/theme-sitecore.css" rel="stylesheet" />
+        <link href="../../css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <!-- For Cludo Search -->
+        <link href="//customer.cludo.com/assets/2063/10039/cludo-search.min.css" type="text/css" rel="stylesheet" />
+        <!--Cookies Policy -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <div class="container">
+        <div class="title-container">
+        <!-- Heading -->
+        <h1>Experience Commerce (Sitecore 9.2)</h1>
+        <p class="intro">Deploy and administer your Sitecore Experience Commerce solution.</p>
+        </div>
+        <div class="row">
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-commerce/en/commerce-developer-reference.html">Commerce
+        Developer<br />
+        Reference</a></h2>
+        <p>API reference for developers who want to extend and customize the Sitecore XC. </p>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"> <a href="../sitecore-experience-commerce/en/commerce-devops.html">Commerce
+        DevOps</a></h2>
+        <p>Information for IT professionals about how to build, deploy and administer the Sitecore XC solution.
+        </p>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-commerce/en/commerce-integration.html">Commerce
+        Integration</a></h2>
+        <p>Information for developers using Sitecore XC endpoints for integration with other business systems or
+        third-party service providers.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-commerce/en/commerce-connect.html">Commerce
+        Connect</a></h2>
+        <p>Information for developers using the Commerce Connect API to integrate an external commerce or ERP
+        system with the Sitecore Experience Platform.</p>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-commerce/en/sxa-storefront.html">SXA
+        Storefront</a></h2>
+        <p>Information for developers who want to customize Storefront features and functions.</p>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+        <h2 class="h3 a-arrow"><a href="https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx">Installation
+        Guides</a></h2>
+        <p>Installation and upgrade documentation is included
+        with each release.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-12 col-sm-12 ">
+        <p>See <a href="/users/92/sitecore-experience-commerce/en/index-en.html">Sitecore Experience Commerce
+        user
+        documentation</a> for information about the XC Business Tools.</p>
+        <p>&nbsp;</p>
+        </div>
+        </div>
+        <h2 class="mb-4">Community and Video</h2>
+        <div class="bg-community row">
+        <div class="col-lg-4 col-sm-4">
+        <a href="https://www.youtube.com/watch?v=T0cn3yBbRro&amp;list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94">
+        </a>
+        <h2 class="h5"><a href="https://www.youtube.com/watch?v=T0cn3yBbRro&amp;list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94">Experience Commerce Deep Dive</a></h2>
+        <p>A series of videos about Sitecore Experience Commerce on the <a href="https://www.youtube.com/user/mastersitecore">Master
+        Sitecore YouTube channel</a>.</p>
+        </div>
+        <div class="col-lg-5 col-sm-5">
+        <ul class="list-unstyled">
+            <li><a href="https://community.sitecore.net/developers/f/6">Sitecore Commerce forums</a></li>
+            <li><a href="https://sitecore.stackexchange.com/questions/tagged/sitecore-commerce">#sitecore-commerce
+            on
+            Sitecore StackExchange</a></li>
+            <li><a href="https://twitter.com/commerceminion">@commerceminion on Twitter</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <footer class="text-muted mainFooter">
+        <div class="container">
+        <a href="/about/index.html">About this site</a> &middot; <a href="mailto:docsite@sitecore.net">Feedback</a> &middot; <a rel="noopener noreferrer" href="http://www.sitecore.net/Company/Contact/Privacy-Policy.aspx" target="_blank">Privacy policy</a> &middot;
+        <a rel="noopener noreferrer" href="http://www.sitecore.net/Legal/Legal-Notice.aspx" target="_blank">Legal notice</a> &middot; <a rel="noopener noreferrer" href="https://profile.sitecore.net:443/dmca_notice" target="_blank">DMCA Notice</a> &middot; <a rel="noopener noreferrer" href="http://www.sitecore.net/Legal/Copyright.aspx" target="_blank">Copyright &copy; 1999-2019 Sitecore</a>
+        </div>
+        </footer>
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- www.Cludo.com Search body init script start -->
+        <!-- www.Cludo.com Search body init script end -->

@@ -1,0 +1,14 @@
+﻿---
+ID: "b0b20434-0ee4-4b21-9871-a6790d936756"
+Parent: "9d42555e-3e06-44a5-92dc-f33c5b5c8e7d"
+Template: "853ca968-ef71-4e8c-9725-564f2e1ba0fe"
+Path: /sitecore/content/ESearch Sample/Search/Data/Search Result Summary
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191018T045251Z

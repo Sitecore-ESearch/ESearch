@@ -1,0 +1,41 @@
+﻿---
+ID: "a37c7e2b-9e13-4b64-b5bd-7fb294aec1d7"
+Parent: "2f22ba6e-6d0b-441a-b389-83b534fa83d1"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: "/sitecore/content/ESearch Sample/Documents/cloud-services/sitecore-azure-toolkit"
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T083725Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Learn about the analytics features of Azure resources, app services, and Azure Marketplace.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Sitecore on Azure
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Azure
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{8A171E01-6A0E-4BEB-ABF6-07F3F3F81B60}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{11B54121-ED44-4F73-AC36-35166B53B585}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <article class="topic content-container" id="content-wrapper"><div id="topic-content" class="topic-content"><section xml:lang="en" dir="ltr" class="section" data-origin-id="UUID-32fdafb7-13b5-5630-faed-726c2d5cc4c3" data-permalink="sitecore-azure-toolkit.html" data-topic-level="1" data-relative-prefix="" data-time-modified="07/01/2019" data-publication-date="08/12/19" id="UUID-534954d0-3428-c061-24b5-4205bfd8f65b"><div class="titlepage"><div><div class="title"><h1 class="title" style="clear: both">Sitecore Azure Toolkit</h1><div id="current-version"><strong>Current version: </strong>2.3</div></div></div></div><p>Use the deployment tools, Microsoft Azure integrations, and deployment methodologies that allow simple and flexible deployment of Sitecore on Microsoft Azure.</p><h2 id="idm45318244784016" class="bridgehead">Overview</h2><p>The Sitecore Azure Toolkit documentation is divided into three sections for an overview of the Sitecore Azure Toolkit features, provisioning pipelines, and topologies; as well as packaging; and deployment.</p><h2 id="idm45318244781344" class="bridgehead">Packaging</h2><p>Use the Sitecore Azure Toolkit packaging references to ensure the structure of your SCCPL package is correct; to create Web Deployment Packages; and to package a local Sitecore instance for deployment to the Microsoft Azure App Service, (for Sitecore Azure Toolkit 2.1 and later).</p><h2 id="idm45318244392272" class="bridgehead">Deployment</h2><p>You can also learn about deploying with the Sitecore Azure Toolkit; specifically how to configure the Bootloader module for your Sitecore App Service deployment when installing other modules, and how to use the Sitecore Azure Toolkit to deploy a new Sitecore environment to the Microsoft Azure App service.</p></section><div class="footer-content"><div class="glossary-definitions"></div></div><footer></footer></div></article>

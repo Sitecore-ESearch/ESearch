@@ -1,0 +1,22 @@
+﻿---
+ID: "dd0069c6-4b06-4ce0-ab29-27c490528f3d"
+Parent: "9d42555e-3e06-44a5-92dc-f33c5b5c8e7d"
+Template: "6b260939-a836-4497-b509-7f530ff5593e"
+Path: /sitecore/content/ESearch Sample/Search/Data/Search Results
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190930T053846Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

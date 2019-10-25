@@ -1,0 +1,21 @@
+﻿---
+ID: "1395bcc0-233c-4ab3-a3d3-70b1ff3c00eb"
+Parent: "9d42555e-3e06-44a5-92dc-f33c5b5c8e7d"
+Template: "314ea20e-22ba-4e07-9cce-3b977d4f1f38"
+Path: /sitecore/content/ESearch Sample/Search/Data/Category
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: "-100"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190930T021740Z
+    - ID: "27d1f25e-cff1-47ef-92c4-d7deb8a960b9"
+      Hint: Header Label
+      Value: Category

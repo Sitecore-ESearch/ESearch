@@ -1,0 +1,189 @@
+﻿---
+ID: "a633b782-887f-460d-a9c6-61bc7a11678e"
+Parent: "9081bebd-f353-44f0-89bd-48bde15e9465"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: /sitecore/content/ESearch Sample/Documents/xm
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T074051Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Create, manage, and publish content to your website.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Experience Manager
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Experience Manager
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{1BF00241-2066-445E-A9B2-030D5E0B2E17}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{A1C97C14-DDB1-46C2-AE3B-E4AACDE63E72}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sitecore Experience Manager" />
+        <meta name="author" />
+        <link rel="icon" href="../../../favicon.ico" />
+        <title>Sitecore Experience Manager (9.2) &mdash; Sitecore Developer Documentation</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/theme-sitecore.css" rel="stylesheet" />
+        <link href="/css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <!-- For Cludo Search -->
+        <link href="//customer.cludo.com/assets/2063/10039/cludo-search.min.css" type="text/css" rel="stylesheet" />
+        <!--Cookies Policy-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <div class="header-container">
+        <div class="container">
+        <div class="row mb-0  align-items-center">
+        <div class="col-sm-6">
+        <a href="/" class="logoLink"> </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="container">
+        <div class="title-container">
+        <!-- Heading -->
+        <h1>Experience Manager (Sitecore 9.2)</h1>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/digital-marketing.html">Digital
+        marketing</a></h2>
+        <p>How to map traffic types to channels, how to configure the Campaign Creator, and how to create Sitecore
+        Forms.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/analyzing-and-reporting.html">Analyzing
+        <br />
+        and reporting</a></h2>
+        <p>How to configure and customize Experience Analytics reports.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"> <a href="../sitecore-experience-management/en/mvc.html">MVC</a></h2>
+        <p>Develop with Sitecore MVC.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/search-and-item-buckets.html">Search and
+        <br />
+        item buckets</a></h2>
+        <p>Work with Sitecore Content Search and configure item buckets.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/ip-geolocation.html">IP Geolocation</a>
+        </h2>
+        <p>Sitecore IP Geolocation is a service that provides information about the location and owner of an IP
+        address.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/device-detection.html">Device Detection</a>
+        </h2>
+        <p>Personalize visitor experience and target campaigns for different devices.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/language-fallback.html">Language
+        fallback</a></h2>
+        <p>In multilanguage solutions, you can set up and control which items or fields reuse content from another
+        language.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/versioned-layouts.html">Versioned
+        layouts</a></h2>
+        <p>Create, use, and reset versioned layouts.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"> <a href="../sitecore-experience-management/en/utc.html">UTC</a></h2>
+        <p>Learn about the configuration details that Sitecore uses when recording dates and times in UTC.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/sitecore-services-client.html">Sitecore.Services<br />
+        .Client</a>
+        </h2>
+        <p>A service layer on both the server and the client side of Sitecore applications that you use to develop
+        data-driven applications.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/developing-with-sitecore.html">Developing
+        with Sitecore</a></h2>
+        <p>Develop features in Sitecore.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/using-federated-authentication-with-sitecore.html">Federated
+        authentication</a></h2>
+        <p>How to use external identity providers.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"> <a href="../sitecore-experience-management/en/sitecore-on-azure.html">Sitecore on
+        Azure</a></h2>
+        <p>Deploy, manage, and maintain Sitecore on Microsoft Azure for a scalable and robust Cloud solution.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"> <a href="../sitecore-experience-management/en/sitecore-app-center.html">Sitecore App
+        Center </a></h2>
+        <p>How to access and use the Sitecore App Center.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/sitecore-host.html">Sitecore Host</a></h2>
+        <p>Sitecore Host and the plugin architecture.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/sitecore-identity.html">Sitecore
+        Identity</a></h2>
+        <p>Sitecore Identity provides a mechanism for Sitecore login.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h2 class="h3 a-arrow"><a href="../sitecore-experience-management/en/graphql.html">GraphQL</a></h2>
+        <p>The Sitecore GraphQL API is a generic GraphQL service platform on top of Sitecore.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/azure-waf.html">Azure WAF</a></h3>
+        <p>Centralized inbound protection of your web applications from common exploits and vulnerabilities using a web
+        traffic load balancer that includes a Web Application Firewall.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../../92/sitecore-experience-management/en/azure-monitoring-and-alerts.html">Azure
+        Monitoring and Alerts</a></h3>
+        <p>Customize the tiles, dashboards, and alerts that you receive when you install Sitecore Application Level
+        Monitoring.</p>
+        </div>
+        </div>
+        </div>
+        <!-- /.container -->
+        <footer class="text-muted mainFooter">
+        <div class="container">
+        <a href="/about/index.html">About this site</a> &middot; <a href="mailto:docsite@sitecore.net">Feedback</a> &middot; <a rel="noopener noreferrer" href="http://www.sitecore.net/Company/Contact/Privacy-Policy.aspx" target="_blank">Privacy policy</a> &middot; <a rel="noopener noreferrer" href="http://www.sitecore.net/Legal/Legal-Notice.aspx" target="_blank">Legal notice</a> &middot; <a rel="noopener noreferrer" href="https://profile.sitecore.net:443/dmca_notice" target="_blank">DMCA Notice</a> &middot; <a rel="noopener noreferrer" href="http://www.sitecore.net/Legal/Copyright.aspx" target="_blank">Copyright &copy; 1999-2019 Sitecore</a> </div>
+        </footer>
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- www.Cludo.com Search body init script start -->
+        <!-- www.Cludo.com Search body init script end -->
