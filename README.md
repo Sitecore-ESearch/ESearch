@@ -1,13 +1,29 @@
-<img src="./img/ESearch_Logo.svg" width="50%">
+## ESearch
+<img src="./img/ESearch_Logo.svg" width="400px">  
 
-## Introduction
 ESearch is a simple search module for Sitecore XP. This project is created as a submission for "[konabos Search UI Competition](https://www.konabos.com/search-ui-competition)".  
 
 **Warning: This software is in the beta stage.**
 
+## Prerequisites
+- Sitecore Experience Platform 9.2
+
 ## Installation
+1. Download the package `ESearch-{version}.zip` from the release page.
+1. Install the package to your Sitecore via Installation Wizard.
 
 ### Sample Website
+ESearch provides a sample website build with this module & Bootstrap 4.
+
+![](./img/Screenshot.png)  
+
+To install the sample website:  
+
+1. Install `ESearch - Sample Website-{version}.zip` (available in the release page)
+1. Rebuild `sitecore_master_index`
+1. Add a bind `esearch.example.com:80` to your site on IIS
+1. Add a DNS record `127.0.0.1 esearch.example.com` to the `hosts` file
+1. Access to `http://esearch.example.com` and enjoy!
 
 ## Usage
 
@@ -15,7 +31,7 @@ ESearch is a simple search module for Sitecore XP. This project is created as a 
 
 **NOTE**
 
-You can see how to use these components on YouTube.
+You can see how to use this module on YouTube.
 
 - [How to use ESearch](https://www.youtube.com)
 
@@ -52,7 +68,7 @@ The `Search Settings` has the following search options.
 ### Search Results
 The search results component shows the result items of searching.  
 
-![](image)
+![](./img/Component_SearchResults.png)
 
 A result item uses the `Search Result Data` template for displaying its information. Set this template to your page templates' `Base template` field.  
 
@@ -76,6 +92,8 @@ A result item uses the `Search Result Data` template for displaying its informat
 The Search Result Summary component shows the count of result and current search conditions.  
 Search conditions are not displayed by default.
 
+![](./img/Component_SearchResultSummary.png)
+
 #### Datasource Template
 - Path:	/sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary 
 
@@ -87,7 +105,7 @@ Search conditions are not displayed by default.
 ### Page Selector
 The page selector component shows the link list for a pagination.
 
-![](image)
+![](./img/Component_PageSelector.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Search Results
@@ -109,6 +127,8 @@ The page selector component shows the link list for a pagination.
 ### Facet Filter
 The facet filter component shows the number of search results in a specific field.
 
+![](./img/Component_FacetFilter.png)
+
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Search Results
 
@@ -127,6 +147,8 @@ The facet filter component shows the number of search results in a specific fiel
 
 ### Sort Indicator
 The sort indicator shows displays two drop-down lists for sorting the search results.
+
+![](./img/Component_SortIndicator.png)
 
 #### Sort field drop-down list
 This drop-down list choices are set in the data source item of the sort indicator component.
@@ -152,8 +174,10 @@ This drop-down list has only ascending or descending choices.
 
 ### Search Box
 The search box is a component that helps the keyword search and provides suggestions.  
-You can search for the field that set in `Keyword Search Target` in` Search Settings`.  
-If you want to use the suggestions function, you need to load `esearch.searchbox.js`.
+
+![](./img/Component_SearchBox.png)
+
+You can search for the field that set in `Keyword Search Target` in` Search Settings`. If you want to use the suggestions function, you need to load `esearch.searchbox.js`.
 
 #### Rendering Parameters
 - Path: /sitecore/templates/Feature/ESearch/Rendering Parameter/Search Box Parameters  
@@ -184,9 +208,10 @@ Your contribution and a feedback like below are very welcome.
 - Fix English in the documents or comments
 - Improve performance
 - Add a sample theme without the Bootstrap
+- Add a compatible rendering for each component
 
 ## License
-This software is released under the MIT License, see license.txt.
+This software is released under the MIT License, see LICENSE.txt.
 
 ## Authors
 - Ayane Suzuki

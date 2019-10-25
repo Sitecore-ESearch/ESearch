@@ -44,7 +44,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codegen", "codegen", "{AFB1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{9AA25C6B-8530-403D-B97D-9C61F5F03674}"
 	ProjectSection(SolutionItems) = preProject
-		img\ESearch Logo.png = img\ESearch Logo.png
+		img\Component_FacetFilter.png = img\Component_FacetFilter.png
+		img\Component_PageSelector.png = img\Component_PageSelector.png
+		img\Component_SearchBox.png = img\Component_SearchBox.png
+		img\Component_SearchResults.png = img\Component_SearchResults.png
+		img\Component_SearchResultSummary.png = img\Component_SearchResultSummary.png
+		img\Component_SortIndicator.png = img\Component_SortIndicator.png
+		img\ESearch_Logo.svg = img\ESearch_Logo.svg
+		img\Screenshot.png = img\Screenshot.png
 	EndProjectSection
 EndProject
 Global
