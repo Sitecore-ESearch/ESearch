@@ -3,7 +3,7 @@
 
 ESearch is a simple search module for Sitecore XP. This project is created as a submission for "[konabos Search UI Competition](https://www.konabos.com/search-ui-competition)".  
 
-**Warning: This software is in the beta stage.**
+**Warning: This software is still in the beta stage.**
 
 ## Prerequisites
 - Sitecore Experience Platform 9.2
@@ -202,13 +202,23 @@ The features below are not supported yet.
 - [ ] Adding the components beyond a search page
 - [ ] SXA Integrations
 
-Your contribution and a feedback like below are very welcome.
+Your contribution and feedback like below are very welcome.
 
 - Make a feature in todo list
 - Fix English in the documents or comments
-- Improve performance
+- Improve the documentation
 - Add a sample theme without the Bootstrap
 - Add a compatible rendering for each component
+
+## Set up a development environment
+For customization or contribution, you need to set up a development environment on your machine.
+
+1. Clone this repository
+1. Build the solution and publish all projects to your Sitecore instance
+1. Enable the `/App_Config/Include/ESearch.Foundation.Serialization.config.example` (published one, not in the repository)
+1. In the enabled file, change the value of `sourceFolder` setting to the cloned solution's `/src` folder path
+1. Access to `{url to your sitecore}/unicorn.aspx` and sync all items
+
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
