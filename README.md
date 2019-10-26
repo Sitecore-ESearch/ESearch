@@ -1,7 +1,7 @@
 ## ESearch
 <img src="./img/ESearch_Logo.svg" width="400px">  
 
-ESearch is a simple search module for Sitecore XP. This project is created as a submission for "[konabos Search UI Competition](https://www.konabos.com/search-ui-competition)".  
+ESearch is a simple search module for Sitecore XP. This project is created as a submission for [konabos Search UI Competition](https://www.konabos.com/search-ui-competition).  
 
 **Warning: This software is still in the beta stage.**
 
@@ -19,11 +19,11 @@ ESearch provides a sample website build with this module & Bootstrap 4.
 
 To install the sample website:  
 
-1. Install `ESearch - Sample Website-{version}.zip` (available in the release page)
-1. Rebuild `sitecore_master_index`
-1. Add a bind `esearch.example.com:80` to your site on IIS
-1. Add a DNS record `127.0.0.1 esearch.example.com` to the `hosts` file
-1. Access to `http://esearch.example.com` and enjoy!
+1. Install `ESearch - Sample Website-{version}.zip` (available in the release page).
+1. Rebuild `sitecore_master_index`.
+1. Add a bind `esearch.example.com:80` to your site on IIS.
+1. Add a DNS record `127.0.0.1 esearch.example.com` to the `hosts` file.
+1. Access to `http://esearch.example.com` and enjoy it!
 
 ## Usage
 
@@ -33,7 +33,7 @@ To install the sample website:
 
 You can see how to use this module on YouTube.
 
-- [How to use ESearch](https://www.youtube.com)
+- [How to use the ESearch module](https://www.youtube.com)
 
 ---
 
@@ -46,24 +46,24 @@ This module contains the following components.
 - <a href="#sort-indicator">Sort Indicator</a>
 - <a href="#search-box">Search Box</a> (supports typeahead suggestion)
 
-These components contain the CSS classes based on the Bootstrap 4, but it's not required. You can use your own styles if you want.  
+These components have the CSS classes based on Bootstrap 4 in its HTML, but it's not required. You can use your own styles if you want.  
 
 All components need to set a `Search Settings` item in the rendering parameter. The `Default Search Settings` is used by default.
 
 - `Search Settings`:
-  - /sitecore/templates/Foundation/ESearch/Search Settings
+  - Path: /sitecore/templates/Foundation/ESearch/Indexing/Search Settings
 - `Default Search Settings`:
-  - /sitecore/system/Settings/ESearch/Search Settings/Default Search Settings
+  - Path: /sitecore/system/Settings/ESearch/Search Settings/Default Search Settings
 
 The `Search Settings` has the following search options.
 
 |Field name|Description|
 |:-|:-|
-|`Scope`|The root item for filtering the search results.|
-|`Target templates`|The tempaltes for filtering the search results.|
-|`Page Size`|The number of items displayed in search results component per page.|
-|`Keyword Search Targets`|The fields used in the keyword search. This affects search performance, so less is better.|
-|`Date Format`|The date format used for displaying date.|
+|`Scope`|Root item for filtering the search results.|
+|`Target templates`|Templates for filtering the search results.|
+|`Page Size`|Number of items displayed in the search results component per page.|
+|`Keyword Search Targets`|Fields used in the keyword search. This affects search performance, so less is better.|
+|`Date Format`|Date format used for displaying date.|
 
 ### Search Results
 The search results component shows the result items of searching.  
@@ -75,54 +75,57 @@ A result item uses the `Search Result Data` template for displaying its informat
 - /sitecore/templates/Feature/ESearch/Search Result Data
 
 #### Datasource Template
-- Path: /sitecore/templates/Feature/ESearch/Search Results
+- Path: /sitecore/templates/Feature/ESearch/Search Results/Search Results
 
 |Field name|Description|
 |:-|:-|
-|Read More Label|A text displayed on the "Read more" link in each result item.|
+|Read More Label|Text displayed on the "Read more" link in each result item.|
 
 #### Rendering Parameters
-- Path: /sitecore/templates/Feature/ESearch/Rendering Parameter/Search Results Parameters
+- Path: /sitecore/templates/Feature/ESearch/Search Results/Rendering Parameter/Search Results Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Item Css Class|A class name that set to each result item.|
+|Item Css Class|Class names that set to each result item.|
 
 ### Search Result Summary
-The Search Result Summary component shows the count of result and current search conditions.  
+The Search Result Summary component shows the count of results and current search conditions.  
 Search conditions are not displayed by default.
 
 ![](./img/Component_SearchResultSummary.png)
 
 #### Datasource Template
-- Path:	/sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary 
+- Path: /sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary 
 
 |Field name|Description|
 |:-|:-|
-|Total Count Label|The text displayed on the title of count of result.|
-|Search Conditions Label|The text displayed on the title of current search conditions.|
+|Total Count Label|Text displayed on the title of count of result.|
+|Search Conditions Label|Text displayed on the title of current search conditions.|
+
+#### Rendering Parameters
+No rendering parameters in this component.
 
 ### Page Selector
-The page selector component shows the link list for a pagination.
+The page selector component shows the link list for pagination.
 
 ![](./img/Component_PageSelector.png)
 
 #### Datasource Template
-- Path: /sitecore/templates/Feature/ESearch/Search Results
+- Path: /sitecore/templates/Feature/ESearch/Page Selector/Page Selector
 
 |Field name|Description|
 |:-|:-|
-|Previous Link Label|The text displayed on the link to the previous page.|
-|Next Link Label|The text displayed on the link to the next page.|
-|First Link Label|The text displayed on the link to the first page. If the text is empty, the link is hidden.|
-|Last Link Label|The text displayed on the link to the last page. If the text is empty, the link is hidden.|
+|Previous Link Label|Text displayed on the link to the previous page.|
+|Next Link Label|Text displayed on the link to the next page.|
+|First Link Label|Text displayed on the link to the first page. If the text is empty, the link is hidden.|
+|Last Link Label|Text displayed on the link to the last page. If the text is empty, the link is hidden.|
 
 #### Rendering Parameters
-- Path: /sitecore/templates/Feature/ESearch/Rendering Parameter/Search Results Parameters
+- Path: /sitecore/templates/Feature/ESearch/Page Selector/Rendering Parameter/Page Selector Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Selector Size|The number of the page selector links displayed on both sides of a center link.|
+|Selector Size|Number of the page selector links displayed on both sides of a center link.|
 
 ### Facet Filter
 The facet filter component shows the number of search results in a specific field.
@@ -130,69 +133,86 @@ The facet filter component shows the number of search results in a specific fiel
 ![](./img/Component_FacetFilter.png)
 
 #### Datasource Template
-- Path: /sitecore/templates/Feature/ESearch/Search Results
+- Path: /sitecore/templates/Feature/ESearch/Facet Filter/Facet Filter
 
 |Field name|Description|
 |:-|:-|
-|Header Label|The text displayed on the header of the filter.|
-|Clear Label|The text displayed on the clear button.|
+|Header Label|Text displayed on the header of the filter.|
+|Clear Label|Text displayed on the clear button.|
 
 #### Rendering Parameters
-- Path: /sitecore/templates/Feature/ESearch/Rendering Parameter/Search Results Parameters
+- Path: /sitecore/templates/Feature/ESearch/Facet Filter/Rendering Parameter/Facet Filter Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Target Field|The field for calculating the number of search results.|
+|Target Field|Field for calculating the number of search results.|
 |||
 
 ### Sort Indicator
-The sort indicator shows displays two drop-down lists for sorting the search results.
+---
+
+**NOTE**
+
+This component uses the dropdown component of Bootstrap. If you don't want to use Bootstrap, you need to create a script for displaying this as a dropdown. (Would be improved in a feature version.)
+
+---
+
+The sort indicator has two dropdown lists for sorting the search results.
 
 ![](./img/Component_SortIndicator.png)
 
-#### Sort field drop-down list
-This drop-down list choices are set in the data source item of the sort indicator component.
+The first one shows the field choices for sorting which specified in the `Sort Fields` field of the data source. The second one has "Ascending" or "Descending" choices and it uses for specifying sort direction.  
 
-#### Sort direction drop-down list
-This drop-down list has only ascending or descending choices.
+To add a field choice:
+
+1. Create a `Sort Field` item.
+1. Input a field name to use for sorting in the `Field Name` field.
+1. Input a displayed label for the dropdown in the `Display Name` field.
+1. Set the item in the `Sort Fields` field of the data source.
+
+- Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Field
+
+|Field name|Description|
+|:-|:-|
+|Field Name|Name of the field of the search target content.|
+|Display Name|Name of display on dropdown list.|
 
 #### Datasource Template
-- Path: /sitecore/templates/Feature/ESearch/Sort Indicator
+- Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Indicator
 
 |Field name|Description|
 |:-|:-|
-|Sort Fields|Select `Sort Field` items displayed on the drop-down list.|
-|Default Text|The text to displayed on the initial choice in the drop-down list.|
+|Sort Fields|`Sort Field` items to display on the dropdown list.|
+|Default Text|Text to display on the initial choice in the dropdown list.|
 
-`Sort Field`:
-  - /sitecore/templates/Feature/ESearch/Sort Field
-
-|Field name|Description|
-|:-|:-|
-|Field Name|The name of the field of the search target content.|
-|Display Name|The name of display on drop-down list.|
+#### Rendering Parameters
+No rendering parameters in this component.
 
 ### Search Box
 The search box is a component that helps the keyword search and provides suggestions.  
 
 ![](./img/Component_SearchBox.png)
 
-You can search for the field that set in `Keyword Search Target` in` Search Settings`. If you want to use the suggestions function, you need to load `esearch.searchbox.js`.
+You can search for the field that set in `Keyword Search Target` in` Search Settings`.
 
-#### Rendering Parameters
-- Path: /sitecore/templates/Feature/ESearch/Rendering Parameter/Search Box Parameters  
+---
 
-|Parameter name|Description|
-|:-|:-|
-|Max Length|The maximum number of characters a user can manually type into the TextBox.|
+**NOTE**  
+
+To enable typeahead suggestion, make sure to load `/Scripts/esearch.searchbox.js` in your layout.
+
+---
 
 #### Datasource Template
-- Path: /sitecore/templates/Feature/ESearch/Search Box
+- Path: /sitecore/templates/Feature/ESearch/Search Box/Search Box
 
 |Field name|Description|
 |:-|:-|
-|Placeholder Label|A text for display in the placeholder.|
-|Execute Button Label|A text for display on the button that executes search.|
+|Placeholder Label|Text for display in the placeholder.|
+|Execute Button Label|Text for display on the button that executes the search.|
+
+#### Rendering Parameters
+No rendering parameters in this component.
 
 ## Todos
 The features below are not supported yet.
@@ -205,20 +225,20 @@ The features below are not supported yet.
 Your contribution and feedback like below are very welcome.
 
 - Make a feature in todo list
+- Add unit testing
 - Fix English in the documents or comments
-- Improve the documentation
 - Add a sample theme without the Bootstrap
 - Add a compatible rendering for each component
 
-## Set up a development environment
+## Development environment
 For customization or contribution, you need to set up a development environment on your machine.
 
-1. Clone this repository
-1. Build the solution and publish all projects to your Sitecore instance
-1. Enable the `/App_Config/Include/ESearch.Foundation.Serialization.config.example` (published one, not in the repository)
-1. In the enabled file, change the value of `sourceFolder` setting to the cloned solution's `/src` folder path
-1. Access to `{url to your sitecore}/unicorn.aspx` and sync all items
-
+1. Clone this repository.
+1. Build the solution and publish all projects to your Sitecore instance.
+1. Enable the `/App_Config/Include/ESearch.Foundation.Serialization.config.example`. (published one, not in the repository)
+1. In the enabled file, change the value of `sourceFolder` setting to the cloned solution's `/src` folder path.
+1. Set the access (read and write) rights to an application pool of your Sitecore.
+1. Access to `{url to your sitecore}/unicorn.aspx` and sync all items.
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
