@@ -244,6 +244,6 @@ For customization or contribution, you need to set up a development environment 
 This software is released under the MIT License, see LICENSE.txt.
 
 ## Authors
-- Ayane Suzuki (a-suzuki@est.co.jp)
 - Takumi Yamada (xirtardauq@gmail.com)
 - Yuta Tsunemoto (tsunemoto@est.co.jp)
+- Ayane Suzuki (a-suzuki@est.co.jp)
