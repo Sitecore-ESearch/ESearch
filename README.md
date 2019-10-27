@@ -1,5 +1,5 @@
 ## ESearch
-<img src="./img/ESearch_Logo.svg" width="400px">  
+<img src="./img/ESearch_Logo.png" width="400px">  
 
 ESearch is a simple search module for Sitecore XP. This project is created as a submission for [konabos Search UI Competition](https://www.konabos.com/search-ui-competition).  
 
