@@ -71,9 +71,9 @@ The Search Results component shows the results of searching.
 
 ![](img/Component_SearchResults.png)
 
-A result item uses the `Search Result Data` template for displaying its information. Set this to your `Base template` field.  
+A result item uses the `Search Result Data` template for displaying its information. Set this to your `Base template` field of the page template.  
 
-- /sitecore/templates/Feature/ESearch/Search Result Data
+- /sitecore/templates/Feature/ESearch/Search Results/Search Result Data
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Search Results/Search Results
@@ -107,7 +107,7 @@ Search conditions are not displayed by default.
 No rendering parameters in this component.
 
 ### Page Selector
-The Page Selector component shows the link list for the pagination.
+The Page Selector component shows the link list for pagination.
 
 ![](img/Component_PageSelector.png)
 
@@ -153,7 +153,7 @@ The Facet Filter component shows the number of search results in a specific fiel
 
 **NOTE**
 
-This component uses the dropdown component of Bootstrap. If you don't want to use Bootstrap, you need to create a script for displaying it as a dropdown. (Would be improved in a feature version.)
+This component uses the dropdown component of Bootstrap. If you don't want to use Bootstrap, you need to create a script for displaying it as a dropdown. (Will be improved in a future version.)
 
 ---
 
