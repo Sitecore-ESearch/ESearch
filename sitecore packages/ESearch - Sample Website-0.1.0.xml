@@ -1,0 +1,383 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>ESearch - Sample Website</PackageName>
+      <Author>Takumi Yamada, Yuta Tsunemoto, Ayane Suzuki</Author>
+      <Version>0.1.0</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme>See: https://github.com/Sitecore-ESearch/ESearch</Readme>
+      <Publisher>East Sitecore Developers</Publisher>
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <items>
+      <Database>master</Database>
+      <Root>{932DFE20-3688-4356-873E-67826C68CC40}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>contents</Name>
+    </items>
+    <items>
+      <Database>master</Database>
+      <Root>{91635309-187B-4A09-8CD1-82DE0F1CFE8E}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>layouts</Name>
+    </items>
+    <items>
+      <Database>master</Database>
+      <Root>{63351EDA-5907-462E-A746-CEE5266F03EC}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>placeholder settings</Name>
+    </items>
+    <items>
+      <Database>master</Database>
+      <Root>{7103C7CF-B328-4F30-935F-4618E4297EFB}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>renderings</Name>
+    </items>
+    <items>
+      <Database>master</Database>
+      <Root>{A4E623FE-0A2A-47B8-AF58-9FC3657FB92F}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>media items</Name>
+    </items>
+    <items>
+      <Database>master</Database>
+      <Root>{243AB72E-F79A-466D-9331-EE3C09382FAE}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>templates</Name>
+    </items>
+    <xfiles>
+      <Entries>
+        <x-item>/bin/ESearch.Project.SampleWebsite.dll</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>assemblies</Name>
+    </xfiles>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Include/Project/ESearch.Project.SampleWebsite.config</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>configs</Name>
+    </xfiles>
+    <xfiles>
+      <Entries>
+        <x-item>/Views/ESearchSample/Article.cshtml</x-item>
+        <x-item>/Views/ESearchSample/Container.cshtml</x-item>
+        <x-item>/Views/ESearchSample/Layout.cshtml</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>views</Name>
+    </xfiles>
+    <xfiles>
+      <Entries>
+        <x-item>/Styles/esearch.sample.css</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>assets</Name>
+    </xfiles>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

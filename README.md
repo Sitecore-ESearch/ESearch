@@ -1,5 +1,5 @@
 ## ESearch
-<img src="./img/logo.png" width="400px">  
+<img src="img/logo.png" width="400px">  
 
 ESearch is a simple search module for Sitecore XP. This project is created as a submission for [konabos Search UI Competition](https://www.konabos.com/search-ui-competition).  
 
@@ -9,34 +9,25 @@ ESearch is a simple search module for Sitecore XP. This project is created as a 
 - Sitecore Experience Platform 9.2
 
 ## Installation
-1. Download the package `ESearch-{version}.zip` from the release page.
+1. Download the package `ESearch-{version}.zip` from the [release page](https://github.com/Sitecore-ESearch/ESearch/releases).
 1. Install the package to your Sitecore via Installation Wizard.
 
 ### Sample Website
 ESearch provides a sample website build with this module & Bootstrap 4.
 
-![](./img/Screenshot.png)  
+![](img/Screenshot.png)  
 
 To install the sample website:  
 
-1. Install `ESearch - Sample Website-{version}.zip` (available in the release page).
-1. Rebuild `sitecore_master_index`.
+1. Install the ESearch module.
+1. Install `ESearch - Sample Website-{version}.zip` (available in the [release page](https://github.com/Sitecore-ESearch/ESearch/releases)).
+1. Execute site publishing.
+1. Rebuild `sitecore_master_index` and `sitecore_web_index`.
 1. Add a bind `esearch.example.com:80` to your site on IIS.
 1. Add a DNS record `127.0.0.1 esearch.example.com` to the `hosts` file.
 1. Access to `http://esearch.example.com` and enjoy it!
 
 ## Usage
-
----
-
-**NOTE**
-
-You can see how to use this module on YouTube.
-
-- [How to use the ESearch module](https://www.youtube.com)
-
----
-
 This module contains the following components.
 
 - <a href="#search-results">Search Results</a>
@@ -45,6 +36,16 @@ This module contains the following components.
 - <a href="#facet-filter">Facet Filter</a>
 - <a href="#sort-indicator">Sort Indicator</a>
 - <a href="#search-box">Search Box</a> (supports typeahead suggestion)
+
+---
+
+**NOTE**
+
+You can see how to use these components on YouTube.
+
+- [How to use the ESearch components](https://youtu.be/3pf_fGUj-5I)
+
+---
 
 These components have the CSS classes based on Bootstrap 4 in its HTML, but it's not required. You can use your own styles if you want.  
 
@@ -68,7 +69,7 @@ The `Search Settings` has the following search options.
 ### Search Results
 The search results component shows the result items of searching.  
 
-![](./img/Component_SearchResults.png)
+![](img/Component_SearchResults.png)
 
 A result item uses the `Search Result Data` template for displaying its information. Set this template to your page templates' `Base template` field.  
 
@@ -92,7 +93,7 @@ A result item uses the `Search Result Data` template for displaying its informat
 The Search Result Summary component shows the count of results and current search conditions.  
 Search conditions are not displayed by default.
 
-![](./img/Component_SearchResultSummary.png)
+![](img/Component_SearchResultSummary.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary 
@@ -108,7 +109,7 @@ No rendering parameters in this component.
 ### Page Selector
 The page selector component shows the link list for pagination.
 
-![](./img/Component_PageSelector.png)
+![](img/Component_PageSelector.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Page Selector/Page Selector
@@ -130,7 +131,7 @@ The page selector component shows the link list for pagination.
 ### Facet Filter
 The facet filter component shows the number of search results in a specific field.
 
-![](./img/Component_FacetFilter.png)
+![](img/Component_FacetFilter.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Facet Filter/Facet Filter
@@ -146,7 +147,6 @@ The facet filter component shows the number of search results in a specific fiel
 |Parameter name|Description|
 |:-|:-|
 |Target Field|Field for calculating the number of search results.|
-|||
 
 ### Sort Indicator
 ---
@@ -159,7 +159,7 @@ This component uses the dropdown component of Bootstrap. If you don't want to us
 
 The sort indicator has two dropdown lists for sorting the search results.
 
-![](./img/Component_SortIndicator.png)
+![](img/Component_SortIndicator.png)
 
 The first one shows the field choices for sorting which specified in the `Sort Fields` field of the data source. The second one has "Ascending" or "Descending" choices and it uses for specifying sort direction.  
 
@@ -191,7 +191,7 @@ No rendering parameters in this component.
 ### Search Box
 The search box is a component that helps the keyword search and provides suggestions.  
 
-![](./img/Component_SearchBox.png)
+![](img/Component_SearchBox.png)
 
 You can search for the field that set in `Keyword Search Target` in` Search Settings`.
 
@@ -241,9 +241,9 @@ For customization or contribution, you need to set up a development environment 
 1. Access to `{url to your sitecore}/unicorn.aspx` and sync all items.
 
 ## License
-This software is released under the MIT License, see LICENSE.txt.
+This software is released under the MIT License, see [LICENSE.txt](LICENSE.txt).
 
 ## Authors
-- Takumi Yamada (xirtardauq@gmail.com)
-- Yuta Tsunemoto (tsunemoto@est.co.jp)
-- Ayane Suzuki (a-suzuki@est.co.jp)
+- [Takumi Yamada](https://github.com/xirtardauq)
+- [Yuta Tsunemoto](https://github.com/yuta-tsunemoto)
+- [Ayane Suzuki](https://github.com/ayane-suzuki)
