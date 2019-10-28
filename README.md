@@ -1,5 +1,5 @@
 ## ESearch
-<img src="./img/logo.png" width="400px">  
+<img src="img/logo.png" width="400px">  
 
 ESearch is a simple search module for Sitecore XP. This project is created as a submission for [konabos Search UI Competition](https://www.konabos.com/search-ui-competition).  
 
@@ -15,7 +15,7 @@ ESearch is a simple search module for Sitecore XP. This project is created as a 
 ### Sample Website
 ESearch provides a sample website build with this module & Bootstrap 4.
 
-![](./img/Screenshot.png)  
+![](img/Screenshot.png)  
 
 To install the sample website:  
 
@@ -68,7 +68,7 @@ The `Search Settings` has the following search options.
 ### Search Results
 The search results component shows the result items of searching.  
 
-![](./img/Component_SearchResults.png)
+![](img/Component_SearchResults.png)
 
 A result item uses the `Search Result Data` template for displaying its information. Set this template to your page templates' `Base template` field.  
 
@@ -92,7 +92,7 @@ A result item uses the `Search Result Data` template for displaying its informat
 The Search Result Summary component shows the count of results and current search conditions.  
 Search conditions are not displayed by default.
 
-![](./img/Component_SearchResultSummary.png)
+![](img/Component_SearchResultSummary.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Search Result Summary/Search Result Summary 
@@ -108,7 +108,7 @@ No rendering parameters in this component.
 ### Page Selector
 The page selector component shows the link list for pagination.
 
-![](./img/Component_PageSelector.png)
+![](img/Component_PageSelector.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Page Selector/Page Selector
@@ -130,7 +130,7 @@ The page selector component shows the link list for pagination.
 ### Facet Filter
 The facet filter component shows the number of search results in a specific field.
 
-![](./img/Component_FacetFilter.png)
+![](img/Component_FacetFilter.png)
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Facet Filter/Facet Filter
@@ -159,7 +159,7 @@ This component uses the dropdown component of Bootstrap. If you don't want to us
 
 The sort indicator has two dropdown lists for sorting the search results.
 
-![](./img/Component_SortIndicator.png)
+![](img/Component_SortIndicator.png)
 
 The first one shows the field choices for sorting which specified in the `Sort Fields` field of the data source. The second one has "Ascending" or "Descending" choices and it uses for specifying sort direction.  
 
@@ -191,7 +191,7 @@ No rendering parameters in this component.
 ### Search Box
 The search box is a component that helps the keyword search and provides suggestions.  
 
-![](./img/Component_SearchBox.png)
+![](img/Component_SearchBox.png)
 
 You can search for the field that set in `Keyword Search Target` in` Search Settings`.
 
