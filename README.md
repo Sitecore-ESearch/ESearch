@@ -9,7 +9,7 @@ ESearch is a simple search module for Sitecore XP. This project is created as a 
 - Sitecore Experience Platform 9.2
 
 ## Installation
-1. Download the package `ESearch-{version}.zip` from the release page.
+1. Download the package `ESearch-{version}.zip` from the [release page](https://github.com/Sitecore-ESearch/ESearch/releases).
 1. Install the package to your Sitecore via Installation Wizard.
 
 ### Sample Website
@@ -19,8 +19,9 @@ ESearch provides a sample website build with this module & Bootstrap 4.
 
 To install the sample website:  
 
-1. Install `ESearch - Sample Website-{version}.zip` (available in the release page).
-1. Rebuild `sitecore_master_index`.
+1. Install `ESearch - Sample Website-{version}.zip` (available in the [release page](https://github.com/Sitecore-ESearch/ESearch/releases)).
+1. Execute site publishing.
+1. Rebuild `sitecore_master_index` and `sitecore_web_index`.
 1. Add a bind `esearch.example.com:80` to your site on IIS.
 1. Add a DNS record `127.0.0.1 esearch.example.com` to the `hosts` file.
 1. Access to `http://esearch.example.com` and enjoy it!
@@ -146,7 +147,6 @@ The facet filter component shows the number of search results in a specific fiel
 |Parameter name|Description|
 |:-|:-|
 |Target Field|Field for calculating the number of search results.|
-|||
 
 ### Sort Indicator
 ---
@@ -241,7 +241,7 @@ For customization or contribution, you need to set up a development environment 
 1. Access to `{url to your sitecore}/unicorn.aspx` and sync all items.
 
 ## License
-This software is released under the MIT License, see LICENSE.txt.
+This software is released under the MIT License, see [LICENSE.txt](LICENSE.txt).
 
 ## Authors
 - Takumi Yamada (xirtardauq@gmail.com)
