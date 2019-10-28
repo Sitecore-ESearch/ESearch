@@ -80,14 +80,14 @@ A result item uses the `Search Result Data` template for displaying its informat
 
 |Field name|Description|
 |:-|:-|
-|Read More Label|Text displayed on the "Read more" link in each result item.|
+|`Read More Label`|Text displayed on the "Read more" link in each result item.|
 
 #### Rendering Parameters
 - Path: /sitecore/templates/Feature/ESearch/Search Results/Rendering Parameter/Search Results Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Item Css Class|Class names that set to each result item.|
+|`Item Css Class`|Class names that set to each result item.|
 
 ### Search Result Summary
 The Search Result Summary component shows the count of results and current search conditions.  
@@ -100,8 +100,8 @@ Search conditions are not displayed by default.
 
 |Field name|Description|
 |:-|:-|
-|Total Count Label|Text displayed on the title of count of result.|
-|Search Conditions Label|Text displayed on the title of current search conditions.|
+|`Total Count Label`|Text displayed on the title of count of result.|
+|`Search Conditions Label`|Text displayed on the title of current search conditions.|
 
 #### Rendering Parameters
 No rendering parameters in this component.
@@ -116,17 +116,17 @@ The Page Selector component shows the link list for the pagination.
 
 |Field name|Description|
 |:-|:-|
-|Previous Link Label|Text displayed on the link to the previous page.|
-|Next Link Label|Text displayed on the link to the next page.|
-|First Link Label|Text displayed on the link to the first page. If the text is empty, the link is hidden.|
-|Last Link Label|Text displayed on the link to the last page. If the text is empty, the link is hidden.|
+|`Previous Link Label`|Text displayed on the link to the previous page.|
+|`Next Link Label`|Text displayed on the link to the next page.|
+|`First Link Label`|Text displayed on the link to the first page. If the text is empty, the link is hidden.|
+|`Last Link Label`|Text displayed on the link to the last page. If the text is empty, the link is hidden.|
 
 #### Rendering Parameters
 - Path: /sitecore/templates/Feature/ESearch/Page Selector/Rendering Parameter/Page Selector Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Selector Size|Number of the page selector links displayed on both sides of a center link.|
+|`Selector Size`|Number of the page selector links displayed on both sides of a center link.|
 
 ### Facet Filter
 The Facet Filter component shows the number of search results in a specific field.
@@ -138,15 +138,15 @@ The Facet Filter component shows the number of search results in a specific fiel
 
 |Field name|Description|
 |:-|:-|
-|Header Label|Text displayed on the header of the filter.|
-|Clear Label|Text displayed on the clear button.|
+|`Header Label`|Text displayed on the header of the filter.|
+|`Clear Label`|Text displayed on the clear button.|
 
 #### Rendering Parameters
 - Path: /sitecore/templates/Feature/ESearch/Facet Filter/Rendering Parameter/Facet Filter Parameters
 
 |Parameter name|Description|
 |:-|:-|
-|Target Field|Field for calculating the number of search results.|
+|`Target Field`|Field for calculating the number of search results.|
 
 ### Sort Indicator
 ---
@@ -174,16 +174,16 @@ To add a field choice:
 
 |Field name|Description|
 |:-|:-|
-|Field Name|Name of the field of the search target content.|
-|Display Name|Name of display on dropdown list.|
+|`Field Name`|Name of the field of the search target content.|
+|`Display Name`|Name of display on dropdown list.|
 
 #### Datasource Template
 - Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Indicator
 
 |Field name|Description|
 |:-|:-|
-|Sort Fields|`Sort Field` items to display on the dropdown list.|
-|Default Text|Text to display on the initial choice in the dropdown list.|
+|`Sort Fields`|`Sort Field` items to display on the dropdown list.|
+|`Default Text`|Text to display on the initial choice in the dropdown list.|
 
 #### Rendering Parameters
 No rendering parameters in this component.
@@ -208,8 +208,8 @@ To enable typeahead suggestion, requierd to load `/Scripts/esearch.searchbox.js`
 
 |Field name|Description|
 |:-|:-|
-|Placeholder Label|Text for display in the placeholder.|
-|Execute Button Label|Text for display on the button that executes the search.|
+|`Placeholder Label`|Text for display in the placeholder.|
+|`Execute Button Label`|Text for display on the button that executes the search.|
 
 #### Rendering Parameters
 No rendering parameters in this component.
