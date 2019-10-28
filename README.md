@@ -9,11 +9,11 @@ ESearch is a simple search module for Sitecore XP. This project is created as a 
 - Sitecore Experience Platform 9.2
 
 ## Installation
-1. Download the package `ESearch-{version}.zip` from the [release page](https://github.com/Sitecore-ESearch/ESearch/releases).
-1. Install the package to your Sitecore via Installation Wizard.
+1. Download the package `ESearch-{version}.zip` from [here](https://github.com/Sitecore-ESearch/ESearch/releases).
+1. Install the package into your Sitecore via Installation Wizard.
 
 ### Sample Website
-ESearch provides a sample website build with this module & Bootstrap 4.
+ESearch provides a sample website built with this module & Bootstrap 4.
 
 ![](img/Screenshot.png)  
 
@@ -56,7 +56,7 @@ All components need to set a `Search Settings` item in the rendering parameter. 
 - `Default Search Settings`:
   - Path: /sitecore/system/Settings/ESearch/Search Settings/Default Search Settings
 
-The `Search Settings` has the following search options.
+The `Search Settings` has following search options.
 
 |Field name|Description|
 |:-|:-|
@@ -67,11 +67,11 @@ The `Search Settings` has the following search options.
 |`Date Format`|Date format used for displaying date.|
 
 ### Search Results
-The search results component shows the result items of searching.  
+The Search Results component shows the results of searching.  
 
 ![](img/Component_SearchResults.png)
 
-A result item uses the `Search Result Data` template for displaying its information. Set this template to your page templates' `Base template` field.  
+A result item uses the `Search Result Data` template for displaying its information. Set this to your `Base template` field.  
 
 - /sitecore/templates/Feature/ESearch/Search Result Data
 
@@ -107,7 +107,7 @@ Search conditions are not displayed by default.
 No rendering parameters in this component.
 
 ### Page Selector
-The page selector component shows the link list for pagination.
+The Page Selector component shows the link list for the pagination.
 
 ![](img/Component_PageSelector.png)
 
@@ -129,7 +129,7 @@ The page selector component shows the link list for pagination.
 |Selector Size|Number of the page selector links displayed on both sides of a center link.|
 
 ### Facet Filter
-The facet filter component shows the number of search results in a specific field.
+The Facet Filter component shows the number of search results in a specific field.
 
 ![](img/Component_FacetFilter.png)
 
@@ -153,22 +153,22 @@ The facet filter component shows the number of search results in a specific fiel
 
 **NOTE**
 
-This component uses the dropdown component of Bootstrap. If you don't want to use Bootstrap, you need to create a script for displaying this as a dropdown. (Would be improved in a feature version.)
+This component uses the dropdown component of Bootstrap. If you don't want to use Bootstrap, you need to create a script for displaying it as a dropdown. (Would be improved in a feature version.)
 
 ---
 
-The sort indicator has two dropdown lists for sorting the search results.
+The Sort Indicator has two dropdown lists for sorting the search results.
 
 ![](img/Component_SortIndicator.png)
 
-The first one shows the field choices for sorting which specified in the `Sort Fields` field of the data source. The second one has "Ascending" or "Descending" choices and it uses for specifying sort direction.  
+The first one shows the field choices which is for sorting specified in the `Sort Fields` of the data source. The second one has "Ascending" or "Descending" choices and it is for specifying sort direction.  
 
 To add a field choice:
 
 1. Create a `Sort Field` item.
-1. Input a field name to use for sorting in the `Field Name` field.
-1. Input a displayed label for the dropdown in the `Display Name` field.
-1. Set the item in the `Sort Fields` field of the data source.
+1. Input a field name for sorting in the `Field Name`.
+1. Input a displayed label for the dropdown in the `Display Name`.
+1. Set the item in the `Sort Fields` of the data source.
 
 - Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Field
 
@@ -189,17 +189,17 @@ To add a field choice:
 No rendering parameters in this component.
 
 ### Search Box
-The search box is a component that helps the keyword search and provides suggestions.  
+The Search Box is a component that helps the keyword search and provides suggestions.  
 
 ![](img/Component_SearchBox.png)
 
-You can search for the field that set in `Keyword Search Target` in` Search Settings`.
+You can search for the field that was set in `Keyword Search Target` in` Search Settings`.
 
 ---
 
 **NOTE**  
 
-To enable typeahead suggestion, make sure to load `/Scripts/esearch.searchbox.js` in your layout.
+To enable typeahead suggestion, requierd to load `/Scripts/esearch.searchbox.js` in your layout.
 
 ---
 
@@ -222,7 +222,7 @@ The features below are not supported yet.
 - [ ] Adding the components beyond a search page
 - [ ] SXA Integrations
 
-Your contribution and feedback like below are very welcome.
+Your contribution and feedback are very welcomed.
 
 - Make a feature in todo list
 - Add unit testing
@@ -230,8 +230,7 @@ Your contribution and feedback like below are very welcome.
 - Add a sample theme without the Bootstrap
 - Add a compatible rendering for each component
 
-## Development environment
-For customization or contribution, you need to set up a development environment on your machine.
+## For Customization
 
 1. Clone this repository.
 1. Build the solution and publish all projects to your Sitecore instance.
