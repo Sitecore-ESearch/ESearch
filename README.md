@@ -19,6 +19,7 @@ ESearch provides a sample website build with this module & Bootstrap 4.
 
 To install the sample website:  
 
+1. Install the ESearch module.
 1. Install `ESearch - Sample Website-{version}.zip` (available in the [release page](https://github.com/Sitecore-ESearch/ESearch/releases)).
 1. Execute site publishing.
 1. Rebuild `sitecore_master_index` and `sitecore_web_index`.
@@ -27,17 +28,6 @@ To install the sample website:
 1. Access to `http://esearch.example.com` and enjoy it!
 
 ## Usage
-
----
-
-**NOTE**
-
-You can see how to use this module on YouTube.
-
-- [How to use the ESearch module](https://www.youtube.com)
-
----
-
 This module contains the following components.
 
 - <a href="#search-results">Search Results</a>
@@ -46,6 +36,16 @@ This module contains the following components.
 - <a href="#facet-filter">Facet Filter</a>
 - <a href="#sort-indicator">Sort Indicator</a>
 - <a href="#search-box">Search Box</a> (supports typeahead suggestion)
+
+---
+
+**NOTE**
+
+You can see how to use these components on YouTube.
+
+- [How to use the ESearch components](https://youtu.be/3pf_fGUj-5I)
+
+---
 
 These components have the CSS classes based on Bootstrap 4 in its HTML, but it's not required. You can use your own styles if you want.  
 
@@ -244,6 +244,6 @@ For customization or contribution, you need to set up a development environment 
 This software is released under the MIT License, see [LICENSE.txt](LICENSE.txt).
 
 ## Authors
-- Takumi Yamada (xirtardauq@gmail.com)
-- Yuta Tsunemoto (tsunemoto@est.co.jp)
-- Ayane Suzuki (a-suzuki@est.co.jp)
+- [Takumi Yamada](https://github.com/xirtardauq)
+- [Yuta Tsunemoto](https://github.com/yuta-tsunemoto)
+- [Ayane Suzuki](https://github.com/ayane-suzuki)
