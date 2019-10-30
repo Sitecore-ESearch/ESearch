@@ -1,0 +1,41 @@
+﻿---
+ID: "cc4c9115-84ed-46ae-a159-2242fe435b11"
+Parent: "9fb9044b-d458-44f4-b461-a63efd40db6a"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: "/sitecore/content/ESearch Sample/Documents/jss/why-sitecore"
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T081702Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: "The most exiting part of developing JavaScript applications is the development itself. But what about all the maintenance? Updating text, change the order of components, the look and feel or just creating additional pages. Wouldn’t it be great if you could leave that to the authors of the application so that you can spend your time on the actual development?"
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Why power your app with Sitecore
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Sitecore
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{F3C5CC30-9986-4A34-B95D-43E9368C3D45}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{DA8F13F3-ED2B-4CCD-BFBD-78A04829AE71}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <article class="topic content-container" id="content-wrapper"><div id="topic-content" class="topic-content"><section xml:lang="en" dir="ltr" class="section reused-publication reused-publication" data-origin-id="UUID-8e58f569-fdb4-e545-9e0b-dfcadfb400d9" data-permalink="xconnect.html" data-topic-level="1" data-relative-prefix="" data-time-modified="10/04/2019" data-publication-date="10/07/19" id="UUID-8e58f569-fdb4-e545-9e0b-dfcadfb400d9"><div class="titlepage"><div><div class="title"><h1 class="title" style="clear: both">xConnect</h1><div id="current-version"><strong>Current version: </strong>9.2</div></div></div></div><p>xConnect is the service layer that sits in between the xDB and any trusted client, device, or interface that wants to read, write, or search xDB data.</p></section><div class="footer-content"><div class="glossary-definitions"></div></div><footer></footer></div></article>

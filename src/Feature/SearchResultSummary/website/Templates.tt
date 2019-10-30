@@ -1,0 +1,12 @@
+<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" encoding="utf-8" #>
+
+<#@ include file="$(SolutionDir)codegen\Assemblies.tt" #>
+
+<#
+    SolutionDir = this.Host.ResolveAssemblyReference("$(SolutionDir)");
+    HelixLayer = "Feature";
+    ModuleName = "SearchResultSummary";
+#>
+
+<#@ include file="$(SolutionDir)codegen\Unicorn.tt" #>

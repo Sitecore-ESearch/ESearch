@@ -1,0 +1,41 @@
+﻿---
+ID: "babccd17-2bff-4e22-8375-0779a051e1b0"
+Parent: "9a079e6c-f38f-4cfa-b4a1-128f4a41d528"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: "/sitecore/content/ESearch Sample/Documents/xc/commerce-developer-reference"
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T082458Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: API reference for developers who want to extend and customize the Sitecore XC.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Commerce Developer Reference
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Development Document
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{BA6E3FF4-2E8E-4D01-8364-C0E45053A1CF}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{6315A236-5450-4718-A163-8E00C1BD58FC}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <article class="topic content-container" id="content-wrapper"><div id="topic-content" class="topic-content"><section xml:lang="en" dir="ltr" class="section reused-publication reused-publication" data-origin-id="UUID-82063a51-2d18-4540-fbc3-c404b096a42e" data-permalink="commerce-developer-reference.html" data-topic-level="1" data-relative-prefix="" data-time-modified="07/24/2019" data-publication-date="10/07/19" id="UUID-82063a51-2d18-4540-fbc3-c404b096a42e"><div class="titlepage"><div><div class="title"><h1 class="title" style="clear: both">Commerce Developer Reference</h1><div id="current-version"><strong>Current version: </strong>9.2</div></div></div></div><p>Sitecore Experience Commerce™ (XC) Developer Reference focusses on the developer experience of using the XC plugin framework to extend or customize Commerce Engine functionality to meet commerce solutions requirements.</p></section><div class="footer-content"><div class="glossary-definitions"></div></div><footer></footer></div></article>

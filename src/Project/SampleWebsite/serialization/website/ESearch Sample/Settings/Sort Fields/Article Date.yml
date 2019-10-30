@@ -1,0 +1,28 @@
+﻿---
+ID: "9a93b6b3-00a5-4657-95fa-245c10f10935"
+Parent: "e0edbff8-7784-40c2-b3ac-3d375107a06e"
+Template: "632da6d2-5b7e-4baf-981c-54eb3d4fd946"
+Path: /sitecore/content/ESearch Sample/Settings/Sort Fields/Article Date
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T025323Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "d75b25b9-2ba8-49bd-8315-84172049b644"
+      Hint: Field Name
+      Value: Article Date
+    - ID: "ecccf19b-2456-4108-99b8-f90d3849ea18"
+      Hint: Display Name
+      Value: Date

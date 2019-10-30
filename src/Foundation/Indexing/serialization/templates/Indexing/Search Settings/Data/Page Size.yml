@@ -1,0 +1,36 @@
+﻿---
+ID: "2451c71d-4bca-480e-875d-456c31df189c"
+Parent: "90b83def-ea8f-4448-b3a1-de1bf5faafa9"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Foundation/ESearch/Indexing/Search Settings/Data/Page Size
+DB: master
+SharedFields:
+- ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
+  Hint: Validation
+  Value: "^[1-9][0-9]*$"
+- ID: "39847666-389d-409b-95bd-f2016f11eed5"
+  Hint: Unversioned
+  Type: Checkbox
+  Value: 0
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Integer
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Fields:
+  - ID: "b12e4906-b96b-495e-b343-cd2e92dc6347"
+    Hint: ValidationText
+    Value: The page size must be 1 or more.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190909T054933Z

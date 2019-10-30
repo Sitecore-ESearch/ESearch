@@ -1,0 +1,21 @@
+﻿---
+ID: "819792c6-800d-466f-bce4-62d905cf5e91"
+Parent: "cc51e4e8-c045-4487-b42d-47917e0ded6f"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/ESearch/Facet Filter/Rendering Parameter/Facet Filter Parameters/ESearch/Target Field
+DB: master
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191002T023817Z

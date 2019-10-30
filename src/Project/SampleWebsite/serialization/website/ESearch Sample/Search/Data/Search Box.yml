@@ -1,0 +1,28 @@
+﻿---
+ID: "d6e9f093-31c6-4403-b0bb-76f279a56d03"
+Parent: "9d42555e-3e06-44a5-92dc-f33c5b5c8e7d"
+Template: "a1dd0c72-0926-46ad-9bb6-9f0a37175ec2"
+Path: /sitecore/content/ESearch Sample/Search/Data/Search Box
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0e5c8a9c-77c3-401d-815f-1594c8791b01"
+      Hint: Placeholder Label
+      Value: Search keyword here...
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191007T112745Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "c9799703-ccaa-46be-b91d-e7265526acf1"
+      Hint: Execute Button Label
+      Value: SEARCH

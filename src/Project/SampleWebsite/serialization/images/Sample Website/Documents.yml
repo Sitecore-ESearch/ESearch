@@ -1,0 +1,14 @@
+﻿---
+ID: "47d26be0-d9d8-41ea-b3b9-261daa755515"
+Parent: "188d6395-5443-47db-ac18-965a5a98b54b"
+Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
+Path: /sitecore/media library/Project/ESearch/Sample Website/Documents
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T074608Z

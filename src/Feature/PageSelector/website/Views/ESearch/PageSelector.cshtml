@@ -1,0 +1,67 @@
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Feature.PageSelector
+@model ESearch.Feature.PageSelector.Models.PageSelectorModel
+<div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
+    <div class="esearch esearch-page-selector">
+        <ul class="pagination">
+            @if (Html.Sitecore().CurrentItem.FieldHasValue(Templates.PageSelector.Fields.FirstLinkLabel))
+            {
+                <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                    @if (Model.HasPreviousPage)
+                    {
+                        <a class="page-link" href="@Model.GetPageUrl(Model.FirstPageIndex)">@Html.Sitecore().Field(Templates.PageSelector.Fields.FirstLinkLabel)</a>
+                    }
+                    else
+                    {
+                        <span class="page-link">@Html.Sitecore().Field(Templates.PageSelector.Fields.FirstLinkLabel)</span>
+                    }
+                </li>
+            }
+            @if (Html.Sitecore().CurrentItem.FieldHasValue(Templates.PageSelector.Fields.PreviousLinkLabel))
+            {
+                <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                    @if (Model.HasPreviousPage)
+                    {
+                        <a class="page-link" href="@Model.GetPageUrl(Model.CurrentPageIndex - 1)">@Html.Sitecore().Field(Templates.PageSelector.Fields.PreviousLinkLabel)</a>
+                    }
+                    else
+                    {
+                        <span class="page-link">@Html.Sitecore().Field(Templates.PageSelector.Fields.PreviousLinkLabel)</span>
+                    }
+                </li>
+            }
+            @foreach (var index in Model.PageIndexes)
+            {
+                <li class="page-item @(index == Model.CurrentPageIndex ? "active" : "")">
+                    <a class="page-link" href="@Model.GetPageUrl(index)">@index</a>
+                </li>
+            }
+            @if (Html.Sitecore().CurrentItem.FieldHasValue(Templates.PageSelector.Fields.NextLinkLabel))
+            {
+                <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                    @if (Model.HasNextPage)
+                    {
+                        <a class="page-link" href="@Model.GetPageUrl(Model.CurrentPageIndex + 1)">@Html.Sitecore().Field(Templates.PageSelector.Fields.NextLinkLabel)</a>
+                    }
+                    else
+                    {
+                        <span class="page-link">@Html.Sitecore().Field(Templates.PageSelector.Fields.NextLinkLabel)</span>
+                    }
+                </li>
+            }
+            @if (Html.Sitecore().CurrentItem.FieldHasValue(Templates.PageSelector.Fields.LastLinkLabel))
+            {
+                <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                    @if (Model.HasNextPage)
+                    {
+                        <a class="page-link" href="@Model.GetPageUrl(Model.LastPageIndex)">@Html.Sitecore().Field(Templates.PageSelector.Fields.LastLinkLabel)</a>
+                    }
+                    else
+                    {
+                        <span class="page-link">@Html.Sitecore().Field(Templates.PageSelector.Fields.LastLinkLabel)</span>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>

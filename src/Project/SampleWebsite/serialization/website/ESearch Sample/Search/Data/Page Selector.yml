@@ -1,0 +1,30 @@
+﻿---
+ID: "e33bd719-bce8-4e24-a7f1-60196ad887cb"
+Parent: "9d42555e-3e06-44a5-92dc-f33c5b5c8e7d"
+Template: "1cbe2c9c-adf3-46a4-8866-4018b026c88b"
+Path: /sitecore/content/ESearch Sample/Search/Data/Page Selector
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0e7d76a2-2c71-4470-8c24-1aa992f71726"
+      Hint: Next Link Label
+      Value: Next
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190926T113307Z
+    - ID: "313e7431-d0ab-4227-ba4d-98a8e1f5d763"
+      Hint: First Link Label
+      Value: «
+    - ID: "5345578d-59c9-40c8-9977-041ed15d4e32"
+      Hint: Last Link Label
+      Value: »
+    - ID: "844dc433-8bd7-4c6c-b88d-5a921e53ee47"
+      Hint: Previous Link Label
+      Value: Prev

@@ -1,0 +1,14 @@
+﻿---
+ID: "8a171e01-6a0e-4beb-abf6-07f3f3f81b60"
+Parent: "eecc7eeb-f78b-46c1-b916-c0256a488b5b"
+Template: "ffb1a78a-9533-47ab-95f1-05138e764506"
+Path: /sitecore/content/ESearch Sample/Settings/Categories/Cloud Service
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T104325Z

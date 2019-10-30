@@ -1,0 +1,40 @@
+@using Sitecore.Globalization
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Feature.SearchResultSummary
+@model ESearch.Feature.SearchResultSummary.Models.SearchResultSummaryModel
+
+<div class="component @Html.Sitecore().CurrentRendering.Parameters["Css Class"]">
+    <div class="esearch esearch-search-result-summary">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultSummary.Fields.TotalCountLabel)</h5>
+                <p class="total-count">
+                    @Translate.Text("{0} results", Model.TotalCount)
+                </p>
+                @if (Model.IsDisplaySearchConditions)
+                {
+                    <h5 class="card-title">@Html.Sitecore().Field(Templates.SearchResultSummary.Fields.SearchConditionsLabel)</h5>
+                    <ul>
+                        @if (!string.IsNullOrEmpty(Model.Keywords))
+                        {
+                            <li class="badge badge-primary">@Translate.Text("Keyword") : @Model.Keywords</li>
+                        }
+                        @foreach (var equal in Model.SearchQuery.EqualsConditions)
+                        {
+                            <li class="badge badge-success">@equal.TargetField : @equal.Value</li>
+                        }
+                        @foreach (var between in Model.SearchQuery.BetweenConditions)
+                        {
+                            <li class="badge badge-info">@between.TargetField : @between.LowerValue - @between.UpperValue</li>
+                        }
+                        @foreach (var contain in Model.SearchQuery.ContainsConditions)
+                        {
+                            <li class="badge badge-warning">@contain.TargetField : @string.Join(",", contain.Values)</li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

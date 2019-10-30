@@ -1,0 +1,148 @@
+﻿---
+ID: "03975be2-0750-4032-b524-c60edd0f9aa6"
+Parent: "9081bebd-f353-44f0-89bd-48bde15e9465"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: /sitecore/content/ESearch Sample/Documents/xp
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T074135Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Collect and search experience data with xConnect and the Experience Database (xDB)
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: Experience Platform
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Experience Platform
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{E4101AFB-3183-4706-AD4F-45697B21E90F}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{11B54121-ED44-4F73-AC36-35166B53B585}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sitecore Experience Platform" />
+        <meta name="author" />
+        <link rel="icon" href="../../../favicon.ico" />
+        <title>Sitecore Experience Platform (9.2) &mdash; Sitecore Developer Documentation</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/theme-sitecore.css" rel="stylesheet" />
+        <link href="/css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <!-- For Cludo Search -->
+        <link href="//customer.cludo.com/assets/2063/10039/cludo-search.min.css" type="text/css" rel="stylesheet" />
+        <!--Cookies Policy-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <div class="header-container">
+        <div class="container">
+        <div class="row mb-0  align-items-center">
+        <div class="col-sm-6">
+        <a href="/" class="logoLink"> </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="container">
+        <div class="title-container">
+        <!-- Heading -->
+        <h1>Experience Platform (Sitecore 9.2)</h1>
+        <p class="intro">Collect and search experience data with xConnect and the Experience Database (xDB).</p>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/getting-started-with-xconnect.html">Getting
+        started with xConnect</a></h3>
+        <p>An overview of xConnect and the xDB, and how to get started with the xConnect Client API.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/xconnect.html">xConnect</a></h3>
+        <p>xConnect is the service layer between the xDB and all client applications. Use xConnect to get, create,
+        search, and update contacts and interactions.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/web-tracking.html">Web tracking </a></h3>
+        <p>The web tracker tracks a contact's activity on a website and submits it to xConnect.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/marketing-automation.html">Marketing Automation
+        Engine</a></h3>
+        <p>The Marketing Automation Engine processes engagement plan enrollments and moves contacts through plans.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/marketing-operations.html">Marketing
+        Operations</a></h3>
+        <p>Use the Marketing Operations API to manage definitions and taxonomies.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/segmentation-and-conditions.html">Segmentation
+        and conditions</a></h3>
+        <p>Segment contacts by behavior or facet and create your own conditions to extend personalization.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/processing-333921.html ">Processing </a></h3>
+        <p>Aggregate and process contact data in the reporting database.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/sitecore-cortex-processing-engine.html">Cortex
+        Processing Engine</a></h3>
+        <p>Distributed processing at scale.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/reference-data-service.html">Reference Data
+        Service</a></h3>
+        <p>Store and retrieve reference data from systems external to the xDB.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/reporting.html">Reporting</a></h3>
+        <p>Access aggregated reporting data.</p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/federated-experience-manager.html">Federated
+        Experience Manager</a></h3>
+        <p>Add Sitecore content on external non-Sitecore websites. Track visitor interactions and generate analytics.
+        </p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+        <h3 class="a-arrow"><a href="../sitecore-experience-platform/en/universal-tracker.html">Universal Tracking </a>
+        </h3>
+        <p>Mobile analytics on data collected from mobile apps, IoT, AR, VR and other emerging channels.</p>
+        </div>
+        </div>
+        </div>
+        <!-- /.container -->
+        <footer class="text-muted mainFooter">
+        <div class="container"> <a href="/about/index.html">About this site</a> &middot; <a href="mailto:docsite@sitecore.net">Feedback</a> &middot; <a href="http://www.sitecore.net/Company/Contact/Privacy-Policy.aspx" rel="noopener" target="_blank">Privacy
+        policy</a> &middot; <a href="http://www.sitecore.net/Legal/Legal-Notice.aspx" rel="noopener" target="_blank">Legal
+        notice</a> &middot; <a href="https://profile.sitecore.net:443/dmca_notice" rel="noopener" target="_blank">DMCA
+        Notice</a> &middot; <a href="http://www.sitecore.net/Legal/Copyright.aspx" rel="noopener" target="_blank">Copyright &copy;
+        1999-2019 Sitecore</a> </div>
+        </footer>
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- www.Cludo.com Search body init script start -->
+        <!-- www.Cludo.com Search body init script end -->

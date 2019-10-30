@@ -1,0 +1,60 @@
+.body-content {
+  max-width: 1280px;
+}
+
+  .body-content > div {
+    margin: .5rem 0rem;
+  }
+
+.navbar-header .header-logo {
+  display: inline-block;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.navbar-header .component {
+  display: inline-block;
+}
+
+.esearch-search-results .col-4 {
+  padding: 0rem .4rem;
+}
+
+.esearch-search-results .card {
+  margin: .4rem 0rem;
+}
+
+.esearch-search-results .card-img-top {
+  height: 100%;
+}
+
+.esearch-search-results h5.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.esearch-search-results p.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  height: 4.5rem;
+}
+
+.esearch-page-selector .pagination {
+  margin-bottom: 0;
+}
+
+.esearch-sort-indicator .dropdown {
+  display: inline-block;
+}
+
+.esearch-search-result-summary .card-title {
+  font-size: .9rem;
+  color: gray;
+}
+
+.esearch-search-result-summary .total-count {
+  margin-left: 2.5rem;
+}

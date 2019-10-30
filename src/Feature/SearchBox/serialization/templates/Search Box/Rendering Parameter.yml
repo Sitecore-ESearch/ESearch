@@ -1,0 +1,14 @@
+﻿---
+ID: "ffedc7d6-1393-454b-b2b5-6a4ab73fddd1"
+Parent: "c34738b3-18f4-42a9-81fd-c16aeef281ca"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/Feature/ESearch/Search Box/Rendering Parameter
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191023T024601Z

@@ -1,0 +1,32 @@
+@using Sitecore.Mvc
+@using ESearch.Foundation.SitecoreExtensions.Extensions
+@using ESearch.Project.SampleWebsite
+@using SearchResultData = ESearch.Feature.SearchResults.Templates.SearchResultData
+@{
+    var contextItem = Html.Sitecore().CurrentItem;
+}
+<article class="mt-5">
+    <div>
+        <h1>@Html.Sitecore().Field(SearchResultData.Fields.Title)</h1>
+        <date class="mt-2">@Html.Sitecore().Field(Templates.ArticlePage.Fields.ArticleDate)</date>
+    </div>
+    <div>
+        <ul class="list-unstyled">
+            @{
+                var category = contextItem.TargetItem(Templates.ArticlePage.Fields.ArticleCategory);
+            }
+            <li class="d-inline-block">
+                <a class="badge badge-primary" href="/?Article+Category=@category.ID.ToShortID().ToString().ToLowerInvariant()">@category.DisplayName</a>
+            </li>
+            @foreach (var tag in contextItem[Templates.ArticlePage.Fields.ArticleTags].Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                <li class="d-inline-block">
+                    <a class="badge badge-secondary" href="/?Article+Tags=@tag.ToLowerInvariant()">@tag</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div>
+        @Html.Sitecore().Field(Templates.ArticlePage.Fields.ArticleContent)
+    </div>
+</article>

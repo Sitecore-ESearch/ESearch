@@ -1,0 +1,14 @@
+﻿---
+ID: "3da914dd-4473-47e2-af4d-f2bd291b01e7"
+Parent: "9100a3d4-d0d8-4180-9383-cd01298ca30b"
+Template: "9100a3d4-d0d8-4180-9383-cd01298ca30b"
+Path: /sitecore/templates/Feature/ESearch/Search Results/Rendering Parameter/Search Results Parameters/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T073339Z

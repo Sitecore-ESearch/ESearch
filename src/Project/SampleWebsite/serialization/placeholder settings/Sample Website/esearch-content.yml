@@ -1,0 +1,29 @@
+﻿---
+ID: "0d48e369-85cc-40a4-942c-3791c6ca81fa"
+Parent: "aff6d3e3-f2bb-4fef-aef5-432dd8ed4d0d"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/ESearch/Sample Website/esearch-content"
+DB: master
+SharedFields:
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "esearch-content"
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {9D616D8A-D14D-4109-B37B-BC447E22789E}
+    {585678D8-E615-471B-BD00-C7B6260656BE}
+    {986EC979-B128-4A96-817C-5E4B735C342D}
+    {E33AF0BF-2812-4F6D-B9A7-E28360E8E22D}
+    {5DCC8A1F-D0CF-4DE3-832E-E103843DFB13}
+    {1171BF42-4181-4EF3-8490-733EDC190677}
+    {F40B0534-755A-4B52-A287-7747951416D7}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T025451Z

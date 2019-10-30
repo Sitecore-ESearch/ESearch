@@ -1,0 +1,14 @@
+﻿---
+ID: "272c2b30-3ffe-46bb-b322-6cbcf38ce33d"
+Parent: "7a79306a-f5b3-4cc6-a3db-f82099cecdc1"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/ESearch/Search Results/Search Result Data/Search Result
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190915T124521Z

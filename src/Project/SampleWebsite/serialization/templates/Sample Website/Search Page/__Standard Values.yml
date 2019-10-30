@@ -1,0 +1,32 @@
+﻿---
+ID: "3678dab7-244b-4654-9bb5-4038e61aaa68"
+Parent: "2e673b22-c5fd-4e70-964c-3ce09ee09007"
+Template: "2e673b22-c5fd-4e70-964c-3ce09ee09007"
+Path: /sitecore/templates/Project/ESearch/Sample Website/Search Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{EBA6B626-EA77-4696-9E14-DB9A89102409}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{FB401E43-BE46-4BAD-BCA7-58EB04DFD12B}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T075658Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

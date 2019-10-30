@@ -1,0 +1,14 @@
+﻿---
+ID: "4419f80f-aa0f-4cad-a472-f53395916e85"
+Parent: "5119f67d-ea7d-489e-8a69-cb160d54189c"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/ESearch/Sort Indicator/Sort Indicator/Sort Indicator
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191001T024936Z

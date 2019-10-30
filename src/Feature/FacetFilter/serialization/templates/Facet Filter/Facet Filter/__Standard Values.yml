@@ -1,0 +1,24 @@
+﻿---
+ID: "500783d7-bb5c-489d-b8bb-6b06c048fb36"
+Parent: "314ea20e-22ba-4e07-9cce-3b977d4f1f38"
+Template: "314ea20e-22ba-4e07-9cce-3b977d4f1f38"
+Path: /sitecore/templates/Feature/ESearch/Facet Filter/Facet Filter/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0b7321b3-88e3-4868-a4e5-ab01e6443cdd"
+      Hint: Clear Label
+      Value: Clear
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190930T015935Z
+    - ID: "27d1f25e-cff1-47ef-92c4-d7deb8a960b9"
+      Hint: Header Label
+      Value: $name
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -1,0 +1,25 @@
+﻿---
+ID: "2c4b745e-df89-4b44-9ecd-644acfa29c6e"
+Parent: "890b9279-c965-4a2a-a715-54ce84c3145c"
+Template: "890b9279-c965-4a2a-a715-54ce84c3145c"
+Path: /sitecore/templates/Project/ESearch/Sample Website/Folders/Category Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {890B9279-C965-4A2A-A715-54CE84C3145C}
+    {FFB1A78A-9533-47AB-95F1-05138E764506}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191015T075514Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

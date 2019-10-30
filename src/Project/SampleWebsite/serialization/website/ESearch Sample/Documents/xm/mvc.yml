@@ -1,0 +1,41 @@
+﻿---
+ID: "e4d37920-0e12-4b35-b7e2-311f26162c58"
+Parent: "a633b782-887f-460d-a9c6-61bc7a11678e"
+Template: "8df4eac2-bb4a-48fe-ba7f-7103d84dd80e"
+Path: /sitecore/content/ESearch Sample/Documents/xm/mvc
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191011T080024Z
+    - ID: "4ee1c5f3-8e7d-4a4c-9600-6fcbc4eeadc7"
+      Hint: Description
+      Value: Develop with Sitecore MVC.
+    - ID: "509114b1-fa52-4bef-87d5-b0f1515a3368"
+      Hint: Title
+      Value: MVC
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8e5fadb9-1f1b-431a-84be-a24af13accfc"
+      Hint: Article Date
+      Value: 20191010T150000Z
+    - ID: "9258ecce-b90b-4b1c-9e28-5079d427023d"
+      Hint: Article Tags
+      Value: Development MVC
+    - ID: "bed89f56-0a0e-46a0-9c01-7c2f1fea3424"
+      Hint: Article Category
+      Value: "{1BF00241-2066-445E-A9B2-030D5E0B2E17}"
+    - ID: "c8c9c3d5-e990-44cc-b92a-0e88d66fe69f"
+      Hint: Thumbnail
+      Value: |
+        <image mediaid="{A1C97C14-DDB1-46C2-AE3B-E4AACDE63E72}" />
+    - ID: "e7d512b3-d5d1-4016-af79-2edf4c7c9acf"
+      Hint: Article Content
+      Value: |
+        <article class="topic content-container" id="content-wrapper"><div id="topic-content" class="topic-content"><section xml:lang="en" dir="ltr" class="section original-topic original-topic" data-origin-id="UUID-2215828f-1e2d-38aa-3e68-8e77fdcd428b" data-permalink="mvc.html" data-topic-level="1" data-relative-prefix="" data-time-modified="12/17/2018" data-publication-date="10/07/19" id="UUID-13343679-d8df-45bc-8302-91876dc8250c"><div class="titlepage"><div><div class="title"><h1 class="title" style="clear: both">MVC</h1><div id="current-version"><strong>Current version: </strong>9.2</div></div></div></div><p>What you need to know when you develop in Sitecore with MVC.</p></section><div class="footer-content"><div class="glossary-definitions"></div></div><footer></footer></div></article>

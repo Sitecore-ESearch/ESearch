@@ -1,0 +1,14 @@
+﻿---
+ID: "e0edbff8-7784-40c2-b3ac-3d375107a06e"
+Parent: "b5286427-790f-4b28-b3df-2f9139257ff7"
+Template: "4e7af1b7-c44d-4d57-b4dd-e33591a6bb8a"
+Path: /sitecore/content/ESearch Sample/Settings/Sort Fields
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191017T102549Z
