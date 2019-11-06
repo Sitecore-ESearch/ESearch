@@ -115,7 +115,7 @@ namespace ESearch.Foundation.Indexing.Services
         }
         #endregion
 
-        private KeywordCondition CreateKeywordCondition(string value, ISearchSettings settings)
+        protected virtual KeywordCondition CreateKeywordCondition(string value, ISearchSettings settings)
         {
             var keywordCondition = new KeywordCondition
             {
@@ -126,7 +126,7 @@ namespace ESearch.Foundation.Indexing.Services
             return keywordCondition;
         }
 
-        private ICollection<SortCondition> CreateSortConditions(string value, ISearchSettings settings)
+        protected virtual ICollection<SortCondition> CreateSortConditions(string value, ISearchSettings settings)
         {
             var sortConditions = new List<SortCondition>();
 
@@ -161,7 +161,7 @@ namespace ESearch.Foundation.Indexing.Services
             return sortConditions;
         }
 
-        private (int offset, int limit) CreatePaginationInfo(string value, ISearchSettings settings)
+        protected virtual (int offset, int limit) CreatePaginationInfo(string value, ISearchSettings settings)
         {
             if (settings.PageSize <= 0)
             {
@@ -179,7 +179,7 @@ namespace ESearch.Foundation.Indexing.Services
             return (offset, limit);
         }
 
-        private ContainsCondition CreateContainsCondition(string key, string value, ISearchSettings settings)
+        protected virtual ContainsCondition CreateContainsCondition(string key, string value, ISearchSettings settings)
         {
             var containsCondition = new ContainsCondition
             {
@@ -190,7 +190,7 @@ namespace ESearch.Foundation.Indexing.Services
             return containsCondition;
         }
 
-        private BetweenCondition CreateBetweenCondition(string key, string value, ISearchSettings settings)
+        protected virtual BetweenCondition CreateBetweenCondition(string key, string value, ISearchSettings settings)
         {
             var lowerAndUpper = value.Split('|');
             var lower = lowerAndUpper[0];
@@ -213,7 +213,7 @@ namespace ESearch.Foundation.Indexing.Services
             }
         }
 
-        private ICollection<EqualsCondition> CreateEqualsConditions(string key, string values, ISearchSettings settings)
+        protected virtual ICollection<EqualsCondition> CreateEqualsConditions(string key, string values, ISearchSettings settings)
         {
             return values.Split(new[] { '+' }, StringSplitOptions.RemoveEmptyEntries).Select(value => new EqualsCondition
             {
