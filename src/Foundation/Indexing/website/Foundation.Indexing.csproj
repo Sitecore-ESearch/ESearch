@@ -173,6 +173,7 @@
     <Compile Include="Models\FacetResults.cs" />
     <Compile Include="Models\SearchQuery.cs" />
     <Compile Include="Models\SearchResults.cs" />
+    <Compile Include="Models\SearchSettings.cs" />
     <Compile Include="Models\SuggestionResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DefaultIndexResolver.cs" />
